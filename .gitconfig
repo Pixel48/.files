@@ -65,7 +65,7 @@
 	;desktop = hub
 	;kraken = !C:\Users\pikse\AppData\Local\gitkraken\run.cmd -p .
 	;kraken = !gitkraken -p .
-	timeline = log --graph --all --format=format:\"%C(yellow)%h%C(reset) %C(bold green)(%ar) %C(bold dim cyan)%an %C(reset)%s \"
+	timeline = log --graph  --format=format:\"%C(yellow)%h%C(reset) %C(bold green)(%ar) %C(bold dim cyan)%an %C(reset)%s\"
 	uns = unstage
 	ma = co main
 	fa = fetch --all
@@ -109,7 +109,7 @@
 	tc = "!clear; git t"
 	stl = st list
 	cl = clone
-	time = "!clear; git timeline"
+	time = timeline
 	cod = cob develop
 	;jump = !git ca && git push
 
