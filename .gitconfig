@@ -112,6 +112,7 @@
 	time = timeline
 	cod = cob develop
 	mm = m -m
+	mnfm = mnf -m
 	;jump = !git ca && git push
 
 [user]
