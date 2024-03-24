@@ -111,6 +111,7 @@
 	cl = clone
 	time = timeline
 	cod = cob develop
+	mm = m -m
 	;jump = !git ca && git push
 
 [user]
