@@ -1,0 +1,87 @@
+export shell=`basename $SHELL`
+alias cat='bat -p'
+alias cls='clear'
+alias ${shell}rc="nano ~/.${shell}rc"
+alias aliases="nano ~/.${shell}_aliases"
+alias functions="nano ~/.${shell}_functions"
+alias code.='code .; exit'
+alias mwin='xwin -multiwindow &'
+alias nanorc='nano /etc/nanorc'
+alias lsr='lst -r'
+alias mnt='mount'
+alias umnt='umount'
+alias tree='ls -R'
+alias ardu='arduino-cli'
+alias now='date +"%d.%m.%Y %H:%M:%S"'
+#alias e='exit'
+# alias q='sleep .01 && exit'
+alias qq='jka && sleep .05 && exit'
+alias firefox='/cygdrive/c/Users/Stanley/AppData/Local/Firefox Nightly/firefox'
+#alias ip='ipconfig | grep -i ipv4 | cut -d: -f2 | tr -d " "'
+alias ipe='curl ifconfig.me'
+alias fox='firefox'
+alias pxyc="nano ~/.proxychains/proxychains.conf"
+#alias dowc='rm -rf $here/Downloads/https%3a%2f%2fpolish-mirror.evolution-host.com%2fcygwin%2f && $here/Downloads/dowSorter.exe'
+#alias ls='ls -p --color=always'
+alias ls='ls -C --color=always'
+alias lsd='ls -d'
+alias lst='ls -t'
+alias lsc='ls -c'
+alias lstr='lst -r'
+alias lscr='lsc -r'
+alias lc='l -c'
+alias lss='ls -sh'
+#alias ll='/usr/bin/ls -l'
+alias llc='ll -c'
+alias llt='ll -t'
+alias root='Powershell -command "Start-Process -Verb RunAs wt" && exit'
+#aliasWc c='code .'
+alias there='cd $here'
+alias df='df -h'
+alias here='explorer .'
+alias heree='here; exit'
+alias shrc="nano ~/.${shell}rc"
+alias reload="exec ${shell}"
+alias .,='cd -'
+
+alias l='ls -1'
+alias lld='ls -ld'
+alias lsh='l -A | grep ^\\.'
+
+alias r='reset'
+alias j='jobs -l'
+alias x='chmod u+x'
+alias du='du -h'
+alias dd='dd status=progress'
+alias lsa='ls -A'
+alias lla='ll -A'
+alias sshc='nano ~/.ssh/config'
+alias sshv='code ~/.ssh/config'
+
+
+
+#alias rex='taskkill /f /t /im explorer.exe && explorer & disown & exit'
+#alias rex='cmd /c "taskkill /f /im explorer.exe && explorer" & disown && kill -9 $$'
+alias rex='cmd /c "taskkill /f /im explorer.exe && explorer"'
+
+alias laws='''echo -e """
+  \e[0;21;31mMurphy’s Law\e[0m
+\e[0;31mAnything that can go wrong will go wrong\e[0m
+
+  \e[0;21;33mKidlin’s Law\e[0m
+\e[0;33mIf you can write the problem down clearly, then the issue is half solved\e[0m
+
+  \e[0;21;95mGilbert’s Law\e[0m
+\e[0;95mThe biggest problem at work is that no one tells you what to do\e[0m
+
+  \e[0;21;32mWalson’s Law\e[0m
+\e[0;32mIf you put information and intelligence first at all times, then the money will come\e[0m
+
+  \e[0;21;94mFalkland’s Law\e[0m
+\e[0;94mWhen you don’t have to make a decision, don’t make a decision\e[0m"""'''
+
+alias xmrigc='nano /cygdrive/s/Program\ Files/xmrig-6.21.0/config.json'
+alias xmrigv='code "S:\\Program Files\\xmrig-6.21.0\\config.json"'
+alias xmrigd='cd "S:\\Program Files\\xmrig-6.21.0"'
+
+alias tldr='tldr -t base16'
