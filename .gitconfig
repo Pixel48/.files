@@ -96,7 +96,6 @@
 	pushall = push --all
 	pusha = push --all
 	brv = br -vv
-	rr = co head .
 	cei = cem 'Initial commit'
 	stm = st push -m
 	bD = b -D
