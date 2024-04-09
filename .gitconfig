@@ -112,6 +112,7 @@
 	cod = cob develop
 	mm = m -m
 	mnfm = mnf -m
+	sub = submodule
 	;jump = !git ca && git push
 
 [user]
