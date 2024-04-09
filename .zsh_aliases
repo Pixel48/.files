@@ -1,5 +1,4 @@
 export shell=`basename $SHELL`
-alias vim=vi
 alias cat='bat -p'
 alias cls='clear'
 alias ${shell}rc="nano ~/.${shell}rc"
