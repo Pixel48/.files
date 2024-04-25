@@ -82,7 +82,7 @@
 	ss = status
 	sa = s -uall
 	ssa = ss -uall
-	list = ssa
+	list = sa
 	la = log --all
 	lsa = ls --all
 	ra = r add

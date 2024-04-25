@@ -120,6 +120,7 @@ source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 
 # =========[EXPORTS]=========
+export mnt='/cygdrive'
 export npm_config_loglevel=error
 export GPG_TTY=$(tty)
 #export LANG=C
