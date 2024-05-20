@@ -114,6 +114,7 @@
 	mnfm = mnf -m
 	sub = submodule
 	rr = r remove
+	update = "!git f; git p"
 	;jump = !git ca && git push
 
 [user]
