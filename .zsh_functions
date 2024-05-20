@@ -1,6 +1,5 @@
-apt-get() {
-  apt-cyg $*
-  rm -rf $here/Downloads/https%3a%2f%2fpolish-mirror.evolution-host.com%2fcygwin%2f
+mkcd() {
+  mkdir -p $@ && cd ${@:$#}
 }
 nll() { nl $1 | less; }
 netline() {
@@ -19,7 +18,6 @@ netline() {
     ping -w 250 -n 1 $ip >&- && echo -ne "\e[0;1;32m$x\e[m" || ( ping -w 750 -n 1 $ip >&- && echo -ne "\e[0;1;33m$x\e[m" || echo -ne "\e[0;1;31m$x\e[m" )
   done &
 }
-#apt-cyg() { /usr/local/bin/apt-cyg $*; rm -rf $here/Downloads/https*cygwin* }
 jk() { kill %$1; }
 jka() {
   for jid in `jobs | cut -d\[ -f2 | cut -d\] -f1`; do

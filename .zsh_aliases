@@ -1,4 +1,6 @@
-export shell=`basename $SHELL`
+shell=`basename $SHELL`
+
+alias d='dirs -p'
 alias wpwd='cygpath -w `pwd`'
 alias dc='d -c'
 alias mkdir='mkdir -p'
@@ -7,6 +9,7 @@ alias cls='clear'
 alias ${shell}rc="nano ~/.${shell}rc"
 alias aliases="nano ~/.${shell}_aliases"
 alias functions="nano ~/.${shell}_functions"
+alias exports="nano ~/.${shell}_exports"
 alias code.='code .; exit'
 alias mwin='xwin -multiwindow &'
 alias nanorc='nano /etc/nanorc'
@@ -25,8 +28,6 @@ alias ipe='curl ifconfig.me'
 alias fox='firefox'
 alias pxyc="nano ~/.proxychains/proxychains.conf"
 #alias dowc='rm -rf $here/Downloads/https%3a%2f%2fpolish-mirror.evolution-host.com%2fcygwin%2f && $here/Downloads/dowSorter.exe'
-#alias ls='ls -p --color=always'
-alias ls='ls -C --color=always'
 alias lsd='ls -d'
 alias lst='ls -t'
 alias lsc='ls -c'
@@ -53,7 +54,7 @@ alias lsh='l -A | grep ^\\.'
 
 alias r='reset'
 alias j='jobs -l'
-alias x='chmod u+x'
+#alias x='chmod u+x'
 alias du='du -h'
 alias dd='dd status=progress'
 alias lsa='ls -A'
@@ -88,3 +89,5 @@ alias xmrigv='code "S:\\Program Files\\xmrig-6.21.0\\config.json"'
 alias xmrigd='cd "S:\\Program Files\\xmrig-6.21.0"'
 
 alias tldr='tldr -t base16'
+
+unset shell
