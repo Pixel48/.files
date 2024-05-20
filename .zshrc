@@ -93,24 +93,37 @@ alias lla='lsa -l'
 alias l='ls -1'
 alias lsd='ls -d'
 
-# Config files
+editor=$(command -v nano 2>/dev/null ||
+          command -v vim 2>/dev/null ||
+          command -v vi 2>/dev/null ||
+          command -v ed 2>/dev/null ||
+          echo "echo No editor found")
+alias zshrc="${editor} ~/.zshrc"
+
+# Load aliases, functions, exports, etc.
 if [ -f ~/.zsh_aliases ]; then
   . ~/.zsh_aliases
+  alias aliases="${editor} ~/.zsh_aliases"
 fi
 
 if [ -f ~/.zsh_functions ]; then
   . ~/.zsh_functions
+  alias functions="${editor} ~/.zsh_functions"
 fi
 
 if [ -f ~/.zsh_exports ]; then
   . ~/.zsh_exports
+  alias exports="${editor} ~/.zsh_exports"
 fi
 
-# Cygwin workarounds
+# Load cygwin workarounds if needed
 case `uname` in
   *CYGWIN*|*MINGW*|*MSYS*)
-#    basedir=`cygpath -w "$basedir"`
-    here=/cygdrive/c/Users/`whoami`;;
+    if [ -f ~/.zsh_cygwin ]; then
+      . ~/.zsh_cygwin
+      alias cygwin_aliases="${editor} ~/.zsh_cygwin_aliases"
+    fi
+    ;;
 esac
 
 # Zoxide

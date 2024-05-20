@@ -1,17 +1,9 @@
-shell=`basename $SHELL`
-
 alias ok='sudo $(fc -nl -1)'
 alias d='dirs -p'
-alias wpwd='cygpath -w `pwd`'
 alias dc='d -c'
 alias mkdir='mkdir -p'
 alias cat='bat -p'
 alias cls='clear'
-alias ${shell}rc="nano ~/.${shell}rc"
-alias aliases="nano ~/.${shell}_aliases"
-alias functions="nano ~/.${shell}_functions"
-alias exports="nano ~/.${shell}_exports"
-alias code.='code .; exit'
 alias mwin='xwin -multiwindow &'
 alias nanorc='nano /etc/nanorc'
 alias lsr='lst -r'
@@ -45,8 +37,8 @@ alias there='cd $here'
 alias df='df -h'
 alias here='explorer .'
 alias heree='here; exit'
-alias shrc="nano ~/.${shell}rc"
-alias reload="exec ${shell}"
+alias shrc="nano ~/.zshrc"
+alias reload="exec zsh"
 alias .,='popd'
 
 alias l='ls -1'
@@ -55,7 +47,6 @@ alias lsh='l -A | grep ^\\.'
 
 alias r='reset'
 alias j='jobs -l'
-#alias x='chmod u+x'
 alias du='du -h'
 alias dd='dd status=progress'
 alias lsa='ls -A'
@@ -84,9 +75,3 @@ alias laws='''echo -e """
 
   \e[0;21;94mFalkland’s Law\e[0m
 \e[0;94mWhen you don’t have to make a decision, don’t make a decision\e[0m"""'''
-
-alias xmrigc='nano /cygdrive/s/Program\ Files/xmrig-6.21.0/config.json'
-alias xmrigv='code "S:\\Program Files\\xmrig-6.21.0\\config.json"'
-alias xmrigd='cd "S:\\Program Files\\xmrig-6.21.0"'
-
-unset shell

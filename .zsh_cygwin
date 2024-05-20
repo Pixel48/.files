@@ -1,0 +1,7 @@
+# Aliases
+alias wpwd='cygpath -w `pwd`'
+unalias cat
+
+# Exports
+here="/cygdrive/c/Users/`whoami`"
+mnt='/cygdrive'
