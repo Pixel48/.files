@@ -136,7 +136,7 @@ case `uname` in
   *CYGWIN*|*MINGW*|*MSYS*)
     if [ -f ~/.zsh_cygwin ]; then
       . ~/.zsh_cygwin
-      alias cygwin_aliases="${EDITOR} ~/.zsh_cygwin_aliases"
+      alias cygwin="${EDITOR} ~/.zsh_cygwin_aliases"
     fi
     ;;
 esac
