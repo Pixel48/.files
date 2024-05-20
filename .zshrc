@@ -87,6 +87,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Fundamental aliases
 alias reload='source ~/.zshrc'
+alias now='date +"%d.%m.%Y %H:%M:%S"'
 alias d='dirs -p'
 alias .,='popd'
 alias ..='cd ..'

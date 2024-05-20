@@ -6,7 +6,6 @@ alias cls='clear'
 alias mnt='mount'
 alias umnt='umount'
 alias ardu='arduino-cli'
-alias now='date +"%d.%m.%Y %H:%M:%S"'
 alias qq='jka && sleep .05 && exit'
 alias ipe='curl ifconfig.me'
 alias pxyc="nano ~/.proxychains/proxychains.conf"
