@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Setup zinit path
-ZINIT_HOME="${HOME}/.local/zinit/zinit.git"
+ZINIT_HOME="${XDG_CACHE_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Install Zinit
 if [ ! -d "${ZINIT_HOME}" ]; then
