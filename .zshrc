@@ -15,7 +15,7 @@ if [ ! -d "${ZINIT_HOME}" ]; then
 fi
 
 # Load Zinit
-. "${ZINIT_HOME}/zinit.zsh"
+source "${ZINIT_HOME}/zinit.zsh"
 
 # Install PowerLevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
