@@ -88,6 +88,4 @@ alias xmrigc='nano /cygdrive/s/Program\ Files/xmrig-6.21.0/config.json'
 alias xmrigv='code "S:\\Program Files\\xmrig-6.21.0\\config.json"'
 alias xmrigd='cd "S:\\Program Files\\xmrig-6.21.0"'
 
-alias tldr='tldr -t base16'
-
 unset shell
