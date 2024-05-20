@@ -1,7 +1,20 @@
-# Aliases
-alias wpwd='cygpath -w `pwd`'
-unalias cat
-
 # Exports
 here="/cygdrive/c/Users/`whoami`"
 mnt='/cygdrive'
+
+# Aliases
+alias wpwd='cygpath -w `pwd`'
+alias ls='ls --color'
+alias tldr='tldr -t base16'
+alias root='Powershell -command "Start-Process -Verb RunAs wt" && exit'
+alias there='cd $here'
+alias rex='cmd /c "taskkill /f /im explorer.exe && explorer"'
+alias mwin='xwin -multiwindow &'
+alias here='explorer .'
+
+unalias cat
+
+# Functions
+# ${EDITOR}() {
+#   $EDITOR `cygpath -w $1`
+# }

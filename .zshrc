@@ -86,34 +86,48 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Fundamental aliases
-alias ls='ls -C --color'
+alias reload='source ~/.zshrc'
+alias d='dirs -p'
+alias .,='popd'
+alias ..='cd ..'
+alias mkdir='mkdir -p'
+alias ls='ls -C --color' # ls-es
 alias lsa='ls -A'
-alias ll='ls -l'
-alias lla='lsa -l'
-alias l='ls -1'
 alias lsd='ls -d'
+alias lss='ls -sh'
+alias l='ls -1'
+alias ll='ls -lh'
+alias lla='ll -A'
+alias lld='ll -d'
+alias lsh=''
 
-editor=$(command -v nano 2>/dev/null ||
+# Setup editor
+EDITOR=$(command -v nano 2>/dev/null ||
           command -v vim 2>/dev/null ||
           command -v vi 2>/dev/null ||
           command -v ed 2>/dev/null ||
           echo "echo No editor found")
-alias zshrc="${editor} ~/.zshrc"
+EDITOR=`basename $EDITOR`
+
+alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
+
+# Aliases for editing config files
+alias zshrc="${EDITOR} ~/.zshrc"
 
 # Load aliases, functions, exports, etc.
 if [ -f ~/.zsh_aliases ]; then
   . ~/.zsh_aliases
-  alias aliases="${editor} ~/.zsh_aliases"
+  alias aliases="${EDITOR} ~/.zsh_aliases"
 fi
 
 if [ -f ~/.zsh_functions ]; then
   . ~/.zsh_functions
-  alias functions="${editor} ~/.zsh_functions"
+  alias functions="${EDITOR} ~/.zsh_functions"
 fi
 
 if [ -f ~/.zsh_exports ]; then
   . ~/.zsh_exports
-  alias exports="${editor} ~/.zsh_exports"
+  alias exports="${EDITOR} ~/.zsh_exports"
 fi
 
 # Load cygwin workarounds if needed
@@ -121,7 +135,7 @@ case `uname` in
   *CYGWIN*|*MINGW*|*MSYS*)
     if [ -f ~/.zsh_cygwin ]; then
       . ~/.zsh_cygwin
-      alias cygwin_aliases="${editor} ~/.zsh_cygwin_aliases"
+      alias cygwin_aliases="${EDITOR} ~/.zsh_cygwin_aliases"
     fi
     ;;
 esac
