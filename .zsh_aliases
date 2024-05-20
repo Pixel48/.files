@@ -1,5 +1,6 @@
 shell=`basename $SHELL`
 
+alias ok='sudo $(fc -nl -1)'
 alias d='dirs -p'
 alias wpwd='cygpath -w `pwd`'
 alias dc='d -c'
