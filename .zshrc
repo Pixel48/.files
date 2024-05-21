@@ -30,7 +30,6 @@ autoload -U compinit && compinit # Load completions
 eval "$(dircolors -b)" # setup LS_COLORS
 zmodload zsh/complist # Load complist
 autoload -U colors && colors # Colors
-#export ZLS_COLORS=':hl=0;30:hl=37;40' # Selected with white bg black fg
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # Highlight files like ls --colors
 zstyle ':completion:*' menu select # Highlight selected
 zstyle ':completion:*' rehash true # To get new binaries into PATH
@@ -136,7 +135,7 @@ case `uname` in
   *CYGWIN*|*MINGW*|*MSYS*)
     if [ -f ~/.zsh_cygwin ]; then
       . ~/.zsh_cygwin
-      alias cygwin="${EDITOR} ~/.zsh_cygwin_aliases"
+      alias cygwin="${EDITOR} ~/.zsh_cygwin"
     fi
     ;;
 esac
