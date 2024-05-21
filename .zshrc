@@ -1,4 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Enable Powerlevel10k instant promptsource Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -116,24 +116,24 @@ alias zshrc="${EDITOR} ~/.zshrc"
 
 # Load aliases, functions, exports, etc.
 if [ -f ~/.zsh_aliases ]; then
-  . ~/.zsh_aliases
+  source ~/.zsh_aliases
   alias aliases="${EDITOR} ~/.zsh_aliases"
 fi
 
 if [ -f ~/.zsh_functions ]; then
-  . ~/.zsh_functions
+  source ~/.zsh_functions
   alias functions="${EDITOR} ~/.zsh_functions"
 fi
 
 if [ -f ~/.zsh_exports ]; then
-  . ~/.zsh_exports
+  source ~/.zsh_exports
   alias exports="${EDITOR} ~/.zsh_exports"
 fi
 
 # Load cygwin workarounds if needed
 if [[ `uname` == *CYGWIN* ]]; then
   if [ -f ~/.zsh_cygwin ]; then
-    . ~/.zsh_cygwin
+    source ~/.zsh_cygwin
     alias cygwin="${EDITOR} ~/.zsh_cygwin"
   fi
 fi
