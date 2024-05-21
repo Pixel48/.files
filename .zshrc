@@ -99,7 +99,6 @@ alias l='ls -1'
 alias ll='ls -lh'
 alias lla='ll -A'
 alias lld='ll -d'
-alias lsh=''
 
 # Setup editor
 EDITOR=$(command -v nano 2>/dev/null ||
