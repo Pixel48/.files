@@ -131,14 +131,12 @@ if [ -f ~/.zsh_exports ]; then
 fi
 
 # Load cygwin workarounds if needed
-case `uname` in
-  *CYGWIN*|*MINGW*|*MSYS*)
-    if [ -f ~/.zsh_cygwin ]; then
-      . ~/.zsh_cygwin
-      alias cygwin="${EDITOR} ~/.zsh_cygwin"
-    fi
-    ;;
-esac
+if [[ `uname` == *CYGWIN* ]]; then
+  if [ -f ~/.zsh_cygwin ]; then
+    . ~/.zsh_cygwin
+    alias cygwin="${EDITOR} ~/.zsh_cygwin"
+  fi
+fi
 
 # Zoxide
 export PATH=$PATH:${HOME}/.local/bin
