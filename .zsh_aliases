@@ -1,5 +1,5 @@
 alias ok='sudo $(fc -nl -1)'
-alias d='dirs -v'
+alias d='dirs -p'
 
 alias 1='cd -1'
 alias 2='cd -2'
