@@ -15,6 +15,22 @@ alias here='explorer .'
 unalias cat
 
 # Functions
-# ${EDITOR}() {
-#   $EDITOR `cygpath -w $1`
-# }
+netline_main() {
+  clear
+  x=.
+  ip=1.1.1.1
+  while [ $1 ]; do
+    if [ $1 != - ]; then ip=$1; shift
+    else
+      shift
+      x=$1
+      shift
+    fi
+  done
+  while :; do
+    ping -w 250 -n 1 $ip >&- && echo -ne "\e[0;1;32m$x\e[m" || ( ping -w 750 -n 1 $ip >&- && echo -ne "\e[0;1;33m$x\e[m" || echo -ne "\e[0;1;31m$x\e[m" )
+  done
+}
+netline() {
+  netline_main $@ &
+}
