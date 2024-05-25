@@ -1,5 +1,5 @@
 alias ok='sudo $(fc -nl -1)'
-alias d='dirs -p'
+alias d='dirs -v'
 alias dc='d -c'
 alias cat='bat -p'
 alias ls='exa'
