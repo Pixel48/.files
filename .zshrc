@@ -129,6 +129,12 @@ if [ -f ~/.zsh_exports ]; then
   alias exports="${EDITOR} ~/.zsh_exports"
 fi
 
+# Load gitconfig if needed
+if [ -f ~/.gitconfig ]; then
+  source ~/.zsh_gitconfig
+  alias gitconfig="${EDITOR} ~/.gitconfig"
+fi
+
 # Load cygwin workarounds if needed
 if [[ `uname` == *CYGWIN* ]]; then
   if [ -f ~/.zsh_cygwin ]; then
