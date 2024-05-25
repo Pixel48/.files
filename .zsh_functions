@@ -1,3 +1,6 @@
+title() {
+  echo -ne "\e]0;$@\a"
+}
 mkcd() {
   mkdir -p $@ && cd ${@:$#}
 }
