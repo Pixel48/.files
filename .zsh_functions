@@ -5,25 +5,6 @@ mkcd() {
   mkdir -p $@ && cd ${@:$#}
 }
 nll() { nl $1 | less; }
-netline_main() {
-  clear
-  x=.
-  ip=1.1.1.1
-  while [ $1 ]; do
-    if [ $1 != - ]; then ip=$1; shift
-    else
-      shift
-      x=$1
-      shift
-    fi
-  done
-  while :; do
-    ping -W 250 -c 1 $ip >&- && echo -ne "\e[0;1;32m$x\e[m" || ( ping -W 750 -c 1 $ip >&- && echo -ne "\e[0;1;33m$x\e[m" || echo -ne "\e[0;1;31m$x\e[m" )
-  done
-}
-netline() {
-  netline_main $@ &
-}
 jk() { kill %$1; }
 jka() {
   for jid in `jobs | cut -d\[ -f2 | cut -d\] -f1`; do
