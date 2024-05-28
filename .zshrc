@@ -159,6 +159,7 @@ zinit cdreplay -q
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if [[ `uname` == *CYGWIN* ]]; then
+if [[ `uname` == *CYGWIN* && ! __lastDir ]]; then
+  __lastDir=true
   cd - > /dev/null
 fi
