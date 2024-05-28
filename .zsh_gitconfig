@@ -96,11 +96,11 @@ git config --global alias.sub 'submodule'
 git config --global alias.rr 'r remove'
 git config --global alias.update '!git f; git p'
 
-git config --global init.defaultBranch master
-
 git config --global core.editor nano
 git config --global core.autocrlf input
 git config --global core.safecrlf true
+
+git config --global init.defaultbranch main
 
 git config --global branch.autoSetupMerge simple
 
