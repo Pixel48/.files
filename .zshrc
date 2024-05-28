@@ -21,9 +21,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Fundamental zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
+#zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
+#zinit light zsh-users/zsh-autosuggestions
 
 # Load and style completion
 autoload -U compinit && compinit # Load completions
@@ -39,6 +39,9 @@ bindkey '^[[Z' reverse-menu-complete
 WORDCHARS=''
 #WORDCHARS='*?_-.[]~=/&;!#$%^(){}<> '
 bindkey '^W' backward-kill-word
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
 
 # EMACS & quality-of-life binds
 bindkey -e
