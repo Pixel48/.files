@@ -45,7 +45,7 @@ git config --global alias.tms 'tm --stat'
 git config --global alias.tp 't -p'
 git config --global alias.tree 'log --oneline --graph --all'
 git config --global alias.ts 't --stat'
-git config --global alias.timeline "log --graph  --formaf'ormat:\"%C(yellow)%h%C(reset) %C(bold green)(%ar) %C(bold dim cyan)%an %C(reset)%s\""
+git config --global alias.timeline 'log --graph --format="%C(yellow)%h%C(reset) %C(bold green)(%ar) %C(bold dim cyan)%an %C(reset)%s"'
 git config --global alias.uns 'unstage'
 git config --global alias.ma 'co main'
 git config --global alias.fa 'fetch --all'
