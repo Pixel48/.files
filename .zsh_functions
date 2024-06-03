@@ -1,3 +1,10 @@
+ok() {
+  if [ "$#" = "0" ]; then
+    sudo $(fc -ln -1)
+  else
+    sudo $@
+  fi
+}
 title() {
   echo -ne "\e]0;$@\a"
 }
