@@ -1,4 +1,3 @@
-alias ok='sudo $(fc -nl -1)'
 alias d='dirs -v'
 
 alias 1='cd +1'
