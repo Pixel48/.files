@@ -15,6 +15,11 @@ alias here='explorer .'
 unalias cat
 
 # Functions
+if [ `command -v bat` ]; then
+  cat() {
+    bat -p `cygwin -w $@`
+  }
+fi
 netline_main() {
   clear
   x=.
