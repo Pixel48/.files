@@ -3,6 +3,10 @@ here="/cygdrive/c/Users/`whoami`"
 mnt='/cygdrive'
 
 # Aliases
+alias .x="cd $mnt/x"
+alias .c="cd $mnt/c"
+alias .s="cd $mnt/s"
+alias .p="cd $mnt/p"
 alias wpwd='cygpath -w `pwd`'
 alias ls='ls --color'
 alias tldr='tldr -t base16'
@@ -11,15 +15,16 @@ alias there='cd $here'
 alias rex='cmd /c "taskkill /f /im explorer.exe && explorer"'
 alias mwin='xwin -multiwindow &'
 alias here='explorer .'
+alias winpath='cygpath -w'
 
-unalias cat
+#unalias cat
 
 # Functions
-if [ `command -v bat` ]; then
-  cat() {
-    bat -p `cygwin -w $@`
-  }
-fi
+#if [ `command -v bat` ]; then
+#  cat() {
+#    bat -p \"`cygwin -w $@`\"
+#  }
+#fi
 netline_main() {
   clear
   x=.
