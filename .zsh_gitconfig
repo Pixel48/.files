@@ -1,3 +1,4 @@
+# ALIASES
 git config --global alias.a 'add .'
 git config --global alias.addp 'add -p'
 git config --global alias.ai 'add -i'
@@ -57,6 +58,7 @@ git config --global alias.mkdev 'cob develop'
 git config --global alias.mm 'm -m'
 git config --global alias.mnf 'merge --no-ff'
 git config --global alias.mnfm 'mnf -m'
+git config --global alias.ms 'squash'
 git config --global alias.p 'pull'
 git config --global alias.pa 'p --all'
 git config --global alias.pop 'stash pop'
@@ -73,7 +75,6 @@ git config --global alias.s 'status -s'
 git config --global alias.sa 's -uall'
 git config --global alias.sco 'sparse-checkout'
 git config --global alias.sl 'shortlog'
-git config --global alias.sm 'squash'
 git config --global alias.squash 'm --squash'
 git config --global alias.ss 'status'
 git config --global alias.ssa 'ss -uall'
@@ -83,10 +84,8 @@ git config --global alias.stm 'st push -m'
 git config --global alias.sub 'submodule'
 git config --global alias.t 'log --oneline --graph'
 git config --global alias.ta 'log --graph --oneline --all'
-git config --global alias.tac '!clear; git ta'
 git config --global alias.tap 'ta -p'
 git config --global alias.tas 'ta --stat'
-git config --global alias.tc '!clear; git t'
 git config --global alias.time 'timeline'
 git config --global alias.timeline 'log --graph --format="%C(yellow)%h%C(reset) %C(bold green)(%ar) %C(bold dim cyan)%an %C(reset)%s"'
 git config --global alias.tm 't master'
@@ -97,17 +96,17 @@ git config --global alias.tree 'log --oneline --graph --all'
 git config --global alias.ts 't --stat'
 git config --global alias.update '!git f; git p'
 git config --global alias.wt 'worktree'
-
+# CORE
 git config --global core.editor nano
 git config --global core.autocrlf input
 git config --global core.safecrlf true
-
+# INIT
 git config --global init.defaultbranch main
-
+# BRANCH
 git config --global branch.autoSetupMerge simple
-
+# PUSH
 git config --global push.default upstream
-
+# CYGWIN
 if [[ `uname` == *CYGWIN* ]]; then
   if [ -f ~/.zsh_cygwin ]; then
     git config --global core.autocrlf true
