@@ -105,12 +105,14 @@ alias ll='ls -lh'
 alias lla='ll -A'
 alias lld='ll -d'
 
-# Setup editor
-EDITOR=$(command -v nano 2>/dev/null ||
-          command -v vim 2>/dev/null ||
-          command -v vi 2>/dev/null ||
-          command -v ed 2>/dev/null ||
-          echo "echo No editor found")
+# Setup file editor
+EDITOR=$(
+	command -v nvim 2>/dev/null ||
+	command -v vim 2>/dev/null ||
+	command -v vi 2>/dev/null ||
+	command -v nano 2>/dev/null ||
+	command -v ed 2>/dev/null ||
+	 echo "echo No editor found")
 EDITOR=`basename $EDITOR`
 
 alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
