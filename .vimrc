@@ -68,5 +68,5 @@ color habamax
 " Disable mouseclick
 set mouse=
 
-" Disable undofiles
-set noundofile
+" Disable undofiles and backups
+set noundofile nobackup
