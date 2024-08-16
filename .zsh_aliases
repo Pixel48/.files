@@ -26,6 +26,7 @@ alias pxyc="nano ~/.proxychains/proxychains.conf"
 alias df='df -h'
 alias here='nautilius .'
 alias heree='here; exit'
+alias wgq='wg-quick'
 
 alias j='jobs -l'
 alias du='du -h'
