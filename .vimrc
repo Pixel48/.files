@@ -70,3 +70,6 @@ set mouse=
 
 " Disable undofiles and backups
 set noundofile nobackup
+
+" Ignore case
+set ic
