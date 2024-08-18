@@ -73,3 +73,6 @@ set noundofile nobackup
 
 " Ignore case
 set ic
+
+" Disable search highligh all
+set nohls
