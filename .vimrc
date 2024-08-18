@@ -30,10 +30,10 @@ else
   endif
 endif
 
-if &t_Co > 2 || has("gui_running")
-  " Switch on highlighting the last used search pattern.
-  set hlsearch
-endif
+"if &t_Co > 2 || has("gui_running")
+"  " Switch on highlighting the last used search pattern.
+"  set hlsearch
+"endif
 
 " Put these in an autocmd group, so that we can delete them easily.
 augroup vimrcEx
