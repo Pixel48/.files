@@ -27,6 +27,7 @@ alias df='df -h'
 alias here='nautilius .'
 alias heree='here; exit'
 alias wgq='wg-quick'
+alias w='w -i'
 
 alias j='jobs -l'
 alias du='du -h'
