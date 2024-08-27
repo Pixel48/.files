@@ -138,9 +138,9 @@ fi
 
 # Load gitconfig if needed
 if [ ! -f ~/.gitconfig ]; then
-  source ~/.zsh_gitconfig
+  source ~/.gitconfig.sh
 fi
-alias gitconfig="${EDITOR} ~/.zsh_gitconfig"
+alias gitconfig="${EDITOR} ~/.gitconfig.sh"
 
 
 # Load cygwin workarounds if needed
