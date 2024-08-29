@@ -29,6 +29,7 @@ alias heree='here; exit'
 alias wgq='wg-quick'
 alias w='w -i'
 
+alias ufwl='ufw status numbered'
 alias j='jobs -l'
 alias du='du -h'
 alias dd='dd status=progress'
