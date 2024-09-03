@@ -103,7 +103,9 @@ alias lss='ls -sh'
 alias l='ls -1'
 alias la='l -A'
 alias ll='ls -lh'
+alias llg='ll -g'
 alias lla='ll -A'
+alias llag='lla -g'
 alias lld='ll -d'
 
 # Setup file editor
