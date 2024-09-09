@@ -53,6 +53,11 @@ bindkey -s '^[l' ' ls^J'
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
+# FZF binds
+bindkey "^R" fzf-history-widget
+bindkey "^T" fzf-file-widget
+bindkey "^[c" fzf-cd-widget
+
 # History up/down arrows
 bindkey "^[[A" up-line-or-search
 bindkey "^[[B" down-line-or-search
