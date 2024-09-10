@@ -97,7 +97,7 @@ git config --global alias.ts 't --stat'
 git config --global alias.update '!git f; git p'
 git config --global alias.wt 'worktree'
 # CORE
-git config --global core.autocrlf input
+#git config --global core.autocrlf input
 git config --global core.safecrlf true
 # INIT
 git config --global init.defaultbranch main
