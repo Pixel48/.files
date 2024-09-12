@@ -55,9 +55,12 @@ bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
 # FZF binds
-bindkey "^R" fzf-history-widget
-bindkey "^T" fzf-file-widget
-bindkey "^[c" fzf-cd-widget
+if command -v fzf 2>&1 >/dev/null && [[ `uname` != *CYGWIN* ]]; then
+  source <(fzf --zsh)
+  bindkey "^R" fzf-history-widget
+  bindkey "^T" fzf-file-widget
+  bindkey "^[c" fzf-cd-widget
+fi
 
 # History up/down arrows
 bindkey "^[[A" up-line-or-search
@@ -150,7 +153,6 @@ if [ ! -f ~/.gitconfig ]; then
   source ~/.gitconfig.sh
 fi
 alias gitconfig="${EDITOR} ~/.gitconfig.sh"
-
 
 # Load cygwin workarounds if needed
 if [[ `uname` == *CYGWIN* ]]; then
