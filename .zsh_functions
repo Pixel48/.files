@@ -45,3 +45,10 @@ refresh() {
 ipinfo() {
   awk '/(Ethernet|Wireless LAN) adapter/ {flag=1; iface=$3} /IPv4 Address|Subnet Mask/ {print iface, $0; flag=0} flag {print iface, $0; flag=0}' <(ipconfig) | while read -r line; do iface=$(echo "$line" | awk '{print $1}'); ipv4_info=$(echo "$line" | grep -oP 'IPv4 Address\.\s*\K[0-9.]+'); subnet_mask_info=$(echo "$line" | grep -oP 'Subnet Mask\.\s*\K[0-9.]+'); if [ -n "$ipv4_info" ] && [ -n "$subnet_mask_info" ]; then cidr=$(ipcalc -n -b "$ipv4_info" "$subnet_mask_info" | awk '/Network/ {print $2}'); echo "$iface: $ipv4_info/$cidr"; fi; done
 }
+ufw() {
+  if [[ $# == 0 ]]; then
+    ufw status numbered
+  else
+    ufw $@
+  fi
+}
