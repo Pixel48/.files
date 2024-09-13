@@ -47,8 +47,8 @@ ipinfo() {
 }
 ufw() {
   if [[ $# == 0 ]]; then
-    ufw status numbered
+    command ufw status numbered
   else
-    ufw $@
+    command ufw $@
   fi
 }
