@@ -76,3 +76,6 @@ set ic
 
 " Disable search highligh all
 set nohls
+
+" Set 2-space indent
+set tabstop=2 shiftwidth=2 expandtab
