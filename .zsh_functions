@@ -49,6 +49,20 @@ ufw() {
   if [[ $# == 0 ]]; then
     command ufw status numbered
   else
-    command ufw $@
+    if [[ $# > 1 ]]; then
+      command ufw $@
+    else
+      case $1 in
+        "on")
+          yes | command ufw enable
+          ;;
+        "off")
+          command ufw disable
+          ;;
+        *)
+          command ufw $@
+          ;;
+      esac
+    fi
   fi
 }
