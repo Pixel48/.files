@@ -11,7 +11,6 @@ alias 8='cd +8'
 alias 9='cd +9'
 
 alias diff='diff --color'
-alias igrep='grep -i'
 alias ip='ip -c'
 alias dc='dirs -c'
 if __cmd bat; then
@@ -21,15 +20,12 @@ fi
 __cmd batgrep && alias rg='batgrep'
 __cmd exa && alias ls='exa'
 alias cls='clear'
-alias mnt='mount'
-alias umnt='umount'
 __cmd arduino-cli && alias ardu='arduino-cli'
 alias qq='jka && sleep .05 && exit'
 alias ipe='curl -s ifconfig.me | rev | cut -c 1- | rev'
-alias pxyc="nano ~/.proxychains/proxychains.conf"
 alias df='df -h'
 __cmd nautilius && alias here='nautilius .'
-alias heree='here; exit'
+__cmd here && alias heree='here; exit'
 __cmd wg && alias wgq='wg-quick'
 alias w='w -i'
 
