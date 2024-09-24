@@ -19,13 +19,9 @@ alias winpath='cygpath -w'
 
 if command -v bat >/dev/null 2>&1; then
   cat() {
-    if [ $# -ne 0 ]; then
-      for file in "$@"; do
-        bat -p "$(cygpath -w "$file")"
-      done
-    else
-      command cat
-    fi
+    for file in "$@"; do
+      bat "$(cygpath -w "$file")"
+    done
   }
 fi
 
