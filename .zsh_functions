@@ -1,4 +1,7 @@
-ok() {
+__cmd() {
+  command -v $1 > /dev/null
+}
+__cmd sudo && ok() {
   if [ "$#" = "0" ]; then
     sudo $(fc -ln -1)
   else
@@ -11,7 +14,6 @@ title() {
 mkcd() {
   mkdir -p $@ && cd ${@:$#}
 }
-nll() { nl $1 | less; }
 jk() { kill %$1; }
 jka() {
   for jid in `jobs | cut -d\[ -f2 | cut -d\] -f1`; do
@@ -19,33 +21,7 @@ jka() {
   done
 #  sleep .1
 }
-mask2cdr() {
-   # Assumes there's no "255." after a non-255 byte in the mask
-   local x=${1##*255.}
-   set -- 0^^^128^192^224^240^248^252^254^ $(( (${#1} - ${#x})*2 )) ${x%%.*}
-   x=${1%%$3*}
-   echo $(( $2 + (${#x}/4) ))
-}
-cdr2mask() {
-   # Number of args to shift, 255..255, first non-255 byte, zeroes
-   set -- $(( 5 - ($1 / 8) )) 255 255 255 255 $(( (255 << (8 - ($1 % 8))) & 255 )) 0 0 0
-   [ $1 -gt 1 ] && shift $1 || shift
-   echo ${1-0}.${2-0}.${3-0}.${4-0}
-}
-#ip() {
-#  for addr in $(paste -d:  - - <<< `ipconfig | grep -i 'v4\|mask' | cut -d: -f2 | tr -d ' '`); do
-#    a=`echo -n $addr | cut -d: -f1`
-#    b=`mask2cdr $(echo -n $addr | cut -d: -f2)`
-#    echo $a/$b
-#  done
-#}
-refresh() {
-  source <(ng completion script) > ~/.ng_completion_script
-}
-ipinfo() {
-  awk '/(Ethernet|Wireless LAN) adapter/ {flag=1; iface=$3} /IPv4 Address|Subnet Mask/ {print iface, $0; flag=0} flag {print iface, $0; flag=0}' <(ipconfig) | while read -r line; do iface=$(echo "$line" | awk '{print $1}'); ipv4_info=$(echo "$line" | grep -oP 'IPv4 Address\.\s*\K[0-9.]+'); subnet_mask_info=$(echo "$line" | grep -oP 'Subnet Mask\.\s*\K[0-9.]+'); if [ -n "$ipv4_info" ] && [ -n "$subnet_mask_info" ]; then cidr=$(ipcalc -n -b "$ipv4_info" "$subnet_mask_info" | awk '/Network/ {print $2}'); echo "$iface: $ipv4_info/$cidr"; fi; done
-}
-ufw() {
+__cmd ufw && ufw() {
   if [[ $# == 0 ]]; then
     command ufw status numbered
   else
@@ -66,10 +42,7 @@ ufw() {
     fi
   fi
 }
-wgqr() {
+__cmd wg-quick && wgqr() {
   echo -e "\tRebooting $1"
   wg-quick down $1 && wg-quick up $1
-}
-__cmd() {
-  command -v $1 > /dev/null
 }
