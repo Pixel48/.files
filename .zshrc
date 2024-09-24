@@ -133,14 +133,14 @@ alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
 alias zshrc="${EDITOR} ~/.zshrc"
 
 # Load aliases, functions, exports, etc.
-if [ -f ~/.zsh_aliases ]; then
-  source ~/.zsh_aliases
-  alias aliases="${EDITOR} ~/.zsh_aliases"
-fi
-
 if [ -f ~/.zsh_functions ]; then
   source ~/.zsh_functions
   alias functions="${EDITOR} ~/.zsh_functions"
+fi
+
+if [ -f ~/.zsh_aliases ]; then
+  source ~/.zsh_aliases
+  alias aliases="${EDITOR} ~/.zsh_aliases"
 fi
 
 if [ -f ~/.zsh_exports ]; then
