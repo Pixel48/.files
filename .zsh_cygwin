@@ -17,13 +17,11 @@ alias mwin='xwin -multiwindow &'
 alias here='explorer .'
 alias winpath='cygpath -w'
 
-if command -v bat >/dev/null 2>&1; then
-  cat() {
-    for file in "$@"; do
-      bat "$(cygpath -w "$file")"
-    done
-  }
-fi
+__cmd && cat() {
+  for file in "$@"; do
+    bat "$(cygpath -w "$file")"
+  done
+}
 
 netline_main() {
   clear
