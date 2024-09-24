@@ -70,3 +70,6 @@ wgqr() {
   echo -e "\tRebooting $1"
   wg-quick down $1 && wg-quick up $1
 }
+__cmd() {
+  command -v $1 > /dev/null
+}
