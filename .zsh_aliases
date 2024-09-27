@@ -25,7 +25,7 @@ alias qq='jka && sleep .05 && exit'
 alias ipe='curl -s ifconfig.me | rev | cut -c 1- | rev'
 alias df='df -h'
 __cmd nautilius && alias here='nautilius .'
-__cmd here && alias heree='here; exit'
+alias heree='here; exit'
 __cmd wg && alias wgq='wg-quick'
 alias w='w -i'
 
