@@ -56,7 +56,9 @@ endif
 " Show current location
 set ruler
 
-filetype plugin indent on
+filetype on
+filetype plugin on
+filetype indent on
 
 " Show current line number with relative other line numbers
 set rnu nu
