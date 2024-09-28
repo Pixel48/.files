@@ -83,5 +83,5 @@ set nohls
 set tabstop=2 shiftwidth=2 expandtab
 
 " Syntax remapping
-"autocmd BufNewFile,BufRead *.conf,*.cfg,*.cnf,*.local set syntax=conf
+autocmd BufNewFile,BufRead *.local set syntax=conf
 autocmd BufNewFile,BufRead *.log set syntax=log
