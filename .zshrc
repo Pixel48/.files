@@ -116,6 +116,7 @@ alias llg='ll -g'
 alias lla='ll -A'
 alias llag='lla -g'
 alias lld='ll -d'
+alias lldg='lld -g'
 
 # Setup file editor
 EDITOR=$(
