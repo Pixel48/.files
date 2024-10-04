@@ -53,6 +53,7 @@ bindkey -s '^[l' ' ls^J'
 bindkey -s '^[L' ' ls -T^J'
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
+bindkey -s '^[t' 'tmux^J'
 
 # FZF binds
 if command -v fzf 2>&1 >/dev/null && [[ `uname` != *CYGWIN* ]]; then
