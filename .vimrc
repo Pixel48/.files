@@ -85,3 +85,4 @@ set tabstop=2 shiftwidth=2 expandtab
 " Syntax remapping
 autocmd BufNewFile,BufRead *.local set syntax=conf
 autocmd BufNewFile,BufRead *.log set syntax=log
+autocmd BufNewFile,BufRead .stow-local-ignore set syntax=gitignore
