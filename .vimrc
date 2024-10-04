@@ -82,6 +82,9 @@ set nohls
 " Set 2-space indent
 set tabstop=2 shiftwidth=2 expandtab
 
+" Show trailing space
+set list listchars=trail:·
+
 " Syntax remapping
 autocmd BufNewFile,BufRead *.local set syntax=conf
 autocmd BufNewFile,BufRead *.log set syntax=log
