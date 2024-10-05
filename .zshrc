@@ -150,7 +150,7 @@ if [ -f ~/.zsh_exports ]; then
 fi
 
 # Load gitconfig if needed
-if [ ! -f ~/.files/gitconfig ]; then
+if [ ! -f ~/.gitconfig ]; then
   source ~/.files/gitconfig.sh
 fi
 alias gitconfig="${EDITOR} ~/.files/gitconfig.sh"
