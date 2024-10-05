@@ -50,8 +50,9 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey -s '^[a' '^P^M'
 bindkey -s '^[l' ' ls^J'
-bindkey -s '^[L' ' ls -T^J'
-bindkey -s '^[:' 'ls -TA^J'
+bindkey -s '^[L' ' ls -A^J'
+bindkey -s '^[;' ' ls -T^J'
+bindkey -s '^[:' ' ls -TA^J'
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 bindkey -s '^[h' ' history^J'
