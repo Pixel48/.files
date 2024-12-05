@@ -99,7 +99,7 @@ git config --global alias.update '!git f; git p'
 git config --global alias.wt 'worktree'
 # CORE
 #git config --global core.autocrlf input
-git config --global core.safecrlf true
+git config --global core.safecrlf warn
 # INIT
 git config --global init.defaultbranch main
 # BRANCH
