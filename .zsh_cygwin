@@ -17,11 +17,11 @@ alias mwin='xwin -multiwindow &'
 alias here='explorer .'
 alias winpath='cygpath -w'
 
-__cmd && cat() {
-  for file in "$@"; do
-    bat "$(cygpath -w "$file")"
-  done
-}
+#__cmd && cat() {
+#  for file in "$@"; do
+#    bat "$(cygpath -w "$file")"
+#  done
+#}
 
 netline_main() {
   clear
@@ -41,4 +41,8 @@ netline_main() {
 }
 netline() {
   netline_main $@ &
+}
+work() {
+  powershell -Command "Set-DesktopName -Name '$*'"
+  exit
 }

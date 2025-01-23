@@ -36,6 +36,7 @@ alias dd='dd status=progress'
 alias dmesg='dmesg -L'
 alias sshc="${EDITOR} ~/.ssh/config"
 
+__cmd g++ && alias cxx=g++
 
 alias laws='''echo -e """
   \e[0;21;31mMurphy’s Law\e[0m

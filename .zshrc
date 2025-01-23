@@ -6,10 +6,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Setup zinit path
-ZINIT_HOME="${XDG_CACHE_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Install Zinit
-if [ ! -d "${ZINIT_HOME}" ]; then
+if [[ ! -d "${ZINIT_HOME}" ]]; then
   mkdir -p "$(dirname $ZINIT_HOME)"
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
@@ -23,10 +23,10 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # Fundamental zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
+# zinit light zsh-users/zsh-autosuggestions
 
 # Load and style completion
-autoload -U compinit && compinit # Load completions
+autoload -Uz compinit && compinit # Load completions
 eval "$(dircolors -b)" # setup LS_COLORS
 zmodload zsh/complist # Load complist
 autoload -U colors && colors # Colors
@@ -59,12 +59,12 @@ bindkey -s '^[h' ' history^J'
 bindkey -s '^[t' 'tmux^J'
 
 # FZF binds
-if command -v fzf 2>&1 >/dev/null && [[ `uname` != *CYGWIN* ]]; then
-  source <(fzf --zsh)
-  bindkey "^R" fzf-history-widget
-  bindkey "^T" fzf-file-widget
-  bindkey "^[c" fzf-cd-widget
-fi
+# if command -v fzf 2>&1 >/dev/null && [[ `uname` != *CYGWIN* ]]; then
+#   source <(fzf --zsh)
+#   bindkey "^R" fzf-history-widget
+#   bindkey "^T" fzf-file-widget
+#   bindkey "^[c" fzf-cd-widget
+# fi
 
 # History up/down arrows
 bindkey "^[[A" up-line-or-search
@@ -101,7 +101,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Fundamental aliases
-alias reload='source ~/.zshrc'
+alias reload='exec zsh'
 alias now='date +"%d.%m.%Y %H:%M:%S"'
 alias d='dirs -p'
 alias .,='popd'
@@ -129,7 +129,7 @@ EDITOR=$(
 	command -v vi 2>/dev/null ||
 	command -v nano 2>/dev/null ||
 	command -v ed 2>/dev/null ||
-	 echo "echo No editor found")
+   echo "echo No editor found")
 EDITOR=`basename $EDITOR`
 
 alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
@@ -156,8 +156,8 @@ fi
 # Load gitconfig if needed
 if [ ! -f ~/.gitconfig ]; then
   source ~/.files/gitconfig.sh
+  alias gitconfig="${EDITOR} ~/.files/gitconfig.sh"
 fi
-alias gitconfig="${EDITOR} ~/.files/gitconfig.sh"
 
 # Load cygwin workarounds if needed
 if [[ `uname` == *CYGWIN* ]]; then
@@ -175,8 +175,10 @@ eval "$(zoxide init --cmd cd zsh)"
 zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 if [[ `uname` == *CYGWIN* ]]; then
   cd - > /dev/null
 fi
+
+zmodload zsh/zprof
