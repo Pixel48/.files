@@ -156,8 +156,8 @@ fi
 # Load gitconfig if needed
 if [ ! -f ~/.gitconfig ]; then
   source ~/.files/gitconfig.sh
-  alias gitconfig="${EDITOR} ~/.files/gitconfig.sh"
 fi
+alias gitconfig="${EDITOR} ~/.files/gitconfig.sh"
 
 # Load cygwin workarounds if needed
 if [[ `uname` == *CYGWIN* ]]; then
