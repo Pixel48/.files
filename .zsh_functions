@@ -46,3 +46,22 @@ __cmd wg-quick && wgqr() {
   echo -e "\tRebooting $1"
   wg-quick down $1 && wg-quick up $1
 }
+rmreporuns() {
+  repo=$1
+
+
+  if [[ -z "$repo" ]]; then
+    echo "Usage: $0 <owner/repo>"
+    return 1
+  fi
+
+
+  runs=$(gh api repos/$repo/actions/runs --paginate | jq -r '.workflow_runs[] | .id')
+
+  while IFS= read -r run; do
+    echo "Deleting run $run..."
+    gh api -X DELETE repos/$repo/actions/runs/$run --silent
+  done <<< "$runs"
+
+  echo "All workflow runs for $repo have been deleted."
+}
