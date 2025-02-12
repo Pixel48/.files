@@ -88,6 +88,7 @@ git config --global alias.stm 'st push -m'
 git config --global alias.sub 'submodule'
 git config --global alias.t 'log --oneline --graph'
 git config --global alias.ta 'log --graph --oneline --all'
+git config --global alias.tags 'log --oneline --tags --no-walk'
 git config --global alias.tap 'ta -p'
 git config --global alias.tas 'ta --stat'
 git config --global alias.timeline 'log --graph --format="%C(yellow)%h%C(reset) %C(bold green)(%ar) %C(bold dim cyan)%an %C(reset)%s"'
@@ -104,6 +105,7 @@ git config --global alias.wt 'worktree'
 # CORE
 #git config --global core.autocrlf input
 git config --global core.safecrlf warn
+git config --global core.editor vim
 # INIT
 git config --global init.defaultbranch main
 # BRANCH
