@@ -124,7 +124,6 @@ alias lldg='lld -g'
 
 # Setup file editor
 EDITOR=$(
-	command -v nvim 2>/dev/null ||
 	command -v vim 2>/dev/null ||
 	command -v vi 2>/dev/null ||
 	command -v nano 2>/dev/null ||
