@@ -1,0 +1,84 @@
+palette:
+  gray: '#777777'
+  shadow: '#444444'
+
+blocks:
+- type: prompt
+  alignment: left
+  segments:
+  - type: os
+    foreground: white
+  - template: "{{ .UserName }}<p:gray>@</>{{.HostName}}"
+    foreground: "#FFBD00"
+    type: session
+    style: plain
+  - properties:
+      style: full
+    template: "<p:gray>:</>{{ .Path }}/ "
+    foreground: red
+    type: path
+    style: plain
+  - properties:
+      fetch_status: true
+      branch_icon: ''
+    type: git
+    template: "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} <p:gray>|</>{{ end }}{{ if .Staging.Changed }}<green>  {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }}<magenta>  {{ .StashCount }}</>{{ end }}"
+    foreground: green
+    foreground_templates:
+    - "{{if .Merge}}red{{end}}"
+    - "{{if .Detached}}blue{{end}}"
+    - "{{if .Working.Changed}}yellow{{end}}"
+  - properties:
+      fetch_version: true
+    template: "<lightGray>via</> \ue781 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} "
+    foreground: "#98C379"
+    type: node
+    style: plain
+- type: prompt
+  alignment: right
+  segments:
+    #template: "$(if [ 1 -eq $(jobs | wc -l) ]; then echo -n ; else if [ $(jobs | wc -l) -gt 1 ]; then echo -n ; fi)"
+  - type: battery
+    template: '{{if or (eq "Charging" .State.String) (le .Percentage 20)}}{{.Icon}}{{.Percentage}} {{end}}'
+    foreground_templates:
+    - '{{if eq "Charging" .State.String}}#40c4ff{{end}}'
+    - '{{if eq "Discharging" .State.String}}#ff5722{{end}}'
+    - '{{if eq "Full" .State.String}}#4caf50{{end}}'
+    properties:
+      discharging_icon: " "
+      charging_icon: " "
+      charged_icon: " "
+  - properties:
+      style: round
+      threshold: 4000.0
+    template: " {{ .FormattedMs }} "
+    foreground: "p:gray"
+    type: executiontime
+    style: diamond
+- type: prompt
+  newline: true
+  alignment: left
+  segments:
+  - template: '❯'
+    foreground: "#FFBD00"
+    foreground_templates:
+    - '{{ if gt .Code 0}}red{{end}}'
+    - '{{ if eq .Code 0}}green{{end}}'
+    type: text
+    style: plain
+
+- type: rprompt
+  alignment: left
+  segments:
+  - type: git
+    template: " <p:shadow>{{.Commit.Subject}} ~{{.Commit.Author.Name}} ({{.Commit.Author.Email}})</>"
+transient_prompt:
+  template: '❯ '
+  foreground_templates:
+  - '{{ if gt .Code 0}}red{{end}}'
+  - '{{ if eq .Code 0}}green{{end}}'
+  properties:
+    newline: true
+
+version: 3
+final_space: true

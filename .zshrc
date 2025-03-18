@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant promptsource Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  #source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 # Setup zinit path
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -18,7 +18,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Install PowerLevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+#zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Fundamental zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -175,10 +175,16 @@ eval "$(zoxide init --cmd cd zsh)"
 zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+#[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
 
 if [[ `uname` == *CYGWIN* ]]; then
   cd - > /dev/null
 fi
 
 zmodload zsh/zprof
+
+# oh-my-posh
+if [ "$TERM_PROGRAM" != "Apple Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/dev.yml)"
+fi

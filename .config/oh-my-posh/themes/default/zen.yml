@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+version: 3
+
+transient_prompt:
+  background: transparent
+  foreground: "#ffffff"
+  template: '❯ '
+
+blocks:
+- type: prompt
+  alignment: left
+  segments:
+  - type: os
+    foreground: white
+  - type: path
+    background: transparent
+    foreground: red
+    properties:
+      style: full
+  - type: git
+    template: '{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}'
+    properties:
+      branch_icon: ''
+      fetch_status: true
+- type: prompt
+  alignment: left
+  newline: true
+  segments:
+  - type: text
+    template: '❯ '
+    foreground_templates:
+    - '{{if gt .Code 0}}red{{end}}'
+    - '{{if eq .Code 0}}white{{end}}'
