@@ -1,0 +1,3 @@
+.gnupg/pubring*
+.gnupg/*.d
+.gnupg/trustdb.gpg
