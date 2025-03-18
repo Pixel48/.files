@@ -169,6 +169,7 @@ fi
 
 # Zoxide
 export PATH=$PATH:${HOME}/.local/bin
+export PATH=$PATH:/opt/homebrew/bin
 eval "$(zoxide init --cmd cd zsh)"
 
 # Zinit caching
@@ -188,3 +189,7 @@ zmodload zsh/zprof
 if [ "$TERM_PROGRAM" != "Apple Terminal" ]; then
   eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/dev.yml)"
 fi
+
+
+# setup Homebrew
+command -v brew > /dev/null && eval "$(brew shellenv)"
