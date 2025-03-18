@@ -27,7 +27,7 @@ zinit light zsh-users/zsh-autosuggestions
 
 # Load and style completion
 autoload -Uz compinit && compinit # Load completions
-eval "$(dircolors -b)" # setup LS_COLORS
+#eval "$(dircolors -b)" # setup LS_COLORS
 zmodload zsh/complist # Load complist
 autoload -U colors && colors # Colors
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # Highlight files like ls --colors
@@ -101,7 +101,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Fundamental aliases
-alias reload='exec zsh'
+alias reload='exec $(basename $SHELL)'
 alias now='date +"%d.%m.%Y %H:%M:%S"'
 alias d='dirs -p'
 alias .,='popd'
