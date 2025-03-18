@@ -138,9 +138,9 @@ alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
 alias zshrc="${EDITOR} ~/.zshrc"
 
 # Load aliases, functions, exports, etc.
-if [ -f ~/.zsh_functions ]; then
-  source ~/.zsh_functions
-  alias functions="${EDITOR} ~/.zsh_functions"
+if [ -f ~/.zsh_exports ]; then
+  source ~/.zsh_exports
+  alias exports="${EDITOR} ~/.zsh_exports"
 fi
 
 if [ -f ~/.zsh_aliases ]; then
@@ -148,9 +148,9 @@ if [ -f ~/.zsh_aliases ]; then
   alias aliases="${EDITOR} ~/.zsh_aliases"
 fi
 
-if [ -f ~/.zsh_exports ]; then
-  source ~/.zsh_exports
-  alias exports="${EDITOR} ~/.zsh_exports"
+if [ -f ~/.zsh_functions ]; then
+  source ~/.zsh_functions
+  alias functions="${EDITOR} ~/.zsh_functions"
 fi
 
 # Load gitconfig if needed

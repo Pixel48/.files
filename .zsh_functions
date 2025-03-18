@@ -1,6 +1,3 @@
-__cmd() {
-  command -v $1 > /dev/null
-}
 __cmd sudo && ok() {
   if [ "$#" = "0" ]; then
     sudo $(fc -ln -1)
