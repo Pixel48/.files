@@ -1,3 +1,5 @@
 .gnupg/pubring*
 .gnupg/*.d
 .gnupg/trustdb.gpg
+.gnupg/*_seed
+.gnupg/*.db
