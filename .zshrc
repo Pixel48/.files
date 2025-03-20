@@ -5,6 +5,9 @@
   #source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
+export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:${HOME}/.local/bin
+
 # Setup zinit path
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -124,10 +127,11 @@ alias lldg='lld -g'
 
 # Setup file editor
 EDITOR=$(
-	command -v vim 2>/dev/null ||
-	command -v vi 2>/dev/null ||
-	command -v nano 2>/dev/null ||
-	command -v ed 2>/dev/null ||
+  command -v nvim 2>/dev/null ||
+  command -v vim 2>/dev/null ||
+  command -v vi 2>/dev/null ||
+  command -v nano 2>/dev/null ||
+  command -v ed 2>/dev/null ||
    echo "echo No editor found")
 EDITOR=`basename $EDITOR`
 
@@ -167,8 +171,6 @@ if [[ `uname` == *CYGWIN* ]]; then
 fi
 
 # Zoxide
-export PATH=$PATH:${HOME}/.local/bin
-export PATH=$PATH:/opt/homebrew/bin
 eval "$(zoxide init --cmd cd zsh)"
 
 # Zinit caching

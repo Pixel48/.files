@@ -1,3 +1,6 @@
+__cmd() {
+  command -v $1 >/dev/null
+}
 # ALIASES
 git config --global alias.a 'add .'
 git config --global alias.addp 'add -p'
@@ -105,7 +108,7 @@ git config --global alias.wt 'worktree'
 # CORE
 #git config --global core.autocrlf input
 git config --global core.safecrlf warn
-git config --global core.editor vim
+__cmd nvim && git config --global core.editor nvim || git config --global core.editor vim
 # INIT
 git config --global init.defaultbranch main
 # BRANCH
