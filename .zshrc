@@ -133,7 +133,7 @@ EDITOR=$(
   command -v nano 2>/dev/null ||
   command -v ed 2>/dev/null ||
    echo "echo No editor found")
-EDITOR=`basename $EDITOR`
+export EDITOR=`basename $EDITOR`
 
 alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
 
