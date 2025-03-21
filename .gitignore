@@ -3,3 +3,4 @@
 .gnupg/trustdb.gpg
 .gnupg/*_seed
 .gnupg/*.db
+.gnupg/.#*
