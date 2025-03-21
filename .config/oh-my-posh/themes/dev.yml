@@ -20,6 +20,7 @@ blocks:
     style: plain
   - properties:
       fetch_status: true
+      fetch_upstream_icon: true
       branch_icon: ''
     type: git
     template: "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} <p:gray>|</>{{ end }}{{ if .Staging.Changed }}<green>  {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }}<magenta>  {{ .StashCount }}</>{{ end }}"
