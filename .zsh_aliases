@@ -2,6 +2,8 @@ __cmd() {
   command -v $1 > /dev/null
 }
 
+__cmd cbonsai && alias cbonsai="cbonsai -c'%,$,#,&,@'"
+
 alias d='dirs -v'
 
 alias 1='cd +1'
