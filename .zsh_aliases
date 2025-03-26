@@ -24,7 +24,7 @@ if __cmd bat; then
   alias pat='bat -p'
 fi
 __cmd batgrep && alias rg='batgrep'
-__cmd exa && alias ls='exa' || __cmd eza && alias ls='eza'
+__cmd exa && alias ls='exa' || ( __cmd eza && alias ls='eza' )
 alias cls='clear'
 __cmd arduino-cli && alias ardu='arduino-cli'
 alias qq='jka && sleep .05 && exit'
