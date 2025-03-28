@@ -161,6 +161,7 @@ if [ ! -f ~/.gitconfig ]; then
   source ~/.files/config/git.sh
 fi
 alias gitconfig="${EDITOR} ~/.files/config/git.sh"
+alias ghconfig="${EDITOR} ~/.files/config/gh.sh"
 
 # Load cygwin workarounds if needed
 if [[ `uname` == *CYGWIN* ]]; then
