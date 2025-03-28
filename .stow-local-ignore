@@ -24,3 +24,6 @@ _darcs
 ### .files-specyfic
 # ignore non-hidden scripts
 ^[^.].*\.sh
+# ignore config scripts
+setup/
+config/
