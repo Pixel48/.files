@@ -196,3 +196,8 @@ fi
 
 # setup Homebrew
 command -v brew > /dev/null && eval "$(brew shellenv)"
+
+# zprofile
+if [ -f ~/.zprofile ]; then
+  source ~/.zprofile
+fi
