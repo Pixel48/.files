@@ -7,6 +7,7 @@ gh ext install dlvhdr/gh-dash
 gh ext install Link-/gh-token
 gh ext install seachicken/gh-poi
 
+gh alias set info 'repo view'
 gh alias set ai 'copilot'
 gh alias set ask 'copilot explain'
 gh alias set gpg 'gpg-key'
