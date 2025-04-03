@@ -21,7 +21,27 @@ blocks:
   - properties:
       fetch_status: true
       fetch_upstream_icon: true
+      fetch_bare_info: true
+      # fetch_user: true
       branch_icon: ''
+      github_icon: "󰊤 "
+      gitlab_icon: "󰮠 "
+      mapped_branches:
+        main: " "
+        master: " "
+        develop: " 󱓞"
+        hotfix*: " 󰈸"
+        patch*: " 󰶯"
+        patchfix*: " 󰶯"
+        fix*: " 󰖷"
+        bugfix*: " 󰨰"
+        bug*: " 󰨰"
+        feature*: " 󰸰"
+        feat/*: " 󰸰/"
+        test*: " "
+      upstream_icons:
+        gitlab: "󰮠 "
+        github: "󰊤 "
     type: git
     template: "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} <p:gray>|</>{{ end }}{{ if .Staging.Changed }}<green>  {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }}<magenta>  {{ .StashCount }}</>{{ end }}"
     foreground: green
@@ -42,9 +62,7 @@ blocks:
   - type: battery
     template: '{{if or (eq "Charging" .State.String) (le .Percentage 20)}}{{.Icon}}{{.Percentage}} {{end}}'
     foreground_templates:
-    - '{{if eq "Charging" .State.String}}#40c4ff{{end}}'
-    - '{{if eq "Discharging" .State.String}}#ff5722{{end}}'
-    - '{{if eq "Full" .State.String}}#4caf50{{end}}'
+    - '{{if eq "Charging" .State.String}}#40c4ff{{else if eq "Discharging" .State.String}}#ff5722{{else if ge .Percentage 85}}#4caf50{{end}}'
     properties:
       discharging_icon: " "
       charging_icon: " "
