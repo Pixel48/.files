@@ -13,7 +13,7 @@ blocks:
     type: session
     style: plain
   - properties:
-      style: full
+      style: full #powerlevel
     template: "<p:gray>:</>{{ .Path }}/ "
     foreground: red
     type: path
