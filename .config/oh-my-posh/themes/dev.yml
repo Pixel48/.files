@@ -58,15 +58,6 @@ blocks:
 - type: prompt
   alignment: right
   segments:
-    #template: "$(if [ 1 -eq $(jobs | wc -l) ]; then echo -n ; else if [ $(jobs | wc -l) -gt 1 ]; then echo -n ; fi)"
-  - type: battery
-    template: '{{if or (eq "Charging" .State.String) (le .Percentage 20)}}{{.Icon}}{{.Percentage}} {{end}}'
-    foreground_templates:
-    - '{{if eq "Charging" .State.String}}#40c4ff{{else if eq "Discharging" .State.String}}#ff5722{{else if ge .Percentage 85}}#4caf50{{end}}'
-    properties:
-      discharging_icon: " "
-      charging_icon: " "
-      charged_icon: " "
   - properties:
       style: round
       threshold: 4000.0
@@ -74,6 +65,19 @@ blocks:
     foreground: "p:gray"
     type: executiontime
     style: diamond
+  - type: battery
+    template: '{{if or (eq "Full" .State.String) (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}% {{end}}' # 
+    foreground_templates:
+    - '{{if eq "Charging" .State.String}}#40c4ff{{else if eq "Discharging" .State.String}}#ff5722{{else if ge .Percentage 85}}#4caf50{{end}}'
+    properties:
+      discharging_icon: " "
+      charging_icon: " "
+      charged_icon: " "
+  - type: text
+    style: plain
+    foreground: white
+    # template: "{{.Env.POSH}}({{.Env.JOBS}})"
+    template: "{{if ne .Env.JOBS \"0\"}}{{if eq .Env.JOBS \"1\"}}{{else}}{{end}}{{end}}"
 - type: prompt
   newline: true
   alignment: left
