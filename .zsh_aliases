@@ -47,6 +47,8 @@ alias sshc="${EDITOR} ~/.ssh/config"
 
 __cmd g++ && alias cxx=g++
 
+__cmd oh-my-posh && alias omp=oh-my-posh
+
 alias laws='''echo -e """
   \e[0;21;31mMurphy’s Law\e[0m
 \e[0;31mAnything that can go wrong will go wrong\e[0m
