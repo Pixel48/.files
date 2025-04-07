@@ -70,9 +70,9 @@ blocks:
     foreground: "#ffd43b"
     template: " 󰌠 {{.Full }} "
   - type: battery
-    template: '{{if or (eq "Full" .State.String) (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}% {{end}}' # 
+    template: '{{if (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}{{end}}'
     foreground_templates:
-    - '{{if eq "Charging" .State.String}}#40c4ff{{else if eq "Discharging" .State.String}}#ff5722{{else if ge .Percentage 85}}#4caf50{{end}}'
+    - '{{if and (eq "Charging" .State.String) (lt .Percentage 85)}}#40c4ff{{else if eq "Discharging" .State.String}}#ff5722{{else if ge .Percentage 85}}#4caf50{{end}}'
     properties:
       discharging_icon: " "
       charging_icon: " "
