@@ -65,6 +65,10 @@ blocks:
     foreground: "p:gray"
     type: executiontime
     style: diamond
+  - type: python
+    style: plain
+    foreground: "#ffd43b"
+    template: " 󰌠 {{.Full }} "
   - type: battery
     template: '{{if or (eq "Full" .State.String) (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}% {{end}}' # 
     foreground_templates:
