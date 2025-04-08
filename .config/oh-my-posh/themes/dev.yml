@@ -34,8 +34,8 @@ blocks:
         patch*: " 󰶯"
         patchfix*: " 󰶯"
         fix*: " 󰖷"
-        bugfix*: " 󰨰"
-        bug*: " 󰨰"
+        bugfix*: " "
+        bug*: " "
         feature*: " 󰸰"
         feat/*: " 󰸰/"
         test*: " "
@@ -70,7 +70,7 @@ blocks:
     foreground: "#ffd43b"
     template: " 󰌠 {{.Full }} "
   - type: battery
-    template: '{{if (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}{{end}}'
+    template: '{{if (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}{{end}} '
     foreground_templates:
     - '{{if and (eq "Charging" .State.String) (lt .Percentage 85)}}#40c4ff{{else if eq "Discharging" .State.String}}#ff5722{{else if ge .Percentage 85}}#4caf50{{end}}'
     properties:
@@ -80,8 +80,7 @@ blocks:
   - type: text
     style: plain
     foreground: white
-    # template: "{{.Env.POSH}}({{.Env.JOBS}})"
-    template: "{{if ne .Env.JOBS \"0\"}}{{if eq .Env.JOBS \"1\"}}{{else}}{{end}}{{end}}"
+    template: "{{if ne .Env.JOBS \"0\"}}{{if eq .Env.JOBS \"1\"}}{{else}}{{end}}{{end}}"
 - type: prompt
   newline: true
   alignment: left
