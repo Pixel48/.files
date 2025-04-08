@@ -2,6 +2,7 @@
 require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
+-- nvlsp.defaults() -- nvchad's defaults
 
 -- EXAMPLE
 local servers = { "html", "cssls" }
