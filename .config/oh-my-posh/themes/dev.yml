@@ -65,7 +65,7 @@ blocks:
   - type: python
     style: plain
     foreground: "#ffd43b"
-    template: " 󰌠 {{.Full }} "
+    template: " {{.Venv}} 󰌠 {{.Full }} "
   - type: battery
     template: '{{if (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}{{end}} '
     foreground_templates:
