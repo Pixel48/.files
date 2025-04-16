@@ -27,3 +27,5 @@ _darcs
 # ignore config scripts
 setup/
 config/
+# ignore fonts dir
+fonts/
