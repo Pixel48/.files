@@ -25,5 +25,5 @@ _darcs
 # ignore non-hidden scripts
 ^[^.].*\.sh
 # ignore config scripts
-setup
-config
+setup/
+config/
