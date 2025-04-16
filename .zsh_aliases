@@ -18,6 +18,8 @@ alias 9='cd +9'
 
 __cmd nvim && alias vim='nvim'
 
+__cmd dust && alias dust='dust --reverse'
+
 alias diff='diff --color'
 alias ip='ip -c'
 alias dc='dirs -c'
