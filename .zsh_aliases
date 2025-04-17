@@ -29,7 +29,7 @@ if __cmd bat; then
 fi
 __cmd batgrep && alias rg='batgrep'
 __cmd eza && alias ls='eza'
-__cmd exa && alias ls='exa'
+__cmd exa && alias ls='exa' && alias lsa='ls -a'
 alias cls='clear'
 __cmd arduino-cli && alias ardu='arduino-cli'
 alias x='jka && sleep .05 && exit'

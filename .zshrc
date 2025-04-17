@@ -5,8 +5,10 @@
   #source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
-export PATH=$PATH:/opt/homebrew/bin
-export PATH=$PATH:${HOME}/.local/bin
+if [ -f ~/.zsh_exports ]; then
+  source ~/.zsh_exports
+  # alias exports="${EDITOR} ~/.zsh_exports"
+fi
 
 # Setup zinit path
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -146,7 +148,7 @@ alias zshrc="${EDITOR} ~/.zshrc"
 
 # Load aliases, functions, exports, etc.
 if [ -f ~/.zsh_exports ]; then
-  source ~/.zsh_exports
+  # source ~/.zsh_exports
   alias exports="${EDITOR} ~/.zsh_exports"
 fi
 
