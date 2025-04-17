@@ -15,9 +15,22 @@ blocks:
   - type: path
     properties:
       style: full #powerlevel
-    template: "<p:gray>:</>{{ .Path }}/ "
+    template: "<p:gray>:</>{{ .Path }}/"
     foreground: red
     style: plain
+  - type: node
+    foreground: "#339933"
+    template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
+  - type: lua
+    foreground: "#808080"
+    template: "{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} "
+  - type: rust
+    foreground: "#B94700"
+    template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
+  - type: python
+    style: plain
+    foreground: "#ffd43b"
+    template: "󰌠 {{.Full }} "
   - type: git
     properties:
       fetch_status: true
@@ -52,12 +65,6 @@ blocks:
     - "{{if .Merge}}red{{end}}"
     - "{{if .Detached}}blue{{end}}"
     - "{{if .Working.Changed}}yellow{{end}}"
-  - type: node
-    properties:
-      fetch_version: true
-    template: "<lightGray>via</> \ue781 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} "
-    foreground: "#98C379"
-    style: plain
 - type: prompt
   alignment: right
   segments:
@@ -68,16 +75,9 @@ blocks:
     template: " {{ .FormattedMs }} "
     foreground: "p:gray"
     style: diamond
-  - type: node
-    foreground: "#339933"
-    template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}}"
-  - type: rust
-    foreground: "#B94700"
-    template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}}"
-  - type: python
-    style: plain
-    foreground: "#ffd43b"
-    template: " {{.Venv}} 󰌠 {{.Full }} "
+  # - type: docker
+  #   foreground: "#1D63ED"
+  #   template: " {{.Context}} "
   - type: battery
     template: '{{if (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}{{end}} '
     foreground_templates:
@@ -89,7 +89,7 @@ blocks:
   - type: text
     style: plain
     foreground: white
-    template: "{{if ne .Env.JOBS \"0\"}}{{if eq .Env.JOBS \"1\"}}{{else}}{{end}}{{end}}"
+    template: "{{if ne .Env.JOBS \"0\"}}{{if eq .Env.JOBS \"1\"}}{{else}}{{end}} {{end}}"
 - type: prompt
   newline: true
   alignment: left
