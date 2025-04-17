@@ -68,6 +68,9 @@ blocks:
     template: " {{ .FormattedMs }} "
     foreground: "p:gray"
     style: diamond
+  - type: rust
+    foreground: "#B94700"
+    template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}}"
   - type: python
     style: plain
     foreground: "#ffd43b"
