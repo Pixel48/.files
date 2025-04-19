@@ -22,17 +22,18 @@ blocks:
     foreground: "#339933"
     template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
   - type: lua
-    foreground: "#808080"
+    # foreground: "#808080"
+    foreground: "#E0E0E0"
     template: "{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} "
   - type: go
     foreground: '#00ADD8'
     template: '{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} ' # 
   - type: rust
-    foreground: "#B94700"
+    foreground: "#CE412B"
     template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
   - type: python
     style: plain
-    foreground: "#ffd43b"
+    foreground: "#FFD43B"
     template: "󰌠 {{.Full }} "
   - type: git
     properties:
@@ -77,14 +78,13 @@ blocks:
       threshold: 4000.0
     template: " {{ .FormattedMs }} "
     foreground: "p:gray"
-    style: diamond
   # - type: docker
   #   foreground: "#1D63ED"
   #   template: " {{.Context}} "
   - type: battery
     template: '{{if (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}{{end}} '
     foreground_templates:
-    - '{{if and (eq "Charging" .State.String) (lt .Percentage 85)}}#40c4ff{{else if eq "Discharging" .State.String}}#ff5722{{else if ge .Percentage 85}}#4caf50{{end}}'
+    - '{{if and (eq "Charging" .State.String) (lt .Percentage 85)}}#40C4FF{{else if eq "Discharging" .State.String}}#FF5722{{else if ge .Percentage 85}}#4CAF50{{end}}'
     properties:
       discharging_icon: " "
       charging_icon: " "
