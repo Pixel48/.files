@@ -1,3 +1,5 @@
+alias functions="${EDITOR} ~/.zsh_functions"
+
 __cmd sudo && ok() {
   if [ "$#" = "0" ]; then
     sudo $(fc -ln -1)

@@ -1,3 +1,5 @@
+alias exports="${EDITOR} ~/.zsh_exports"
+
 export FUCK_RUSSIA=true
 export HOMEBREW_NO_ENV_HINTS=true
 export PATH=$PATH:/opt/homebrew/bin
