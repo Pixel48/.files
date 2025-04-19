@@ -24,6 +24,9 @@ blocks:
   - type: lua
     foreground: "#808080"
     template: "{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} "
+  - type: go
+    foreground: '#00ADD8'
+    template: '{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} ' # 
   - type: rust
     foreground: "#B94700"
     template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
