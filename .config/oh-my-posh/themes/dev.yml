@@ -97,6 +97,8 @@ blocks:
   newline: true
   alignment: left
   segments:
+  - type: shell
+    foreground: "#444444"
   - template: '❯'
     foreground: "#FFBD00"
     foreground_templates:
