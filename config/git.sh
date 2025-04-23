@@ -106,6 +106,7 @@ git config --global alias.tree 'log --oneline --graph --all'
 git config --global alias.ts 't --stat'
 git config --global alias.update '!git f; git p'
 git config --global alias.wt 'worktree'
+git config --global alias.wtl 'wt list'
 # CORE
 #git config --global core.autocrlf input
 git config --global core.safecrlf warn
