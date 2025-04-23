@@ -22,7 +22,6 @@ blocks:
     foreground: "#339933"
     template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
   - type: lua
-    # foreground: "#808080"
     foreground: "#E0E0E0"
     template: "{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} "
   - type: go
