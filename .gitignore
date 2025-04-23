@@ -4,3 +4,5 @@
 .gnupg/*_seed
 .gnupg/*.db
 .gnupg/.#*
+
+.DS_Store
