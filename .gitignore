@@ -6,3 +6,5 @@
 .gnupg/.#*
 
 .DS_Store
+
+.config/nushell/*.txt

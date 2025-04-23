@@ -1,6 +1,7 @@
 palette:
   gray: '#777777'
   shadow: '#444444'
+  viper: '#333333'
 
 blocks:
 - type: prompt
@@ -96,15 +97,14 @@ blocks:
   newline: true
   alignment: left
   segments:
-  - type: shell
-    foreground: "#444444"
-  - template: '❯'
+  - type: upgrade
+  - type: text
+    # template: "❯"
+    template: "   <p:viper>{{.Shell}}</>\r❯"
     foreground: "#FFBD00"
     foreground_templates:
     - '{{ if gt .Code 0}}red{{end}}'
     - '{{ if eq .Code 0}}green{{end}}'
-    type: text
-    style: plain
 
 - type: rprompt
   alignment: left

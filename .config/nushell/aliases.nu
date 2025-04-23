@@ -1,0 +1,94 @@
+alias reload = exec nu
+
+alias vim = nvim
+alias aliases = vim ~/.config/nushell/aliases.nu
+
+alias lsa = ls -a
+alias ll = ls -l
+alias lla = ll -a
+alias lld = ll -D
+
+alias jobs = job list
+alias spawn = job spawn
+# __cmd() {
+  # command -v $1 > /dev/null
+# }
+# def __cmd [thing: string] {
+#   ( which $thing | length ) != 0
+# }
+#
+# if __cmd cbonsai { alias cbonsai = cbonsai -c'%,$,#,&,@' }
+
+# alias d='dirs -v'
+#
+# alias 1='cd +1'
+# alias 2='cd +2'
+# alias 3='cd +3'
+# alias 4='cd +4'
+# alias 5='cd +5'
+# alias 6='cd +6'
+# alias 7='cd +7'
+# alias 8='cd +8'
+# alias 9='cd +9'
+#
+# __cmd nvim && alias vim='nvim'
+#
+# __cmd dust && alias dust='dust --reverse'
+#
+# alias diff='diff --color'
+# alias ip='ip -c'
+# alias dc='dirs -c'
+# if __cmd bat; then
+#   alias cat='bat'
+#   alias pat='bat -p'
+# fi
+# __cmd batgrep && alias rg='batgrep'
+# __cmd eza && alias ls='eza'
+# __cmd exa && alias ls='exa' && alias lsa='ls -a'
+# alias cls='clear'
+# __cmd arduino-cli && alias ardu='arduino-cli'
+# alias ipe='curl -s ifconfig.me | rev | cut -c 1- | rev'
+# alias df='df -h'
+# __cmd nautilius && alias here='nautilius .'
+# alias heree='here; exit'
+# __cmd wg && alias wgq='wg-quick'
+# alias w='w -i'
+#
+# alias ipt='iptables'
+# alias j='jobs -l'
+# alias du='du -h'
+# alias dd='dd status=progress'
+# alias dmesg='dmesg -L'
+# alias sshc="${EDITOR} ~/.ssh/config"
+#
+# __cmd g++ && alias cxx=g++
+#
+# __cmd oh-my-posh && alias omp=oh-my-posh
+#
+# alias laws='''echo -e """
+#   \e[0;21;31mMurphy’s Law\e[0m
+# \e[0;31mAnything that can go wrong will go wrong\e[0m
+#
+#   \e[0;21;33mKidlin’s Law\e[0m
+# \e[0;33mIf you can write the problem down clearly, then the issue is half solved\e[0m
+#
+#   \e[0;21;95mGilbert’s Law\e[0m
+# \e[0;95mThe biggest problem at work is that no one tells you what to do\e[0m
+#
+#   \e[0;21;32mWalson’s Law\e[0m
+# \e[0;32mIf you put information and intelligence first at all times, then the money will come\e[0m
+#
+#   \e[0;21;94mFalkland’s Law\e[0m
+# \e[0;94mWhen you don’t have to make a decision, don’t make a decision\e[0m
+# """'''
+#
+#
+# alias hate='''echo -e """
+# \e[0;33mIf you feel like \e[1myou \e[0;31mhate\e[0;33m \e[1meveryone\e[0;33m:\e[7m Eat something \e[0m
+#
+# \e[0;34mIf you feel like \e[0;1;34meveryone\e[0;34m \e[0;31mhates\e[0;1;34m \e[0;1;34myou\e[0;34m:\e[7m Go to sleep \e[0m
+#
+# \e[0;36mIf you feel like \e[0;1;36myou\e[0;36m \e[0;31mhate\e[0;1;36m \e[0;1;36myourself\e[0;36m:\e[7m Have a shower \e[0m
+#
+# \e[0;32mIf you feel like \e[0;1;32meveryone\e[0;32m \e[0;31mhates\e[0;1;32m \e[0;1;32meveryone\e[0;32m:\e[7m Go outside \e[0m
+# """'''
