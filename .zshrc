@@ -162,7 +162,7 @@ alias gitconfig="${EDITOR} ~/.files/config/git.sh"
 alias ghconfig="${EDITOR} ~/.files/config/gh.sh"
 alias glabconfig="${EDITOR} ~/.files/config/glab.sh"
 
-alias oxiconfig="${EDITOR} ~/.files/setup/oxidise.sh"
+alias oxiconfig="${EDITOR} ~/.files/setup/oxidation.sh"
 
 # Load cygwin workarounds if needed
 if [[ `uname` == *CYGWIN* ]]; then
