@@ -16,18 +16,26 @@
 #
 # You can remove these comments if you want or leave
 # them for future reference.
+$env.config.show_banner = false
+
+# use std/dirs
 
 use std "path add"
 
-path add /opt/homebrew/bin
-path add ~/.cargo/bin
-echo $env.PATH
-
+path add /opt/homebrew/bin/
+path add ~/.cargo/bin/
+path add ~/.local/bin/
+path add /usr/local/bin/
 $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"
 $env.config.buffer_editor = "nvim"
 
+$env.GL_HOST = 'https://gitlab.griddynamics.net'
 
 source ~/.config/nushell/aliases.nu
 source ~/.config/nushell/functions.nu
 source ~/.config/nushell/tools.nu
+
+# if (echo ~/.config/nushell/profile.nu | path exists) {
+#   source ~/.config/nushell/profile.nu
+# }

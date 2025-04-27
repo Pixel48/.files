@@ -15,7 +15,7 @@ source ~/.cache/zoxide/init.nu
 alias omp = oh-my-posh
 mkdir ~/.cache/oh-my-posh/
 oh-my-posh init -p nu -c ~/.config/oh-my-posh/themes/dev.yml | save -f ~/.cache/oh-my-posh/init.nu
-def --env SET_POSHCONTEXT [] {
-  $env.JOBS = (jobs | length)
+$env.SET_POSHCONTEXT = {
+	$env.JOBS = ( jobs | length );
 }
 source ~/.cache/oh-my-posh/init.nu

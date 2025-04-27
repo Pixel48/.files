@@ -7,9 +7,26 @@ alias lsa = ls -a
 alias ll = ls -l
 alias lla = ll -a
 alias lld = ll -D
+alias ., = cd -
+
+alias ,, = dirs drop
+# alias ,. = dirs next
+alias ,,. = dirs prev
+alias ,., = dirs add
+alias ,,, = dirs
 
 alias jobs = job list
 alias spawn = job spawn
+
+alias desc = describe
+
+alias cat = bat
+alias pat = bat -p
+
+alias here = command open .
+alias heree = here and (exit)
+
+alias sshc = vim ~/.ssh/config
 # __cmd() {
   # command -v $1 > /dev/null
 # }
