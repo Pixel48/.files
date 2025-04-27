@@ -29,3 +29,6 @@ setup
 config
 # ignore fonts dir
 fonts
+
+# ignore finder file
+.DS_Store
