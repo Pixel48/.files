@@ -8,12 +8,13 @@ alias ll = ls -l
 alias lla = ll -a
 alias lld = ll -D
 alias ., = cd -
+alias tree = tree -C
 
-alias ,, = dirs drop
-# alias ,. = dirs next
-alias ,,. = dirs prev
-alias ,., = dirs add
-alias ,,, = dirs
+# alias ,, = dirs drop
+# # alias ,. = dirs next
+# alias ,,. = dirs prev
+# alias ,., = dirs add
+# alias ,,, = dirs
 
 alias jobs = job list
 alias spawn = job spawn
