@@ -22,10 +22,10 @@ jka() {
 }
 __cmd ufw && ufw() {
   if [[ $# == 0 ]]; then
-    command ufw status numbered
+    sudo command ufw status numbered
   else
     if [[ $# > 1 ]]; then
-      command ufw $@
+      sudo command ufw $@
     else
       case $1 in
         "on")
