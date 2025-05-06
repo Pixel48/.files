@@ -205,5 +205,3 @@ command -v brew > /dev/null && eval "$(brew shellenv)"
 if [ -f ~/.zprofile ]; then
   source ~/.zprofile
 fi
-
-. "$HOME/.local/bin/env"
