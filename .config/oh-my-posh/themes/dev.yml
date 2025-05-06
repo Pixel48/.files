@@ -42,7 +42,7 @@ blocks:
           branch_icon: ''
           github_icon: 
           gitlab_icon: 
-          git_icon: "\U000F02A2"
+          git_icon: 󰊢
           commit_icon: ' '
           tag_icon: ' '
           rebase_icon: ' '
@@ -106,8 +106,11 @@ blocks:
     alignment: left
     segments:
       - type: upgrade
-      - type: text
-        template: "   <p:viper>{{.Shell}}</>\r❯"
+      - type: text # asciinema
+        template: '{{ if eq .Env.ASCIINEMA_REC "1" }} {{ end }}'
+        foreground: 'red'
+      - type: text # shell
+        template: "❯"
         foreground: '#FFBD00'
         foreground_templates:
           - '{{ if gt .Code 0}}red{{end}}'
