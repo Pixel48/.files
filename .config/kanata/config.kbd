@@ -1,0 +1,13 @@
+(defcfg process-unmapped-keys (all-except lctl ralt))
+
+(defsrc
+  caps
+)
+
+(defalias
+  esctl (tap-hold-release 100 100 esc lctrl)
+)
+
+(deflayer base
+  @esctl
+)
