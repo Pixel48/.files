@@ -202,6 +202,7 @@ fi
 command -v brew > /dev/null && eval "$(brew shellenv)"
 
 # zprofile
-if [ -f ~/.zprofile ]; then
-  source ~/.zprofile
+if [ ! -f ~/.zprofile ]; then
+  echo 'alias zprofile="${EDITOR} ~/.zprofile"' > ~/.zprofile
 fi
+source ~/.zprofile
