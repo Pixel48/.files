@@ -60,7 +60,7 @@ command -v exa > /dev/null && bindkey -s '^[K' ' ls -Ta^J' || bindkey -s '^[K' '
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 bindkey -s '^[h' ' history^J'
-bindkey -s '^[t' 'tmux^J'
+# bindkey -s '^[t' 'tmux^J'
 
 # FZF binds
 # if command -v fzf 2>&1 >/dev/null && [[ `uname` != *CYGWIN* ]]; then

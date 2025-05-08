@@ -1,0 +1,20 @@
+theme = iTerm2 Default
+
+keybind = alt+d=new_split:right
+keybind = alt+shift+d=new_split:down
+keybind = alt+t=new_tab
+keybind = super+alt+l=goto_split:right
+keybind = super+alt+h=goto_split:left
+keybind = super+alt+;=goto_split:left
+
+keybind = super+alt+j=scroll_page_down
+keybind = super+alt+k=scroll_page_up
+
+font-family = LigaHack Nerd Font
+font-size = 11
+
+shell-integration-features = no-cursor
+cursor-style-blink = true
+cursor-style = underline
+
+mouse-hide-while-typing = true
