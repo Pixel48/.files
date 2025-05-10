@@ -49,17 +49,18 @@ blocks:
           cherry_pick_icon: ' '
           revert_icon: ' '
           merge_icon: ' '
-          no_commits_icon: "\U000F08A4 "
+          no_commits_icon: '󰢤 '
           mapped_branches:
             main: 
             master: 
             develop: 
-            hotfix*: "\U000F0238"
-            patch*: "\U000F0DAF"
-            fix*: "\U000F05B7"
+            hotfix*: 󰈸
+            patch*: 󰶯
+            fix*: 󰖷
+            refactor*: 󰁨
             bug*: 
-            feature*: "\U000F0E30"
-            feat/*: "\U000F0E30/"
+            feature*: 󰸰
+            feat/*: 󰸰/
             test*: 
         template: >-
           {{if .UpstreamIcon}}{{ .UpstreamIcon }} {{end}}{{ .HEAD }} {{if
