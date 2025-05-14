@@ -37,6 +37,7 @@ alias df='df -h'
 __cmd nautilius && alias here='nautilius .'
 alias heree='here; exit'
 __cmd wg && alias wgq='wg-quick'
+__cmd wg && alias wg='sudo wg'
 alias w='w -i'
 
 alias ipt='iptables'
