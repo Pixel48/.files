@@ -23,6 +23,7 @@ $env.config.show_banner = false
 use std "path add"
 
 path add /opt/homebrew/bin/
+$env.HOMEBREW_NO_ENV_HINTS = true
 path add ~/.cargo/bin/
 path add ~/.local/bin/
 path add /usr/local/bin/
