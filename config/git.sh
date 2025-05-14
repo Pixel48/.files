@@ -113,7 +113,7 @@ git config --global alias.update '!git f; git p'
 git config --global alias.wt 'worktree'
 git config --global alias.wtl 'wt list'
 # CORE
-#git config --global core.autocrlf input
+git config --global core.autocrlf input
 git config --global core.safecrlf warn
 __cmd nvim && git config --global core.editor nvim || git config --global core.editor vim
 # INIT
