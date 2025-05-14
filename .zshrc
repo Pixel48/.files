@@ -173,7 +173,7 @@ if [[ `uname` == *CYGWIN* ]]; then
 fi
 
 # Zoxide
-eval "$(zoxide init --cmd cd zsh)"
+__cmd zoxide && eval "$(zoxide init --cmd cd zsh)"
 
 # Zinit caching
 zinit cdreplay -q
