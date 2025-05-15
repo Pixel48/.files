@@ -107,6 +107,8 @@ blocks:
     alignment: left
     segments:
       - type: upgrade
+      - type: text # screen
+        template: '{{if matchP "screen*" .Env.TERM }}󱣴 {{ end}}'
       - type: text # asciinema
         template: '{{ if eq .Env.ASCIINEMA_REC "1" }} {{ end }}'
         foreground: 'red'
