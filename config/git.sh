@@ -119,7 +119,7 @@ __cmd nvim && git config --global core.editor nvim || git config --global core.e
 # INIT
 git config --global init.defaultbranch main
 # BRANCH
-git config --global branch.autoSetupMerge simple
+git config --global branch.autoSetupMerge true
 # PUSH
 git config --global push.default upstream
 # CYGWIN
