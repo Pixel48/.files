@@ -39,6 +39,7 @@ alias heree='here; exit'
 __cmd wg && alias wgq='wg-quick'
 __cmd wg && alias wg='sudo wg'
 alias w='w -i'
+alias who='who -a'
 
 alias ipt='iptables'
 alias j='jobs -l'
