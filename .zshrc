@@ -189,7 +189,7 @@ fi
 zmodload zsh/zprof
 
 # oh-my-posh
-__cmd oh-my-posh || curl -s https://ohmyposh.dev/install.sh | bash -s
+__cmd oh-my-posh || ~/.files/setup/ohmyposh.sh
 if [ "$TERM_PROGRAM" != "Apple Terminal" ]; then
   eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/dev.yml)"
   function set_poshcontext() {
