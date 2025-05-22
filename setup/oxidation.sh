@@ -7,4 +7,4 @@ __cmd cargo || ~/.files/setup/rust.sh
 __cmd sccache || cargo install --locked sccache
 [ -n "$RUSTC_WRAPPER" ] && echo 'export RUSTC_WRAPPER=sccache' >> ~/.zprofile
 
-RUSTC_WRAPPER=sccache cargo install --locked cargo-info nu ripgrep du-dust exa bat irust bacon porsmo speedtest-rs wiki-tui mrpocs rtx-cli zellij gitui hd xh zoxide
+RUSTC_WRAPPER=sccache cargo install cargo-info nu ripgrep du-dust eza bat irust bacon porsmo speedtest-rs wiki-tui rtx-cli hd xh zoxide hyperfine fselect ncspot tokei just mask
