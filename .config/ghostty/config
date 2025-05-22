@@ -1,17 +1,15 @@
-theme = iTerm2 Default
-# theme = Builtin Dark
-# theme = 
+theme = PaulMillr
 
 keybind = alt+d=new_split:right
 keybind = alt+shift+d=new_split:down
 keybind = alt+t=new_tab
 keybind = ctrl+shift+d=new_tab
 # keybind = super+alt+h=goto_split:left
-keybind = super+alt+l=goto_split:left
-keybind = super+alt+;=goto_split:right
+keybind = ctrl+shift+l=goto_split:left
+keybind = ctrl+shift+;=goto_split:right
 
-keybind = super+alt+j=scroll_page_down
-keybind = super+alt+k=scroll_page_up
+keybind = ctrl+shift+j=scroll_page_down
+keybind = ctrl+shift+k=scroll_page_up
 
 # keybind = alt+enter=toggle_fullscreen
 
