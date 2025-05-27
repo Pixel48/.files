@@ -41,7 +41,11 @@ __cmd wg && alias wg='sudo wg'
 alias w='w -i'
 alias who='who -a'
 
-alias ipt='iptables'
+__cmd sysctl && alias sysctl='sudo sysctl'
+__cmd brctl && alias brctl='sudo brctl'
+__cmd nmcli && alias nmcli='sudo nmcli'
+
+alias ipt='sudo ptables'
 alias j='jobs -l'
 alias du='du -h'
 alias dd='dd status=progress'
