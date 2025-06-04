@@ -14,7 +14,8 @@ blocks:
         style: plain
       - type: path
         properties:
-          style: full
+          style: mixed
+          mixed_threshold: 9
         template: '<p:gray>:</>{{ .Path }}/'
         foreground: red
         style: plain
