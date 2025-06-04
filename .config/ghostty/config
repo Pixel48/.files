@@ -28,6 +28,5 @@ app-notifications = no-clipboard-copy
 background-opacity = .75
 
 copy-on-select = clipboard
-keybind = ctrl+v=paste_from_clipboard
 
 focus-follows-mouse = true
