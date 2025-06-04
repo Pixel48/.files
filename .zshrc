@@ -31,12 +31,15 @@ zinit light zsh-users/zsh-autosuggestions
 
 # Load and style completion
 autoload -Uz compinit && compinit # Load completions
-#eval "$(dircolors -b)" # setup LS_COLORS
 zmodload zsh/complist # Load complist
 autoload -U colors && colors # Colors
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # Highlight files like ls --colors
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select # Highlight selected
 zstyle ':completion:*' rehash true # To get new binaries into PATH
+# Case-insensitive completion
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 bindkey '^[[Z' reverse-menu-complete
 
 # Word killing per separator
@@ -99,10 +102,6 @@ setopt push_d_ignore_dups
 # Dunoo, was in old one
 setopt interactive
 setopt monitor
-
-# Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Fundamental aliases
 alias reload='exec $(basename $SHELL)'
