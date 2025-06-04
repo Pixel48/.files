@@ -44,6 +44,7 @@ alias who='who -a'
 __cmd sysctl && alias sysctl='sudo sysctl'
 __cmd brctl && alias brctl='sudo brctl'
 __cmd nmcli && alias nmcli='sudo nmcli'
+__cmd dnf && alias dnf='sudo dnf'
 
 alias ipt='sudo ptables'
 alias j='jobs -l'
