@@ -53,7 +53,7 @@ alias dd='dd status=progress'
 alias dmesg='dmesg -L'
 alias sshc="${EDITOR} ~/.ssh/config"
 
-__cmd tcpdump && alias td="tcpdump"
+__cmd tcpdump && alias td="sudo tcpdump"
 
 __cmd g++ && alias cxx=g++
 
