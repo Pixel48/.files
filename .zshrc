@@ -200,8 +200,8 @@ fi
 # setup Homebrew
 command -v brew > /dev/null && eval "$(brew shellenv)"
 
-# zprofile
-if [ ! -f ~/.zprofile ]; then
-  echo 'alias zprofile="${EDITOR} ~/.zprofile"' > ~/.zprofile
+# profile
+if [ ! -f ~/.profile ]; then
+  echo 'alias profile="${EDITOR} ~/.profile"' > ~/.profile
 fi
-source ~/.zprofile
+source ~/.profile
