@@ -5,10 +5,6 @@
   #source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
-if [ -f ~/.zsh_exports ]; then
-  source ~/.zsh_exports
-fi
-
 # Setup zinit path
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -138,6 +134,10 @@ EDITOR=$(
   command -v ed 2>/dev/null ||
    echo "echo No editor found")
 export EDITOR=`basename $EDITOR`
+
+if [ -f ~/.zsh_exports ]; then
+  source ~/.zsh_exports
+fi
 
 alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
 
