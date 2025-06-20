@@ -104,6 +104,19 @@ blocks:
           {{if ne .Env.JOBS "0"}}{{if eq .Env.JOBS "1"}}{{else}}{{end}}
           {{end}}
   - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      # - type: gcp
+      #   disabled: true
+      #   template: "{{ if and .Project .Account }}<#4285F4> </>{{ .Project }} <#34A853>{{ .Account }}</>{{ end }}"
+      #   # foreground: "#4285F4"
+      #   foreground: "#EA4335"
+      #   # foreground: "#FBBC05"
+      #   # foreground: "#34A853"
+      - type: gcp
+        template: "{{ if and .Project .Account }} {{ .Project }} <p:shadow>{{ .Account }}</>{{ end }}"
+  - type: prompt
     newline: true
     alignment: left
     segments:
