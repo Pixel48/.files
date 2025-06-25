@@ -5,16 +5,18 @@ keybind = alt+shift+d=new_split:down
 keybind = alt+t=new_tab
 keybind = ctrl+shift+d=new_tab
 # keybind = super+alt+h=goto_split:left
-keybind = ctrl+shift+l=goto_split:left
-keybind = ctrl+shift+;=goto_split:right
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+l=goto_split:right
+keybind = ctrl+shift+k=goto_split:up
+keybind = ctrl+shift+j=goto_split:down
 
-keybind = ctrl+shift+j=scroll_page_down
-keybind = ctrl+shift+k=scroll_page_up
+keybind = ctrl+shift+u=scroll_page_down
+keybind = ctrl+shift+i=scroll_page_up
 
-# keybind = alt+enter=toggle_fullscreen
+keybind = ctrl+enter=toggle_fullscreen
 
 font-family = LigaHack Nerd Font
-font-size = 11
+font-size = 14
 
 shell-integration-features = no-cursor
 cursor-style-blink = true
