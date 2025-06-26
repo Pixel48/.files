@@ -1,0 +1,21 @@
+
+
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored _correct _approximate
+zstyle ':completion::complete:ls::' completer _complete _match
+zstyle ':completion:*' format '  %d'
+zstyle ':completion:*' group-name '  %d'
+zstyle ':completion:*' insert-unambiguous true
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-prompt '%S%l%s'
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' '+r:|[._-]=** r:|=** l:|=*'
+zstyle ':completion::complete:ls::' matcher-list 'm:{[:lower:]}={[:upper:]}' '+r:|[._-]=** r:|=** l:|=*'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' original false
+zstyle ':completion:*' select-prompt '%S%l%s'
+zstyle :compinstall filename '/home/stanley/.zsh_comp'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall

@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant promptsource Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  #source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
-
 # Setup zinit path
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -17,24 +10,11 @@ fi
 # Load Zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Install PowerLevel10k
-#zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Fundamental zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-
-# Load and style completion
-autoload -Uz compinit && compinit # Load completions
-zmodload zsh/complist # Load complist
-autoload -U colors && colors # Colors
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # Highlight files like ls --colors
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu select # Highlight selected
-zstyle ':completion:*' rehash true # To get new binaries into PATH
-# Case-insensitive completion
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**'
 
 bindkey '^[[Z' reverse-menu-complete
 
@@ -139,6 +119,7 @@ if [ -f ~/.zsh_exports ]; then
   source ~/.zsh_exports
 fi
 
+
 alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
 
 # Aliases for editing config files
@@ -173,9 +154,11 @@ fi
 
 # Zoxide
 __cmd zoxide && eval "$(zoxide init --cmd cd zsh)"
+source ~/.zsh_comp
+alias compconfig="$EDITOR ~/.zsh_comp"
 
 # Zinit caching
-zinit cdreplay -q
+# zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -195,7 +178,6 @@ if [ "$TERM_PROGRAM" != "Apple Terminal" ]; then
     export JOBS=$(jobs|wc -l|xargs)
   }
 fi
-
 
 # setup Homebrew
 command -v brew > /dev/null && eval "$(brew shellenv)"
