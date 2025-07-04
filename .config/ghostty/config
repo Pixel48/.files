@@ -16,7 +16,7 @@ keybind = ctrl+shift+i=scroll_page_up
 keybind = ctrl+enter=toggle_fullscreen
 
 font-family = LigaHack Nerd Font
-font-size = 14
+font-size = 11
 
 shell-integration-features = no-cursor
 cursor-style-blink = true
