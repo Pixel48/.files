@@ -21,6 +21,8 @@ font-size = 14
 shell-integration-features = no-cursor
 cursor-style-blink = true
 cursor-style = underline
+cursor-color = #999999
+cursor-opacity = .8
 
 mouse-hide-while-typing = true
 
