@@ -105,6 +105,10 @@ alias llag='lla -g'
 alias lld='ll -d'
 alias lldg='lld -g'
 
+if [ -f ~/.zsh_exports ]; then
+  source ~/.zsh_exports
+fi
+
 # Setup file editor
 EDITOR=$(
   command -v nvim 2>/dev/null ||
@@ -114,11 +118,6 @@ EDITOR=$(
   command -v ed 2>/dev/null ||
    echo "echo No editor found")
 export EDITOR=`basename $EDITOR`
-
-if [ -f ~/.zsh_exports ]; then
-  source ~/.zsh_exports
-fi
-
 
 alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
 
