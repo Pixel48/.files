@@ -79,6 +79,10 @@ setopt push_d_ignore_dups
 setopt interactive
 setopt monitor
 
+if [ -f ~/.zsh_exports ]; then
+  source ~/.zsh_exports
+fi
+
 # Fundamental aliases
 alias reload='exec $(basename $SHELL)'
 alias now='date +"%d.%m.%Y %H:%M:%S"'
@@ -104,10 +108,6 @@ command -v exa > /dev/null && alias lla='ll -a' || alias lla='ll -A'
 alias llag='lla -g'
 alias lld='ll -d'
 alias lldg='lld -g'
-
-if [ -f ~/.zsh_exports ]; then
-  source ~/.zsh_exports
-fi
 
 # Setup file editor
 EDITOR=$(
