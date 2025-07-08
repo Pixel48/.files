@@ -33,9 +33,7 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey -s '^[a' '^P^M'
 bindkey -s '^[l' ' ls^J'
-command -v exa > /dev/null && bindkey -s '^[L' ' ls -a^J' || bindkey -s '^[L' ' ls -A^J'
 bindkey -s '^[k' ' ls -T^J'
-command -v exa > /dev/null && bindkey -s '^[K' ' ls -Ta^J' || bindkey -s '^[K' ' ls -TA^J'
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 bindkey -s '^[h' ' history^J'
@@ -83,6 +81,7 @@ if [ -f ~/.zsh_exports ]; then
   source ~/.zsh_exports
 fi
 
+
 # Fundamental aliases
 alias reload='exec $(basename $SHELL)'
 alias now='date +"%d.%m.%Y %H:%M:%S"'
@@ -96,15 +95,11 @@ alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 alias ........='cd ../../../../../../..'
 alias mkdir='mkdir -p'
-alias ls='ls -C --color' # ls-es
-command -v exa > /dev/null && alias lsa='ls -a' || alias lsa='ls -A'
 alias lsd='ls -d'
 alias lss='ls -sh'
 alias l='ls -1'
-command -v exa > /dev/null && alias la='l -a' || alias la='l -A'
 alias ll='ls -lh'
 alias llg='ll -g'
-command -v exa > /dev/null && alias lla='ll -a' || alias lla='ll -A'
 alias llag='lla -g'
 alias lld='ll -d'
 alias lldg='lld -g'
@@ -186,3 +181,10 @@ if [ ! -f ~/.profile ]; then
   echo 'alias profile="${EDITOR} ~/.profile"' > ~/.profile
 fi
 source ~/.profile
+
+command -v exa > /dev/null && alias ls='exa' || alias ls='ls -C --color' # ls-es
+command -v exa > /dev/null && alias la='l -a' || alias la='l -A'
+command -v exa > /dev/null && alias lla='ll -a' || alias lla='ll -A'
+command -v exa > /dev/null && alias lsa='ls -a' || alias lsa='ls -A'
+command -v exa > /dev/null && bindkey -s '^[L' ' ls -a^J' || bindkey -s '^[L' ' ls -A^J'
+command -v exa > /dev/null && bindkey -s '^[K' ' ls -Ta^J' || bindkey -s '^[K' ' ls -TA^J'
