@@ -148,7 +148,9 @@ fi
 
 # Zoxide
 __cmd zoxide && eval "$(zoxide init --cmd cd zsh)"
-source ~/.zsh_comp
+if [ -f ~/.zsh_comp ]; then
+  source ~/.zsh_comp
+fi
 alias compconfig="$EDITOR ~/.zsh_comp"
 
 # Zinit caching
