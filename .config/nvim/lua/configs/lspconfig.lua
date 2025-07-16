@@ -2,7 +2,15 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
-local servers = { "html", "cssls", "gopls", "jedi_language_server", "rust_analyzer", "ccls" }
+local servers = {
+  "html",
+  "cssls",
+  "gopls",
+  "jedi_language_server",
+  "rust_analyzer",
+  "ccls",
+  -- "terraform-ls",
+}
 local nvlsp = require "nvchad.configs.lspconfig"
 local on_attach = nvlsp.on_attach
 local capabilities = nvlsp.capabilities
