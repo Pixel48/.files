@@ -46,6 +46,8 @@ __cmd brctl && alias brctl='sudo brctl'
 __cmd nmcli && alias nmcli='sudo nmcli'
 __cmd dnf && alias dnf='sudo dnf'
 
+__cmd terraform && alias tf='terraform'
+
 alias ipt='sudo ptables'
 alias j='jobs -l'
 alias du='du -h'
