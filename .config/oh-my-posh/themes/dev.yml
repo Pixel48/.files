@@ -52,17 +52,18 @@ blocks:
           merge_icon: ' '
           no_commits_icon: '󰢤 '
           mapped_branches:
-            main: 
-            master: 
-            develop: 
-            hotfix*: 󰈸
-            patch*: 󰶯
-            fix*: 󰖷
-            refactor*: 󰁨
-            bug*: 
-            feature*: 󰸰
-            feat/*: 󰸰/
-            test*: 
+            main*: ' '
+            master*: ' '
+            develop*: ' '
+            hotfix*: '󰈸 '
+            patch*: '󰶯 '
+            fix*:  '󰖷 '
+            refactor*: '󰁨 '
+            bug*: ' '
+            feature*: '󰸰 '
+            feat/*: 󰸰 /
+            test*: ' '
+            rewrite*: ' '
         template: >-
           {{if .UpstreamIcon}}{{ .UpstreamIcon }} {{end}}{{ .HEAD }} {{if
           .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}
