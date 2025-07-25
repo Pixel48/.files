@@ -37,6 +37,7 @@ bindkey -s '^[k' ' ls -T^J'
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 bindkey -s '^[h' ' history^J'
+bindkey -s '^[H' ' `history -n 0 | fzf`^J'
 # bindkey -s '^[t' 'tmux^J'
 
 # FZF binds
