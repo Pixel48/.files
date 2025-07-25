@@ -185,8 +185,8 @@ if [ ! -f ~/.profile ]; then
 fi
 source ~/.profile
 
-if [ ! -f ~/.zprofile ]; then
-  echo 'alias zprofile="$EDITOR ~/.zprofile"' > ~/.zprofile
+if [ -f ~/.zprofile ]; then
+  alias zprofile="$EDITOR ~/.zprofile"
 fi
 
 command -v exa > /dev/null && alias ls='exa' || alias ls='ls -C --color' # ls-es
