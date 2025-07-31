@@ -6,6 +6,7 @@ return { -- Mason
       "gopls",
       "cssls",
       "jedi_language_server",
+      "jedi-language-server",
       "rust_analyzer",
       "clangd",
     }
