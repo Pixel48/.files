@@ -52,6 +52,7 @@ alias ipt='sudo ptables'
 alias j='jobs -l'
 alias du='du -h'
 alias dd='dd status=progress'
+alias free='free -ght'
 alias dmesg='dmesg -L'
 alias sshc="${EDITOR} ~/.ssh/config"
 
