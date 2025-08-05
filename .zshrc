@@ -34,19 +34,20 @@ bindkey '^n' history-search-forward
 bindkey -s '^[a' '^P^M'
 bindkey -s '^[l' ' ls^J'
 bindkey -s '^[k' ' ls -T^J'
+bindkey -s '^[;' ' ls -l^J'
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 bindkey -s '^[h' ' history^J'
-bindkey -s '^[H' ' `history -n 0 | fzf`^J'
+# bindkey -s '^[H' ' `history -n 0 | fzf`^J'
 # bindkey -s '^[t' 'tmux^J'
 
 # FZF binds
-# if command -v fzf 2>&1 >/dev/null && [[ `uname` != *CYGWIN* ]]; then
-#   source <(fzf --zsh)
-#   bindkey "^R" fzf-history-widget
-#   bindkey "^T" fzf-file-widget
-#   bindkey "^[c" fzf-cd-widget
-# fi
+if command -v fzf 2>&1 >/dev/null && [[ `uname` != *CYGWIN* ]]; then
+  source <(fzf --zsh)
+  bindkey "^R" fzf-history-widget
+  bindkey "^T" fzf-file-widget
+  bindkey "^[c" fzf-cd-widget
+fi
 
 # History up/down arrows
 bindkey "^[[A" up-line-or-search
@@ -194,4 +195,5 @@ command -v exa > /dev/null && alias la='l -a' || alias la='l -A'
 command -v exa > /dev/null && alias lla='ll -a' || alias lla='ll -A'
 command -v exa > /dev/null && alias lsa='ls -a' || alias lsa='ls -A'
 command -v exa > /dev/null && bindkey -s '^[L' ' ls -a^J' || bindkey -s '^[L' ' ls -A^J'
+command -v exa > /dev/null && bindkey -s '^[:' ' ls -la^J' || bindkey -s '^[:' ' ls -lA^J'
 command -v exa > /dev/null && bindkey -s '^[K' ' ls -Ta^J' || bindkey -s '^[K' ' ls -TA^J'
