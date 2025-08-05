@@ -9,6 +9,7 @@ return { -- Mason
       "jedi-language-server",
       "rust_analyzer",
       "clangd",
+      "terraform-ls",
     }
   }
 }

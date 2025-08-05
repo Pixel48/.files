@@ -6,5 +6,5 @@ return {
   { import = 'plugins.config.kualala' },
   { import = 'plugins.config.platformio'},
   -- { import = 'plugins.config.terraform'},
-  { import = 'plugins.config.tree-sitter'}
+  { import = 'plugins.config.tree-sitter'},
 }
