@@ -56,6 +56,8 @@ alias free='free -ght'
 alias dmesg='dmesg -L'
 alias sshc="${EDITOR} ~/.ssh/config"
 
+__cmd cryptsetup && alias cryptsetup="sudo cryptsetup"
+
 __cmd tcpdump && alias td="sudo tcpdump"
 
 __cmd g++ && alias cxx=g++
