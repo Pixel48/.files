@@ -190,7 +190,6 @@ if [ -f ~/.zprofile ]; then
   alias zprofile="$EDITOR ~/.zprofile"
 fi
 
-command -v exa > /dev/null && alias ls='exa' || alias ls='ls -C --color' # ls-es
 command -v exa > /dev/null && alias la='l -a' || alias la='l -A'
 command -v exa > /dev/null && alias lla='ll -a' || alias lla='ll -A'
 command -v exa > /dev/null && alias lsa='ls -a' || alias lsa='ls -A'
