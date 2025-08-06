@@ -6,4 +6,7 @@ return {
   "rust_analyzer",
   "ccls",
   "terraformls",
+  "lua_ls",
+  "ts_ls",
+  "jsonls",
 }
