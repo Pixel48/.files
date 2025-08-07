@@ -42,7 +42,7 @@ bindkey -s '^[h' ' history^J'
 # bindkey -s '^[t' 'tmux^J'
 
 # FZF binds
-if command -v fzf 2>&1 >/dev/null && [[ `uname` != *CYGWIN* ]]; then
+if command -v fzf 2>&1 >/dev/null; then
   source <(fzf --zsh)
   bindkey "^R" fzf-history-widget
   bindkey "^T" fzf-file-widget
