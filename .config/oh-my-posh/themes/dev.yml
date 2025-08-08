@@ -57,13 +57,14 @@ blocks:
             develop*: ' '
             hotfix*: '󰈸 '
             patch*: '󰶯 '
-            fix*:  '󰖷 '
+            fix*:  ' '
             refactor*: '󰁨 '
             bug*: ' '
             feature*: '󰸰 '
-            feat/*: 󰸰 /
+            feat/*: '󰸰 /'
             test*: ' '
             rewrite*: ' '
+            rework*: ' '
         template: >-
           {{if .UpstreamIcon}}{{ .UpstreamIcon }} {{end}}{{ .HEAD }} {{if
           .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}
