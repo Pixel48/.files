@@ -41,14 +41,6 @@ bindkey -s '^[h' ' history^J'
 # bindkey -s '^[H' ' `history -n 0 | fzf`^J'
 # bindkey -s '^[t' 'tmux^J'
 
-# FZF binds
-if command -v fzf 2>&1 >/dev/null; then
-  source <(fzf --zsh)
-  bindkey "^R" fzf-history-widget
-  bindkey "^T" fzf-file-widget
-  bindkey "^[c" fzf-cd-widget
-fi
-
 # History up/down arrows
 bindkey "^[[A" up-line-or-search
 bindkey "^[[B" down-line-or-search
@@ -196,3 +188,12 @@ command -v exa > /dev/null && alias lsa='ls -a' || alias lsa='ls -A'
 command -v exa > /dev/null && bindkey -s '^[L' ' ls -a^J' || bindkey -s '^[L' ' ls -A^J'
 command -v exa > /dev/null && bindkey -s '^[:' ' ls -la^J' || bindkey -s '^[:' ' ls -lA^J'
 command -v exa > /dev/null && bindkey -s '^[K' ' ls -Ta^J' || bindkey -s '^[K' ' ls -TA^J'
+
+# FZF binds
+if command -v fzf 2>&1 >/dev/null; then
+  source <(fzf --zsh)
+  bindkey "^R" fzf-history-widget
+  bindkey "^T" fzf-file-widget
+  bindkey "^[c" fzf-cd-widget
+fi
+
