@@ -12,6 +12,8 @@ return {
       "hcl",
       "bash",
       "yaml",
+      "c",
+      "cpp",
     },
   },
 }
