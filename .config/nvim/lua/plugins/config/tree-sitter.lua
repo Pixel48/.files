@@ -9,7 +9,9 @@ return {
       "html",
       "css",
       "terraform",
-      "hcl"
+      "hcl",
+      "bash",
+      "yaml",
     },
-  }
+  },
 }
