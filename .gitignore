@@ -1,10 +1,1 @@
-.gnupg/pubring*
-.gnupg/*.d
-.gnupg/trustdb.gpg
-.gnupg/*_seed
-.gnupg/*.db
-.gnupg/.#*
-
 .DS_Store
-
-.config/nushell/*.txt
