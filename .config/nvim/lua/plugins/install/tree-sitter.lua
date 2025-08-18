@@ -14,6 +14,7 @@ return {
       "yaml",
       "c",
       "cpp",
+      "glsl",
     },
   },
 }
