@@ -34,7 +34,7 @@ bindkey '^n' history-search-forward
 bindkey -s '^[a' '^P^M'
 bindkey -s '^[l' ' ls^J'
 bindkey -s '^[k' ' ls -T^J'
-bindkey -s '^[;' ' ls -l^J'
+bindkey -s '^[;' ' ls -lg^J'
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 bindkey -s '^[h' ' history^J'
@@ -186,7 +186,7 @@ command -v exa > /dev/null && alias la='l -a' || alias la='l -A'
 command -v exa > /dev/null && alias lla='ll -a' || alias lla='ll -A'
 command -v exa > /dev/null && alias lsa='ls -a' || alias lsa='ls -A'
 command -v exa > /dev/null && bindkey -s '^[L' ' ls -a^J' || bindkey -s '^[L' ' ls -A^J'
-command -v exa > /dev/null && bindkey -s '^[:' ' ls -la^J' || bindkey -s '^[:' ' ls -lA^J'
+command -v exa > /dev/null && bindkey -s '^[:' ' ls -lag^J' || bindkey -s '^[:' ' ls -lA^J'
 command -v exa > /dev/null && bindkey -s '^[K' ' ls -Ta^J' || bindkey -s '^[K' ' ls -TA^J'
 
 # FZF binds
