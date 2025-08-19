@@ -14,10 +14,10 @@ return {
   },
   -- stylua: ignore
   keys = {
-    { "<S-space>", mode = { "n", "x" }, function() require("flash").jump() end, desc = "Flash" },
-    { "<S-C-space>", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    { "<S-space>", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    { "<S-C-space>", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-    { "<S-space>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    { "<C-;>", mode = { "n", "x" }, function() require("flash").jump() end, desc = "Flash" },
+    { "<S-C-;>", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "<C-;>", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    { "<S-C-;>", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    { "<C-space>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
   },
 }
