@@ -8,4 +8,5 @@ return {
   { import = "plugins.install.tree-sitter" },
   { import = "plugins.install.yaml" },
   { import = "plugins.install.ufo" },
+  { import = "plugins.install.flash" },
 }
