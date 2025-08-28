@@ -4,8 +4,8 @@
 
 zstyle ':completion:*' completer _complete _ignored _correct _approximate
 zstyle ':completion::complete:ls::' completer _complete _match
-zstyle ':completion:*' format '  %d'
-zstyle ':completion:*' group-name '  %d'
+zstyle ':completion:*' format '  %F{8}%d%f'
+zstyle ':completion:*' group-name '  %F{8}%d%f'
 zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-prompt '%S%l%s'
