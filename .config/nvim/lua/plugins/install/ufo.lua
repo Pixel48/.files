@@ -27,7 +27,7 @@ local text_handler = function(virtText, lnum, endLnum, width, truncate)
   return newVirtText
 end
 
-return {
+local result = {
   "kevinhwang91/nvim-ufo",
   dependencies = {
     { "kevinhwang91/promise-async" },
@@ -46,3 +46,5 @@ return {
     fold_virt_text_handler = text_handler,
   },
 }
+
+return result
