@@ -9,4 +9,5 @@ return {
   { import = "plugins.install.yaml" },
   { import = "plugins.install.ufo" },
   { import = "plugins.install.flash" },
+  { import = "plugins.install.coc" },
 }
