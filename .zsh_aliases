@@ -79,6 +79,9 @@ alias laws='''echo -e """
 
   \e[0;21;94mFalkland’s Law\e[0m
 \e[0;94mWhen you don’t have to make a decision, don’t make a decision\e[0m
+
+  \e[0;21;96mGoodhart’s Law\e[0m
+\e[0;96mWhen a measure becomes a target, it ceases to be a good measure\e[0m
 """'''
 
 
