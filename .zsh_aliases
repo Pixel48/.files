@@ -71,14 +71,14 @@ alias laws='''echo -e """
   \e[0;21;32mWalson’s Law\e[0m
 \e[0;32mIf you put information and intelligence first at all times, then the money will come\e[0m
 
-  \e[0;21;33mKidlin’s Law\e[0m
-\e[0;33mIf you can write the problem down clearly, then the issue is half solved\e[0m
+  \e[0;21;33mGilbert’s Law\e[0m
+\e[0;33mThe biggest problem at work is that no one tells you what to do\e[0m
 
-  \e[0;21;94mFalkland’s Law\e[0m
-\e[0;94mWhen you don’t have to make a decision, don’t make a decision\e[0m
+  \e[0;21;94mKidlin’s Law\e[0m
+\e[0;94mIf you can write the problem down clearly, then the issue is half solved\e[0m
 
-  \e[0;21;95mGilbert’s Law\e[0m
-\e[0;95mThe biggest problem at work is that no one tells you what to do\e[0m
+  \e[0;21;95mFalkland’s Law\e[0m
+\e[0;95mWhen you don’t have to make a decision, don’t make a decision\e[0m
 
   \e[0;21;96mGoodhart’s Law\e[0m
 \e[0;96mWhen a measure becomes a target, it ceases to be a good measure\e[0m
