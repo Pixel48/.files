@@ -83,11 +83,11 @@ alias laws='''echo -e """
 
 
 alias hate='''echo -e """
+\e[0;36mIf you feel like \e[0;1;36myou\e[0;36m \e[0;31mhate\e[0;1;36m \e[0;1;36myourself\e[0;36m:\e[7m Have a shower \e[0m
+
 \e[0;33mIf you feel like \e[1myou \e[0;31mhate\e[0;33m \e[1meveryone\e[0;33m:\e[7m Eat something \e[0m
 
 \e[0;34mIf you feel like \e[0;1;34meveryone\e[0;34m \e[0;31mhates\e[0;1;34m \e[0;1;34myou\e[0;34m:\e[7m Go to sleep \e[0m
-
-\e[0;36mIf you feel like \e[0;1;36myou\e[0;36m \e[0;31mhate\e[0;1;36m \e[0;1;36myourself\e[0;36m:\e[7m Have a shower \e[0m
 
 \e[0;32mIf you feel like \e[0;1;32meveryone\e[0;32m \e[0;31mhates\e[0;1;32m \e[0;1;32meveryone\e[0;32m:\e[7m Go outside \e[0m
 """'''
