@@ -69,13 +69,13 @@ alias laws='''echo -e """
 \e[0;31mAnything that can go wrong will go wrong\e[0m
 
   \e[0;21;32mWalson’s Law\e[0m
-\e[0;32mIf you put information and intelligence first at all times, then the money will come\e[0m
+\e[0;32mPut information and intelligence first, and money will come rolling in\e[0m
 
   \e[0;21;33mGilbert’s Law\e[0m
 \e[0;33mThe biggest problem at work is that no one tells you what to do\e[0m
 
   \e[0;21;94mKidlin’s Law\e[0m
-\e[0;94mIf you can write the problem down clearly, then the issue is half solved\e[0m
+\e[0;94mIf you can write a problem down clearly, then it is already half solved\e[0m
 
   \e[0;21;95mFalkland’s Law\e[0m
 \e[0;95mWhen you don’t have to make a decision, don’t make a decision\e[0m
