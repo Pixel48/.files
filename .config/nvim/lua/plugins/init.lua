@@ -10,4 +10,5 @@ return {
   { import = "plugins.install.ufo" },
   { import = "plugins.install.flash" },
   { import = "plugins.install.coc" },
+  { import = "plugins.install.markdown" },
 }
