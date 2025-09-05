@@ -112,6 +112,7 @@ git config --global alias.ts 't --stat'
 git config --global alias.update '!git f; git p'
 git config --global alias.wt 'worktree'
 git config --global alias.wta 'wt add'
+git config --global alias.wtr 'wt remove'
 git config --global alias.wtl 'wt list'
 # CORE
 git config --global core.autocrlf input
