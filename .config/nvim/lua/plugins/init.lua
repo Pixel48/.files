@@ -98,6 +98,7 @@ return {
         "c",
         "cpp",
         "glsl",
+        "haskell",
       },
     },
   },
