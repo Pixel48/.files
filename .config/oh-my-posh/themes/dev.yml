@@ -65,6 +65,7 @@ blocks:
             test*: ' '
             rewrite*: ' '
             rework*: ' '
+            docs*: '󱔘 '
         template: >-
           {{if .UpstreamIcon}}{{ .UpstreamIcon }} {{end}}{{ .HEAD }} {{if
           .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}
