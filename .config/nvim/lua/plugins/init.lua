@@ -181,6 +181,7 @@ return {
   { -- coc
     "neoclide/coc.nvim",
     branch = "master",
+    enabled = false,
   },
   { -- coc-ansible
     "yaegassy/coc-ansible",
