@@ -64,6 +64,6 @@ rmreporuns() {
 
   echo "All workflow runs for $repo have been deleted."
 }
-fd() {
+fw() {
 	[ 0 -ne $1 ] && fg %$1 || fg
 }
