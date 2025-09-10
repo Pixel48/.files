@@ -195,4 +195,11 @@ return {
       enabled = true,
     },
   },
+  { -- diffview
+    "sindrets/diffview.nvim",
+    keys = {
+      { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
+      { "<leader>dg", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
+    },
+  },
 }
