@@ -11,6 +11,7 @@ return {
   },
   { -- lsp config
     "neovim/nvim-lspconfig",
+    name = 'lspconfig',
     config = function()
       -- require "configs.lspconfig"
       require("nvchad.configs.lspconfig").defaults()
@@ -73,6 +74,7 @@ return {
   },
   { -- PlatformIO supprt
     "anurag3301/nvim-platformio.lua",
+    name = 'PlatformIO',
     dependencies = {
       { "akinsho/nvim-toggleterm.lua" },
       { "nvim-telescope/telescope.nvim" },
@@ -82,6 +84,7 @@ return {
   },
   { -- Treesitter
     "nvim-treesitter/nvim-treesitter",
+    name = 'treesitter',
     build = ":TSUpdate",
     event = { "BufReadPre", "BufNewFile" },
     opts = {
@@ -113,6 +116,7 @@ return {
   },
   { -- UFO
     "kevinhwang91/nvim-ufo",
+    name = "ufo",
     dependencies = {
       { "kevinhwang91/promise-async" },
     },
