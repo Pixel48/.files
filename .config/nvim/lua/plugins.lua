@@ -1,12 +1,19 @@
 return {
   { -- mason-tool-installer
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    cmd = {
+      "MasonToolsClean",
+      "MasonToolsInstall",
+      "MasonToolsInstallSync",
+      "MasonToolsUpdate",
+      "MasonToolsUpdateSync",
+    },
     dependencies = { "mason-org/mason.nvim" },
     opts = {
       ensure_installed = require("custom").tools,
       automatic_installation = true,
-      auto_update = true,
-      run_on_start = true,
+      -- auto_update = true,
+      -- run_on_start = true,
       debounce_hours = 48,
     },
   },
