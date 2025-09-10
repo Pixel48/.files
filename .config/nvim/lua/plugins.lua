@@ -1,25 +1,20 @@
 return {
   { -- mason-tool-installer
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    cmd = {
-      "MasonToolsClean",
-      "MasonToolsInstall",
-      "MasonToolsInstallSync",
-      "MasonToolsUpdate",
-      "MasonToolsUpdateSync",
-    },
+    lazy = false,
     dependencies = { "mason-org/mason.nvim" },
     opts = {
       ensure_installed = require("custom").tools,
       automatic_installation = true,
-      -- auto_update = true,
-      -- run_on_start = true,
+      auto_update = true,
+      run_on_start = true,
       debounce_hours = 48,
     },
   },
-  { -- mason-auto-install
-    "owallb/mason-auto-install.nvim",
+  { -- mason-lspconfig
+    "mason-org/mason-lspconfig.nvim",
     dependencies = { "mason-org/mason.nvim" },
+    lazy = false,
     opts = {
       ensure_installed = require("custom").lsps,
       automatic_installation = true,
@@ -28,7 +23,6 @@ return {
   { -- lspconfig
     "neovim/nvim-lspconfig",
     name = "lspconfig",
-    -- cond = false,
     config = function()
       -- require "configs.lspconfig"
       require("nvchad.configs.lspconfig").defaults()
@@ -63,14 +57,16 @@ return {
   },
   { -- ansible.nvim
     "mfussenegger/nvim-ansible",
-    ft = {},
+    ft = { "yaml", "yml" },
     keys = {
-      "<leader>ta",
-      function()
-        require("ansible").run()
-      end,
-      desc = "Run Ansible Playbook/Role",
-      silent = true,
+      {
+        "<leader>ta",
+        function()
+          require("ansible").run()
+        end,
+        desc = "Run Ansible Playbook/Role",
+        silent = true,
+      },
     },
   },
   { -- conform

@@ -1,7 +1,5 @@
 return {
   lsps = {
-    "ansible-lint",
-    "ccls",
     "clangd",
     "cssls",
     "gopls",
@@ -14,6 +12,7 @@ return {
     "ts_ls",
   },
   tools = {
+    "ansible-lint",
     "mmdc",
     "prettier",
     "stylua",
