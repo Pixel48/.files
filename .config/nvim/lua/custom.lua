@@ -16,5 +16,6 @@ return {
     "mmdc",
     "prettier",
     "stylua",
+    "terraform",
   },
 }
