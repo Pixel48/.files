@@ -1,16 +1,16 @@
 return {
   lsps = {
-    "html",
+    "ccls",
+    "clangd",
     "cssls",
     "gopls",
+    "html",
     "jedi_language_server",
-    "rust_analyzer",
-    "ccls",
-    "terraformls",
-    "lua_ls",
-    "ts_ls",
     "jsonls",
-    "clangd",
+    "lua_ls",
+    "rust_analyzer",
+    "terraformls",
+    "ts_ls",
   },
   tools = {
     "mmdc",
