@@ -1,5 +1,6 @@
 return {
   lsps = {
+    "ansible-lint",
     "ccls",
     "clangd",
     "cssls",

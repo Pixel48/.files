@@ -61,6 +61,18 @@ return {
       }
     end,
   },
+  { -- ansible.nvim
+    "mfussenegger/nvim-ansible",
+    ft = {},
+    keys = {
+      "<leader>ta",
+      function()
+        require("ansible").run()
+      end,
+      desc = "Run Ansible Playbook/Role",
+      silent = true,
+    },
+  },
   { -- conform
     "stevearc/conform.nvim",
     event = "BufWritePre",
