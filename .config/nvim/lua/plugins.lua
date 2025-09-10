@@ -1,24 +1,34 @@
 return {
-  { -- mason
-    "owallb/mason-auto-install.nvim",
-    dependencies = {
-      "williamboman/mason.nvim",
-      "neovim/nvim-lspconfig",
-    },
+  { -- mason-tool-installer
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    dependencies = { "mason-org/mason.nvim" },
     opts = {
-      packages = require "custom.lsp",
+      ensure_installed = require("custom").tools,
+      automatic_installation = true,
+      auto_update = true,
+      run_on_start = true,
+      debounce_hours = 48,
     },
   },
-  { -- lsp config
+  { -- mason-auto-install
+    "owallb/mason-auto-install.nvim",
+    dependencies = { "mason-org/mason.nvim" },
+    opts = {
+      ensure_installed = require("custom").lsps,
+      automatic_installation = true,
+    },
+  },
+  { -- lspconfig
     "neovim/nvim-lspconfig",
-    name = 'lspconfig',
+    name = "lspconfig",
+    -- cond = false,
     config = function()
       -- require "configs.lspconfig"
       require("nvchad.configs.lspconfig").defaults()
 
       local lspconfig = require "lspconfig"
 
-      local servers = require "custom.lsp"
+      local servers = require("custom").lsps
       local nvlsp = require "nvchad.configs.lspconfig"
       local on_attach = nvlsp.on_attach
       local on_init = nvlsp.on_init
@@ -32,8 +42,8 @@ return {
             on_init = on_init,
             capabilities = capabilities,
           }
-          -- else
-          --   vim.notify(lsp .. "not available in lspconfig", vim.log.level.WARN)
+        else
+          vim.notify(lsp .. "not available in lspconfig", vim.log.level.WARN)
         end
       end
 
@@ -74,7 +84,7 @@ return {
   },
   { -- PlatformIO supprt
     "anurag3301/nvim-platformio.lua",
-    name = 'PlatformIO',
+    name = "PlatformIO",
     dependencies = {
       { "akinsho/nvim-toggleterm.lua" },
       { "nvim-telescope/telescope.nvim" },
@@ -84,7 +94,7 @@ return {
   },
   { -- Treesitter
     "nvim-treesitter/nvim-treesitter",
-    name = 'treesitter',
+    name = "treesitter",
     build = ":TSUpdate",
     event = { "BufReadPre", "BufNewFile" },
     opts = {
@@ -173,14 +183,48 @@ return {
         },
       },
     },
-  -- stylua: ignore
-  keys = {
-    { "<C-;>", mode = { "n", "x" }, function() require("flash").jump() end, desc = "Flash" },
-    { "<S-C-;>", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    { "<C-;>", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    { "<S-C-;>", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-    { "<C-space>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-  },
+    keys = {
+      {
+        "<C-;>",
+        mode = { "n", "x" },
+        function()
+          require("flash").jump()
+        end,
+        desc = "Flash",
+      },
+      {
+        "<S-C-;>",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").treesitter()
+        end,
+        desc = "Flash Treesitter",
+      },
+      {
+        "<C-;>",
+        mode = "o",
+        function()
+          require("flash").remote()
+        end,
+        desc = "Remote Flash",
+      },
+      {
+        "<S-C-;>",
+        mode = { "o", "x" },
+        function()
+          require("flash").treesitter_search()
+        end,
+        desc = "Treesitter Search",
+      },
+      {
+        "<C-space>",
+        mode = { "c" },
+        function()
+          require("flash").toggle()
+        end,
+        desc = "Toggle Flash Search",
+      },
+    },
   },
   { -- coc
     "neoclide/coc.nvim",

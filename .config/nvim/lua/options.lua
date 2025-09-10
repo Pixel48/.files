@@ -1,6 +1,6 @@
 require "nvchad.options"
 
-require "plugins.config.ufo"
+require "config.ufo"
 
 vim.o.colorcolumn = "80"
 vim.o.relativenumber = true
