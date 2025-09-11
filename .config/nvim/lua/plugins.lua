@@ -23,17 +23,24 @@ return {
   { -- lspconfig
     "neovim/nvim-lspconfig",
     name = "lspconfig",
+    lazy = false,
     config = function()
-      -- require "configs.lspconfig"
-      require("nvchad.configs.lspconfig").defaults()
+      local nvlsp = require "nvchad.configs.lspconfig"
+      nvlsp.defaults()
 
       local lspconfig = require "lspconfig"
-
-      local servers = require("custom").lsps
-      local nvlsp = require "nvchad.configs.lspconfig"
       local on_attach = nvlsp.on_attach
       local on_init = nvlsp.on_init
       local capabilities = nvlsp.capabilities
+
+      local servers = require("custom").lsps
+
+      -- terraformls
+      lspconfig.terraformls.setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        filetypes = { "terraform", "terraform-vars", "tf" },
+      }
 
       -- lsps with default config
       for _, lsp in ipairs(servers) do
@@ -47,12 +54,6 @@ return {
           vim.notify(lsp .. "not available in lspconfig", vim.log.level.WARN)
         end
       end
-
-      lspconfig.terraformls.setup {
-        on_attach = on_attach,
-        capabilities = capabilities,
-        filetypes = { "terraform", "terraform-vars", "tf" },
-      }
     end,
   },
   { -- ansible.nvim
