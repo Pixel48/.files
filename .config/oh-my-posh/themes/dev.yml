@@ -110,13 +110,6 @@ blocks:
     alignment: left
     newline: true
     segments:
-      # - type: gcp
-      #   disabled: true
-      #   template: "{{ if and .Project .Account }}<#4285F4> </>{{ .Project }} <#34A853>{{ .Account }}</>{{ end }}"
-      #   # foreground: "#4285F4"
-      #   foreground: "#EA4335"
-      #   # foreground: "#FBBC05"
-      #   # foreground: "#34A853"
       - type: gcp
         template: "{{ if and .Project .Account }} {{ .Project }} <p:shadow>{{ .Account }}</>{{ end }}"
   - type: prompt
@@ -129,6 +122,9 @@ blocks:
       - type: text # asciinema
         template: '{{ if eq .Env.ASCIINEMA_REC "1" }} {{ end }}'
         foreground: 'red'
+      - type: text # ssh-agent
+        template: '{{ if .Env.SSH_AGENT_PID }} {{ end }}'
+        foreground: '#FFBD00'
       - type: text # shell
         template: "❯"
         foreground: '#FFBD00'
