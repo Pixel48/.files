@@ -78,12 +78,12 @@ blocks:
           - '{{if .Merge}}red{{end}}'
           - '{{if .Detached}}blue{{end}}'
           - '{{if .Working.Changed}}yellow{{end}}'
+      - type: kubectl
+        template: ' {{if .Context}}󱃾 {{.Context}}{{if .Namespace}}::{{.Namespace}}{{end}}{{end}}'
+        foreground: '#326CE5'
   - type: prompt # kube-context, exectime, battery, jobs
     alignment: right
     segments:
-      - type: kubectl
-        template: '{{if .Context}}󱃾 {{.Context}}{{if .Namespace}}::{{.Namespace}}{{end}}{{end}} '
-        foreground: '#326CE5'
       - type: executiontime
         properties:
           style: round
