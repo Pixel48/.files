@@ -10,6 +10,7 @@ return {
     "rust_analyzer",
     "terraformls",
     "ts_ls",
+    "yamlls",
   },
   tools = {
     "ansible-lint",
@@ -17,5 +18,6 @@ return {
     "prettier",
     "stylua",
     "terraform",
+    "yamlfmt",
   },
 }

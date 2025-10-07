@@ -24,6 +24,10 @@ return {
     "neovim/nvim-lspconfig",
     name = "lspconfig",
     lazy = false,
+    config = function()
+      local servers = require("custom").lsps
+      vim.lsp.enable(servers)
+    end,
   },
   { -- ansible.nvim
     "mfussenegger/nvim-ansible",
@@ -102,6 +106,7 @@ return {
   },
   { -- YAML
     "cuducos/yaml.nvim",
+    cond = false,
     ft = "yaml",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
