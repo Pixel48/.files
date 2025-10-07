@@ -3,7 +3,7 @@ palette:
   shadow: '#444444'
   viper: '#333333'
 blocks:
-  - type: prompt
+  - type: prompt # user@hostname:path
     alignment: left
     segments:
       - type: os
@@ -78,7 +78,7 @@ blocks:
           - '{{if .Merge}}red{{end}}'
           - '{{if .Detached}}blue{{end}}'
           - '{{if .Working.Changed}}yellow{{end}}'
-  - type: prompt
+  - type: prompt # kube-context, exectime, battery, jobs
     alignment: right
     segments:
       - type: kubectl
@@ -109,13 +109,13 @@ blocks:
         template: >-
           {{if ne .Env.JOBS "0"}}{{if eq .Env.JOBS "1"}}{{else}}{{end}}
           {{end}}
-  - type: prompt
+  - type: prompt # gcp
     alignment: left
     newline: true
     segments:
       - type: gcp
         template: "{{ if and .Project .Account }} {{ .Project }} <p:shadow>{{ .Account }}</>{{ end }}"
-  - type: prompt
+  - type: prompt # switches, shell
     newline: true
     alignment: left
     segments:
@@ -134,7 +134,7 @@ blocks:
         foreground_templates:
           - '{{ if gt .Code 0}}red{{end}}'
           - '{{ if eq .Code 0}}green{{end}}'
-  - type: rprompt
+  - type: rprompt # last commit msg
     alignment: left
     segments:
       - type: git
