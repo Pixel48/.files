@@ -81,6 +81,9 @@ blocks:
   - type: prompt
     alignment: right
     segments:
+      - type: kubectl
+        template: '{{if .Context}}󱃾 {{.Context}}{{if .Namespace}}::{{.Namespace}}{{end}}{{end}} '
+        foreground: '#326CE5'
       - type: executiontime
         properties:
           style: round
