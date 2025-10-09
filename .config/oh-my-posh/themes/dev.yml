@@ -15,35 +15,35 @@ blocks:
       - type: os
         foreground: white
       - type: session
-        template: '{{ .UserName }}<p:gray>@</>{{.HostName}}'
-        foreground: '#FFBD00'
+        template: "{{ .UserName }}<p:gray>@</>{{.HostName}}"
+        foreground: "#FFBD00"
         style: plain
       - type: path
         properties:
           style: powerlevel
           max_width: 60
-        template: '<p:gray>:</>{{ .Path }}/'
+        template: "<p:gray>:</>{{ .Path }}/"
         foreground: red
         style: plain
       - type: node
-        foreground: '#339933'
-        template: '{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} '
+        foreground: "#339933"
+        template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
       - type: lua
-        foreground: '#E0E0E0'
-        template: '{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} '
+        foreground: "#E0E0E0"
+        template: "{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} "
       - type: go
-        foreground: '#00ADD8'
-        template: '{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} '
+        foreground: "#00ADD8"
+        template: "{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} "
       - type: rust
-        foreground: '#CE412B'
-        template: '{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} '
+        foreground: "#CE412B"
+        template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
       - type: python
         style: plain
-        foreground: '#FFD43B'
+        foreground: "#FFD43B"
         template: "\U000F0320 {{.Full }} "
       - type: git
         properties:
-          branch_icon: ''
+          branch_icon: ""
           cherry_pick_icon: 
           commit_icon: 
           fetch_bare_info: true
@@ -63,7 +63,7 @@ blocks:
             docs*: 󱔘
             feat/*: 󰸰
             feature*: 󰸰
-            fix*:  
+            fix*: 
             hotfix*: 󰈸
             main*: 
             master*: 
@@ -81,12 +81,12 @@ blocks:
           }}<magenta>  {{ .StashCount }}</>{{ end }}
         foreground: green
         foreground_templates:
-          - '{{if .Merge}}red{{end}}'
-          - '{{if .Detached}}blue{{end}}'
-          - '{{if .Working.Changed}}yellow{{end}}'
+          - "{{if .Merge}}red{{end}}"
+          - "{{if .Detached}}blue{{end}}"
+          - "{{if .Working.Changed}}yellow{{end}}"
       - type: kubectl
-        template: ' {{if .Context}}󱃾 {{.Context}}{{if .Namespace}}::{{.Namespace}}{{end}}{{end}}'
-        foreground: '#326CE5'
+        template: " {{if .Context}}󱃾 {{.Context}}{{if .Namespace}}::{{.Namespace}}{{end}}{{end}}"
+        foreground: "#326CE5"
   - type: prompt # kube-context, exectime, battery, jobs
     alignment: right
     segments:
@@ -94,21 +94,21 @@ blocks:
         properties:
           style: round
           threshold: 4000
-        template: ' {{ .FormattedMs }} '
-        foreground: 'p:gray'
+        template: " {{ .FormattedMs }} "
+        foreground: "p:gray"
       - type: battery
         template: >-
           {{if (or (eq "Charging" .State.String) (le .Percentage
-          20))}}{{.Icon}}{{.Percentage}}{{end}} 
+          20))}}{{.Icon}}{{.Percentage}}{{end}}
         foreground_templates:
           - >-
             {{if and (eq "Charging" .State.String) (lt .Percentage
             85)}}#40C4FF{{else if eq "Discharging" .State.String}}#FF5722{{else
             if ge .Percentage 85}}#4CAF50{{end}}
         properties:
-          discharging_icon: ' '
-          charging_icon: ' '
-          charged_icon: ' '
+          discharging_icon: " "
+          charging_icon: " "
+          charged_icon: " "
       - type: text
         style: plain
         foreground: white
@@ -130,26 +130,26 @@ blocks:
         template: '{{if matchP "screen*" .Env.TERM }} {{ end}}' # 󱣴
       - type: text # asciinema
         template: '{{ if eq .Env.ASCIINEMA_REC "1" }} {{ end }}'
-        foreground: 'red'
+        foreground: "red"
       - type: text # ssh-agent
-        template: '{{ if .Env.SSH_AGENT_PID }} {{ end }}'
-        foreground: '#FFBD00'
+        template: "{{ if .Env.SSH_AGENT_PID }} {{ end }}"
+        foreground: "#FFBD00"
       - type: text # shell
         template: "❯"
-        foreground: '#FFBD00'
+        foreground: "#FFBD00"
         foreground_templates:
-          - '{{ if gt .Code 0}}red{{end}}'
-          - '{{ if eq .Code 0}}green{{end}}'
+          - "{{ if gt .Code 0}}red{{end}}"
+          - "{{ if eq .Code 0}}green{{end}}"
   - type: rprompt # last commit msg
     alignment: left
     segments:
       - type: git
-        template: ' <p:shadow>{{.Commit.Subject}} ~{{.Commit.Author.Name}} ({{.Commit.Author.Email}})</>'
+        template: " <p:shadow>{{.Commit.Subject}} ~{{.Commit.Author.Name}} ({{.Commit.Author.Email}})</>"
 transient_prompt:
-  template: '❯ '
+  template: "❯ "
   foreground_templates:
-    - '{{ if gt .Code 0}}red{{end}}'
-    - '{{ if eq .Code 0}}green{{end}}'
+    - "{{ if gt .Code 0}}red{{end}}"
+    - "{{ if eq .Code 0}}green{{end}}"
   properties:
     newline: true
 version: 3
