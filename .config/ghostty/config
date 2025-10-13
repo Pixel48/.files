@@ -1,4 +1,4 @@
-theme = Paul Millr
+theme = PaulMillr
 
 keybind = alt+d=new_split:right
 keybind = alt+shift+d=new_split:down
