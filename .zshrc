@@ -173,9 +173,9 @@ fi
 command -v brew > /dev/null && eval "$(brew shellenv)"
 
 # profile
-if [ ! -f ~/.profile ]; then
-  echo 'alias profile="${EDITOR} ~/.profile"' > ~/.profile
-fi
+# if [ ! -f ~/.profile ]; then
+#   echo 'alias profile="${EDITOR} ~/.profile"' > ~/.profile
+# fi
 source ~/.profile
 
 if [ -f ~/.zprofile ]; then

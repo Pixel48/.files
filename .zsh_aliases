@@ -1,5 +1,7 @@
 alias aliases="${EDITOR} ~/.zsh_aliases"
 
+alias profile="${EDITOR} ~/.profile"
+
 __cmd() {
   command -v $1 > /dev/null
 }
