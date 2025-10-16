@@ -120,7 +120,7 @@ blocks:
     newline: true
     segments:
       - type: gcp
-        template: "{{ if and .Project .Account }} <p:google_blue>{{ .Project }}</>{{if .Region}}<p:google_green> {{.Region}}</>{{end}} <p:google_yellow>{{ .Account }}</>{{ end }}" #  
+        template: '{{ if and .Project .Account }} {{ if ne .ActiveConfig "default" }}<p:google_red>{{ .ActiveConfig }}</> {{ end }}<p:google_blue>{{ .Project }}</>{{ if .Region }}<p:google_green> {{ .Region }}</>{{ end }} <p:google_yellow>{{ .Account }}</>{{ end }}' #  
   - type: prompt # switches, shell
     newline: true
     alignment: left
