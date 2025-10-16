@@ -112,9 +112,7 @@ blocks:
       - type: text
         style: plain
         foreground: white
-        template: >-
-          {{if ne .Env.JOBS "0"}}{{if eq .Env.JOBS "1"}}{{else}}{{end}}
-          {{end}}
+        template: '{{if ne .Env.JOBS "0"}}{{if eq .Env.JOBS "1"}}{{else}}{{end}}{{end}}'
   - type: prompt # clouds
     alignment: left
     newline: true
