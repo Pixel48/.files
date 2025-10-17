@@ -13,7 +13,7 @@ keybind = ctrl+shift+i=scroll_to_top
 keybind = ctrl+shift+ =scroll_to_bottom
 
 font-family = LigaHack Nerd Font
-font-size = 13
+font-size = 11
 
 shell-integration-features = no-cursor
 cursor-style-blink = true
