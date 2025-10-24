@@ -1,7 +1,19 @@
-http://feeds.feedburner.com/sekurak_full
-https://www.newyorker.com/feed/everything
-https://feeds.content.dowjones.io/public/rss/RSSWorldNews
-https://www.theguardian.com/international/rss
-https://www.pcgamer.com/rss/
-https://www.androidauthority.com/feed/
+# tech
+https://www.androidauthority.com/feed/ "Tech"
+https://blog.dreamsofcode.io/rss.xml "Tech"
+https://vkc.sh/feed/ "~Veronica Explains" "Tech"
+https://lukesmith.xyz/rss.xml "~Luke Smith" "Tech"
 
+# ITsec
+http://feeds.feedburner.com/sekurak_full "ITsec"
+
+# News
+https://www.newyorker.com/feed/everything "~The Newyorker" "News"
+# https://feeds.content.dowjones.io/public/rss/RSSWorldNews "News"
+https://www.theguardian.com/international/rss "News"
+
+# games
+https://www.pcgamer.com/rss/ "~PC Gamer" "Games"
+
+# YT
+# https://www.youtube.com/feeds/videos.xml?channel_id=UCWQaM7SpSECp9FELz-cHzuQ "YT"
