@@ -1,12 +1,39 @@
-bind-key k up
+auto-reload yes
+# prepopulate-query-feeds yes
+# show-read-feeds no
+
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+
 bind-key j down
+bind-key k up
+bind-key g home
+bind-key G end
+
 bind-key h pageup
 bind-key l pagedown
 bind-key ^r reload-all
-show-read-feeds no
 
-color info              black default bold dim
+color info              red default bold
 color listnormal_unread default default
-color listfocus_unread  red default bold
+color listfocus_unread  yellow default bold
 color listnormal        black default
-color listfocus         red default dim
+color listfocus         yellow default
+
+highlight article "^Feed:.*" red default
+highlight article "^Title:.*" yellow default
+highlight article "^Author:.*" green default
+highlight article "^Date:.*" blue default
+highlight article "^Link:.*" magenta default
+highlight article "^Links:" black default
+highlight article "\\[[0-9][0-9]*\\]:.*" black default
+highlight article "\\[image [0-9][0-9]*.*\\]" magenta default
+highlight article "\\[iframe [0-9][0-9]*.*\\]" cyan default
+highlight article "\\[embedded flash: [0-9][0-9]*.*\\]" red default
+highlight article "tl;dr|TL;DR|tldr|TLDR" default default underline
+highlight article "^\\ ?[0-9][0-9]*\\..*" default default reverse
+
+# browser linkhandler
+# macro v set browser "setsid nohup mpv"; open-in-browser; set browser linkhandler
