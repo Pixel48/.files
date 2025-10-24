@@ -24,11 +24,11 @@ _darcs
 ### .files-specyfic
 # ignore non-hidden scripts
 ^[^.].*\.sh
-# ignore config scripts
-setup
-config
+# ignore config script dirs
+setup/
+config/
 # ignore fonts dir
-fonts
+fonts/
 
 # ignore finder file
 .DS_Store
