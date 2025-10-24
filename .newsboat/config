@@ -1,0 +1,12 @@
+bind-key k up
+bind-key j down
+bind-key h pageup
+bind-key l pagedown
+bind-key ^r reload-all
+show-read-feeds no
+
+color info              black default bold dim
+color listnormal_unread default default
+color listfocus_unread  red default bold
+color listnormal        black default
+color listfocus         red default dim
