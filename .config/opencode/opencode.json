@@ -12,6 +12,7 @@
     "thinking_blocks": "<leader>k",
     "app_help": "<leader>;",
     "theme_list": "<leader>h",
-    "session_timeline": "ctrl+y"
+    "session_timeline": "ctrl+y",
+    "input_clear": "ctrl+c"
   }
 }
