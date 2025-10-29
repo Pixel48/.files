@@ -22,13 +22,11 @@ _darcs
 ^/COPYING
 
 ### .files-specyfic
-# ignore non-hidden scripts
-^[^.].*\.sh
-# ignore config script dirs
-setup/
-config/
-# ignore fonts dir
-fonts/
+# ignore all non-hidden root dirs
+^/[^.].*
+
+# ignore AGENTS.md in opencode
+^/\.config/opencode/AGENTS\.md
 
 # ignore finder file
 .DS_Store
