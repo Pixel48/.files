@@ -5,6 +5,8 @@ temperature: 0.1
 tools:
   todowrite: true
 permission:
+  bash:
+    "*": "deny"
   webfetch: allow
 ---
 

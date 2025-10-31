@@ -7,7 +7,27 @@ tools:
   bash: true
   todowrite: true
 permission:
-  bash: allow
+  bash:
+    "*": "deny"
+
+    # Search, File, and Git Operations
+    "grep": "allow"
+    "find": "allow"
+    "openssl": "allow"
+    "git log": "allow"
+    "git blame": "allow"
+    "cat": "allow"
+    "ls": "allow"
+
+    # Destructive Operations
+    "chmod": "ask"
+    "chown": "ask"
+    "rm": "ask"
+    "gpg": "ask"
+
+    # Documentation
+    "man": "allow"
+    "tldr": "allow"
   webfetch: allow
 ---
 

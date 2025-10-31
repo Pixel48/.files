@@ -6,7 +6,43 @@ tools:
   bash: true
   todowrite: true
 permission:
-  bash: ask
+  bash:
+    "*": "deny"
+
+    # Git
+    "git status": "allow"
+    "git log": "allow"
+    "git diff": "allow"
+    "git push": "ask"
+    "git merge": "ask"
+
+    # Docker
+    "docker ps": "allow"
+    "docker images": "allow"
+    "docker logs": "allow"
+    "docker build": "ask"
+    "docker run": "ask"
+    "docker push": "ask"
+
+    # Kubectl
+    "kubectl get": "allow"
+    "kubectl describe": "allow"
+    "kubectl apply": "ask"
+    "kubectl delete": "ask"
+
+    # GitHub CLI
+    "gh pr list": "allow"
+    "gh run list": "allow"
+    "gh pr create": "ask"
+    "gh workflow run": "ask"
+
+    # File Operations
+    "cat": "allow"
+    "ls": "allow"
+
+    # Documentation
+    "man": "allow"
+    "tldr": "allow"
   webfetch: allow
 ---
 

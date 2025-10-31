@@ -8,7 +8,30 @@ tools:
   todowrite: true
 permission:
   edit: allow
-  bash: allow
+  bash:
+    "*": "deny"
+
+    # Git
+    "git status": "allow"
+    "git log": "allow"
+    "git add": "ask"
+    "git commit": "ask"
+    "git push": "ask"
+
+    # Linting
+    "markdownlint": "allow"
+
+    # Search and File Operations
+    "cat": "allow"
+    "grep": "allow"
+    "find": "allow"
+
+    # Destructive
+    "rm": "ask"
+
+    # Documentation
+    "man": "allow"
+    "tldr": "allow"
   webfetch: allow
 ---
 

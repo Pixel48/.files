@@ -8,7 +8,30 @@ tools:
   todowrite: true
 permission:
   edit: allow
-  bash: allow
+  bash:
+    "*": "deny"
+
+    # Monitoring and Debugging
+    "tail": "allow"
+    "grep": "allow"
+    "ps": "allow"
+    "top": "allow"
+    "strace": "allow"
+    "gdb": "allow"
+    "journalctl": "allow"
+    "dmesg": "allow"
+    "cat": "allow"
+    "ls": "allow"
+
+    # Destructive Operations
+    "kill": "ask"
+    "systemctl restart": "ask"
+    "systemctl stop": "ask"
+    "rm": "ask"
+
+    # Documentation
+    "man": "allow"
+    "tldr": "allow"
   webfetch: allow
 ---
 

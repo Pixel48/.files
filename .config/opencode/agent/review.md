@@ -7,6 +7,25 @@ tools:
   bash: false
   todowrite: true
 permission:
+  bash:
+    "*": "deny"
+
+    # Git
+    "git diff": "allow"
+    "git log": "allow"
+    "git blame": "allow"
+
+    # Search and File Operations
+    "grep": "allow"
+    "cat": "allow"
+    "find": "allow"
+
+    # Linting
+    "clang-tidy": "allow"
+
+    # Documentation
+    "man": "allow"
+    "tldr": "allow"
   webfetch: allow
 ---
 

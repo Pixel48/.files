@@ -6,6 +6,22 @@ tools:
   webfetch: true
   todowrite: true
 permission:
+  bash:
+    "*": "deny"
+
+    # Download Tools
+    "curl": "allow"
+    "wget": "allow"
+
+    # GitHub CLI
+    "gh search": "allow"
+
+    # File Operations
+    "cat": "allow"
+
+    # Documentation
+    "man": "allow"
+    "tldr": "allow"
   webfetch: allow
 ---
 

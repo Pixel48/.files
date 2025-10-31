@@ -8,7 +8,32 @@ tools:
   todowrite: true
 permission:
   edit: allow
-  bash: allow
+  bash:
+    "*": "deny"
+
+    # Test Runners
+    "npm test": "allow"
+    "npm run": "allow"
+    "pytest": "allow"
+
+    # Git
+    "git status": "allow"
+    "git diff": "allow"
+    "git add": "ask"
+    "git commit": "ask"
+
+    # Search and File Operations
+    "grep": "allow"
+    "find": "allow"
+    "cat": "allow"
+
+    # Package Managers
+    "npm install": "ask"
+    "pip install": "ask"
+
+    # Documentation
+    "man": "allow"
+    "tldr": "allow"
   webfetch: allow
 ---
 

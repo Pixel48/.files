@@ -6,7 +6,24 @@ tools:
   bash: true
   todowrite: true
 permission:
-  bash: ask
+  bash:
+    "*": "deny"
+
+    # Profiling
+    "time": "allow"
+    "perf": "allow"
+    "python -m cProfile": "allow"
+    "python -m timeit": "allow"
+    "node --prof": "allow"
+
+    # Search and File Operations
+    "grep": "allow"
+    "cat": "allow"
+    "git diff": "allow"
+
+    # Documentation
+    "man": "allow"
+    "tldr": "allow"
   webfetch: allow
 ---
 

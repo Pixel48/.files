@@ -7,6 +7,8 @@ tools:
   todowrite: true
 permission:
   read: allow
+  bash:
+    "*": "deny"
   webfetch: allow
 ---
 
