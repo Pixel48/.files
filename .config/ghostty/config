@@ -10,7 +10,7 @@ keybind = ctrl+shift+;=goto_split:down
 keybind = ctrl+shift+j=scroll_page_down
 keybind = ctrl+shift+k=scroll_page_up
 keybind = ctrl+shift+i=scroll_to_top
-keybind = ctrl+shift+ =scroll_to_bottom
+keybind = ctrl+shift+u=scroll_to_bottom
 
 font-family = LigaHack Nerd Font
 font-size = 11
