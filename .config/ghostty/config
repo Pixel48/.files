@@ -1,7 +1,7 @@
 theme = PaulMillr
 
-keybind = alt+d=new_split:right
-keybind = alt+shift+d=new_split:down
+keybind = alt+d=new_split:down
+keybind = alt+f=new_split:right
 keybind = alt+t=new_tab
 keybind = ctrl+shift+d=new_tab
 keybind = ctrl+shift+l=goto_split:up
