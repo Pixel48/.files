@@ -1,13 +1,28 @@
-(defcfg process-unmapped-keys (all-except ralt))
+(defcfg
+  process-unmapped-keys (all-except ralt)
+)
 
 (defsrc
-  caps
+  caps a s d f j k l ;
+)
+
+(defvar
+  tap-time 150
+  hold-time 150
 )
 
 (defalias
-  esctl (tap-hold-release 100 100 esc lctrl)
+  esctl (tap-hold-release $tap-time $hold-time esc lctrl)
+  a (multi f24 (tap-hold $tap-time $hold-time a lmet))
+  s (multi f24 (tap-hold $tap-time $hold-time s lalt))
+  d (multi f24 (tap-hold $tap-time $hold-time d lsft))
+  f (multi f24 (tap-hold $tap-time $hold-time f lctl))
+  j (multi f24 (tap-hold $tap-time $hold-time j rctl))
+  k (multi f24 (tap-hold $tap-time $hold-time k rsft))
+  l (multi f24 (tap-hold $tap-time $hold-time l lalt))
+  ; (multi f24 (tap-hold $tap-time $hold-time ; lmet))
 )
 
 (deflayer default
-  @esctl
+  @esctl @a @s @d @f @j @k @l @;
 )
