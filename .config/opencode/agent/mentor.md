@@ -1,7 +1,6 @@
 ---
 description: Mentor agent that manages todos and proposes code changes
 mode: primary
-model: anthropic/claude-sonnet-4-20250514
 temperature: 0.1
 tools:
   todowrite: true
