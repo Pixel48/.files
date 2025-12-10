@@ -4,11 +4,12 @@
 
 keybinds clear-defaults=true {
   normal {
-bind "Alt Shift d" { NewPane "Right"; }
-    bind "Alt Shift c" { NewPane "Down"; }
-    bind "Alt Shift x" { CloseFocus; }
+bind "Alt d" { NewPane "Right"; }
+    bind "Alt c" { NewPane "Down"; }
+    bind "Alt q" { CloseFocus; }
     bind "Alt Shift r" { SwitchToMode "renametab"; TabNameInput 0; }
-    bind "Alt Shift w" { CloseTab; }
+    bind "Alt t" { NewTab; }
+    bind "Alt w" { CloseTab; }
   }
   locked {
     bind "Ctrl g" { SwitchToMode "normal"; }
