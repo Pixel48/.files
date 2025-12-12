@@ -1,154 +1,166 @@
-palette:
-  gray: "#777777"
-  shadow: "#444444"
-  viper: "#333333"
-  dred: "#dd0000"
-  ddred: "#990000"
-  google_blue: "#4285F4"
-  google_red: "#DB4437"
-  google_yellow: "#F4B400"
-  google_green: "#0F9D58"
-blocks:
-  - type: prompt # user@hostname:path
-    alignment: left
-    segments:
-      - type: os
-        foreground: white
-      - type: session
-        template: "{{ .UserName }}<p:gray>@</>{{.HostName}}"
-        foreground: "#FFBD00"
-        style: plain
-      - type: path
-        properties:
-          style: powerlevel
-          max_width: 60
-        template: "<p:gray>:</>{{ .Path }}/"
-        foreground: red
-        style: plain
-      - type: node
-        foreground: "#339933"
-        template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
-      - type: lua
-        foreground: "#E0E0E0"
-        template: "{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} "
-      - type: go
-        foreground: "#00ADD8"
-        template: "{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} "
-      - type: rust
-        foreground: "#CE412B"
-        template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
-      - type: python
-        style: plain
-        foreground: "#FFD43B"
-        template: "\U000F0320 {{.Full }} "
-      - type: git
-        properties:
-          branch_icon: ""
-          cherry_pick_icon: 
-          commit_icon: 
-          fetch_bare_info: true
-          fetch_status: true
-          fetch_upstream_icon: true
-          git_icon: 󰊢
-          github_icon: 
-          gitlab_icon: 
-          merge_icon: 
-          no_commits_icon: 󰢤
-          rebase_icon: 
-          revert_icon: 
-          tag_icon: 
-          mapped_branches:
-            bug*: 
-            develop*: 
-            docs*: 󱔘
-            feat/*: 󰸰
-            feature*: 󰸰
-            fix*: 
-            hotfix*: 󰈸
-            main*: 
-            master*: 
-            patch*: 󰶯
-            refactor*: 󰁨
-            rework*: 
-            rewrite*: 
-            test*: 
-        template: >-
-          {{if .UpstreamIcon}}{{ .UpstreamIcon }} {{end}}{{ .HEAD }} {{if
-          .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}
-           {{ .Working.String }}{{ end }}{{ if and (.Working.Changed)
-          (.Staging.Changed) }} <p:gray>|</>{{ end }}{{ if .Staging.Changed
-          }}<green>  {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0
-          }}<magenta>  {{ .StashCount }}</>{{ end }}
-        foreground: green
-        foreground_templates:
-          - "{{if .Merge}}red{{end}}"
-          - "{{if .Detached}}blue{{end}}"
-          - "{{if .Working.Changed}}yellow{{end}}"
-      - type: kubectl
-        template: " {{if .Context}}󱃾 {{.Context}}{{if .Namespace}}::{{.Namespace}}{{end}}{{end}}"
-        foreground: "#326CE5"
-  - type: prompt # kube-context, exectime, battery, jobs
-    alignment: right
-    segments:
-      - type: executiontime
-        properties:
-          style: round
-          threshold: 4000
-        template: " {{ .FormattedMs }} "
-        foreground: "p:gray"
-      - type: battery
-        template: >-
-          {{if (or (eq "Charging" .State.String) (le .Percentage
-          20))}}{{.Icon}}{{.Percentage}}{{end}}
-        foreground_templates:
-          - >-
-            {{if and (eq "Charging" .State.String) (lt .Percentage
-            85)}}#40C4FF{{else if eq "Discharging" .State.String}}#FF5722{{else
-            if ge .Percentage 85}}#4CAF50{{end}}
-        properties:
-          discharging_icon: " "
-          charging_icon: " "
-          charged_icon: " "
-      - type: text
-        style: plain
-        foreground: white
-        template: '{{if ne .Env.JOBS "0"}}{{if eq .Env.JOBS "1"}}{{else}}{{end}}{{end}}'
-  - type: prompt # clouds
-    alignment: left
-    newline: true
-    segments:
-      - type: gcp
-        template: '{{ if and .Project .Account }} {{ if ne .ActiveConfig "default" }}<p:google_red>{{ .ActiveConfig }}</> {{ end }}<p:google_blue>{{ .Project }}</>{{ if .Region }}<p:google_green> {{ .Region }}</>{{ end }} <p:google_yellow>{{ .Account }}</>{{ end }}' #  
-  - type: prompt # switches, shell
-    newline: true
-    alignment: left
-    segments:
-      - type: upgrade
-      - type: text # screen
-        template: '{{if matchP "screen*" .Env.TERM }} {{ end}}' # 󱣴
-      - type: text # asciinema
-        template: '{{ if eq .Env.ASCIINEMA_REC "1" }} {{ end }}'
-        foreground: "red"
-      - type: text # ssh-agent
-        template: "{{ if .Env.SSH_AGENT_PID }} {{ end }}"
-        foreground: "#FFBD00"
-      - type: text # shell
-        template: "❯"
-        foreground: "#FFBD00"
-        foreground_templates:
-          - "{{ if gt .Code 0}}red{{end}}"
-          - "{{ if eq .Code 0}}green{{end}}"
-  - type: rprompt # last commit msg
-    alignment: left
-    segments:
-      - type: git
-        template: " <p:shadow>{{.Commit.Subject}} ~{{.Commit.Author.Name}} ({{.Commit.Author.Email}})</>"
-transient_prompt:
-  template: "❯ "
-  foreground_templates:
-    - "{{ if gt .Code 0}}red{{end}}"
-    - "{{ if eq .Code 0}}green{{end}}"
-  properties:
-    newline: true
-version: 3
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version: 4
 final_space: true
+
+transient_prompt:
+    template: '❯ '
+    foreground_templates:
+        - '{{ if gt .Code 0}}red{{end}}'
+        - '{{ if eq .Code 0}}green{{end}}'
+
+palette:
+    ddred: '#990000'
+    dred: '#dd0000'
+    google_blue: '#4285F4'
+    google_green: '#0F9D58'
+    google_red: '#DB4437'
+    google_yellow: '#F4B400'
+    gray: '#777777'
+    shadow: '#444444'
+    viper: '#333333'
+blocks:
+    - type: prompt
+      alignment: left
+      segments:
+        - foreground: white
+          style: plain
+          type: os
+        - template: '{{ .UserName }}<p:gray>@</>{{.HostName}}'
+          foreground: '#FFBD00'
+          type: session
+          style: plain
+        - template: <p:gray>:</>{{ .Path }}/
+          foreground: red
+          type: path
+          style: powerline
+          options:
+            max_width: 60
+        - template: '{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} '
+          foreground: '#339933'
+          style: plain
+          type: node
+        - template: '{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} '
+          foreground: '#E0E0E0'
+          style: plain
+          type: lua
+        - template: '{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} '
+          foreground: '#00ADD8'
+          style: plain
+          type: go
+        - template: '{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} '
+          foreground: '#CE412B'
+          style: plain
+          type: rust
+        - template: "\U000F0320 {{.Full }} "
+          foreground: '#FFD43B'
+          type: python
+          style: plain
+        - type: git
+          style: plain
+          options:
+            branch_icon: ""
+            cherry_pick_icon: 
+            commit_icon: 
+            fetch_bare_info: true
+            fetch_status: true
+            fetch_upstream_icon: true
+            git_icon: 󰊢
+            github_icon: 
+            gitlab_icon: 
+            merge_icon: 
+            no_commits_icon: 󰢤
+            rebase_icon: 
+            revert_icon: 
+            tag_icon: 
+            mapped_branches:
+              bug*: 
+              develop*: 
+              docs*: 󱔘
+              feat/*: 󰸰
+              feature*: 󰸰
+              fix*: 
+              hotfix*: 󰈸
+              main*: 
+              master*: 
+              patch*: 󰶯
+              refactor*: 󰁨
+              rework*: 
+              rewrite*: 
+              test*: 
+          template: >-
+            {{if .UpstreamIcon}}{{ .UpstreamIcon }} {{end}}{{ .HEAD }} {{if
+            .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}
+             {{ .Working.String }}{{ end }}{{ if and (.Working.Changed)
+            (.Staging.Changed) }} <p:gray>|</>{{ end }}{{ if .Staging.Changed
+            }}<green>  {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0
+            }}<magenta>  {{ .StashCount }}</>{{ end }}
+          foreground: green
+          foreground_templates:
+            - "{{if .Merge}}red{{end}}"
+            - "{{if .Detached}}blue{{end}}"
+            - "{{if .Working.Changed}}yellow{{end}}"
+        - template: " {{if .Context}}\U000F10FE {{.Context}}{{if .Namespace}}::{{.Namespace}}{{end}}{{end}}"
+          foreground: '#326CE5'
+          style: plain
+          type: kubectl
+    - type: prompt
+      alignment: right
+      segments:
+        - template: ' {{ .FormattedMs }} '
+          foreground: p:gray
+          type: executiontime
+          style: plain
+          options:
+            style: round
+            threshold: 4000
+        - template: '{{if (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}{{end}}'
+          type: battery
+          style: plain
+          foreground_templates:
+            - '{{if and (eq "Charging" .State.String) (lt .Percentage 85)}}#40C4FF{{else if eq "Discharging" .State.String}}#FF5722{{else if ge .Percentage 85}}#4CAF50{{end}}'
+          options:
+            discharging_icon: " "
+            charging_icon: " "
+            charged_icon: " "
+        - template: '{{if ne .Env.JOBS "0"}}{{if eq .Env.JOBS "1"}}{{else}}{{end}}{{end}}'
+          foreground: white
+          style: plain
+          type: text
+    - type: prompt
+      alignment: left
+      segments:
+        - template: '{{ if and .Project .Account }} {{ if ne .ActiveConfig "default" }}<p:google_red>{{ .ActiveConfig }}</> {{ end }}<p:google_blue>{{ .Project }}</>{{ if .Region }}<p:google_green> {{ .Region }}</>{{ end }} <p:google_yellow>{{ .Account }}</>{{ end }}'
+          style: plain
+          type: gcp
+      newline: true
+    - type: prompt
+      alignment: left
+      segments:
+        - type: upgrade
+          style: plain
+        - template: '{{if matchP "screen*" .Env.TERM }} {{ end}}'
+          style: plain
+          type: text
+        - template: '{{ if eq .Env.ASCIINEMA_REC "1" }} {{ end }}'
+          foreground: red
+          style: plain
+          type: text
+        - template: '{{ if .Env.SSH_AGENT_PID }} {{ end }}'
+          foreground: '#FFBD00'
+          style: plain
+          type: text
+        - template: ❯
+          foreground: '#FFBD00'
+          style: plain
+          type: text
+          foreground_templates:
+            - '{{ if gt .Code 0}}red{{end}}'
+            - '{{ if eq .Code 0}}green{{end}}'
+      newline: true
+    - type: rprompt
+      alignment: left
+      segments:
+        - template: ' <p:shadow>{{.Commit.Subject}} ~{{.Commit.Author.Name}} ({{.Commit.Author.Email}})</>'
+          style: plain
+          type: git
