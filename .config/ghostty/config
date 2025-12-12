@@ -4,8 +4,8 @@ keybind = alt+d=new_split:right
 keybind = alt+c=new_split:down
 keybind = alt+t=new_tab
 keybind = ctrl+shift+d=new_tab
-keybind = ctrl+shift+l=goto_split:up
-keybind = ctrl+shift+;=goto_split:down
+keybind = ctrl+shift+l=goto_split:left
+keybind = ctrl+shift+;=goto_split:right
 
 keybind = ctrl+shift+j=scroll_page_down
 keybind = ctrl+shift+k=scroll_page_up
