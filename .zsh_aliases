@@ -55,6 +55,8 @@ alias umount='sudo umount'
 alias free='free -ght'
 alias dmesg='dmesg -L'
 alias sshc="${EDITOR} ~/.ssh/config"
+alias sshr='ssh-keygen -R'
+alias sshk='ssh-keygen'
 
 __cmd cryptsetup && alias cryptsetup="sudo cryptsetup"
 
