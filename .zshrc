@@ -1,15 +1,10 @@
-# Setup zinit path
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-
-# Install Zinit
-if [[ ! -d "${ZINIT_HOME}" ]]; then
+# Setup zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git" # Setup zinit path
+if [[ ! -d "${ZINIT_HOME}" ]]; then # Install Zinit
   mkdir -p "$(dirname $ZINIT_HOME)"
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
-
-# Load Zinit
-source "${ZINIT_HOME}/zinit.zsh"
-
+source "${ZINIT_HOME}/zinit.zsh" # Load Zinit
 
 # Fundamental zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -18,15 +13,16 @@ zinit light zsh-users/zsh-autosuggestions
 
 bindkey '^[[Z' reverse-menu-complete
 
-# Word killing per separator
+# kill-word per separator
 WORDCHARS=''
 #WORDCHARS='*?_-.[]~=/&;!#$%^(){}<> '
+
 bindkey '^W' backward-kill-word
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 
-# EMACS & quality-of-life binds
+# EMACS & QoL binds
 bindkey -e
 bindkey '^@' autosuggest-accept
 bindkey '^p' history-search-backward
@@ -38,8 +34,8 @@ bindkey -s '^[;' ' ls -lg^J'
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 bindkey -s '^[h' ' history^J'
-# bindkey -s '^[H' ' `history -n 0 | fzf`^J'
-# bindkey -s '^[t' 'tmux^J'
+bindkey -s '^[q' '""\C-b'
+bindkey -s '^[Q' "''\C-b"
 
 # History up/down arrows
 bindkey "^[[A" up-line-or-search
@@ -71,32 +67,10 @@ setopt push_d_ignore_dups
 setopt interactive
 setopt monitor
 
+# Load exports
 if [ -f ~/.zsh_exports ]; then
   source ~/.zsh_exports
 fi
-
-
-# Fundamental aliases
-alias reload='exec $(basename $SHELL)'
-alias now='date +"%d.%m.%Y %H:%M:%S"'
-alias d='dirs -p'
-alias .,='popd'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
-alias .......='cd ../../../../../..'
-alias ........='cd ../../../../../../..'
-alias mkdir='mkdir -p'
-alias lsd='ls -d'
-alias lss='ls -sh'
-alias l='ls -1'
-alias ll='ls -lh'
-alias llg='ll -g'
-alias llag='lla -g'
-alias lld='ll -d'
-alias lldg='lld -g'
 
 # Setup file editor
 EDITOR=$(
@@ -108,11 +82,6 @@ EDITOR=$(
    echo "echo No editor found")
 export EDITOR=`basename $EDITOR`
 
-alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
-
-# Aliases for editing config files
-alias zshrc="${EDITOR} ~/.zshrc"
-
 # Load aliases, functions, etc.
 if [ -f ~/.zsh_aliases ]; then
   source ~/.zsh_aliases
@@ -122,21 +91,15 @@ if [ -f ~/.zsh_functions ]; then
   source ~/.zsh_functions
 fi
 
-# Load gitconfig if needed
+# Create gitconfig if needed
 if [ ! -f ~/.gitconfig ]; then
   source ~/.files/config/git.sh
 fi
-alias gitconfig="${EDITOR} ~/.files/config/git.sh"
-alias ghconfig="${EDITOR} ~/.files/config/gh.sh"
-alias glabconfig="${EDITOR} ~/.files/config/glab.sh"
-
-alias oxiconfig="${EDITOR} ~/.files/setup/oxidation.sh"
 
 # Load cygwin workarounds if needed
 if [[ `uname` == *CYGWIN* ]]; then
   if [ -f ~/.zsh_cygwin ]; then
     source ~/.zsh_cygwin
-    alias cygwin="${EDITOR} ~/.zsh_cygwin"
   fi
 fi
 
@@ -170,24 +133,11 @@ if [ "$TERM_PROGRAM" != "Apple Terminal" ]; then
 fi
 
 # setup Homebrew
-command -v brew > /dev/null && eval "$(brew shellenv)"
-
-# profile
-# if [ ! -f ~/.profile ]; then
-#   echo 'alias profile="${EDITOR} ~/.profile"' > ~/.profile
-# fi
-source ~/.profile
+__cmd brew && eval "$(brew shellenv)"
 
 if [ -f ~/.zprofile ]; then
   alias zprofile="$EDITOR ~/.zprofile"
 fi
-
-command -v exa > /dev/null && alias la='l -a' || alias la='l -A'
-command -v exa > /dev/null && alias lla='ll -a' || alias lla='ll -A'
-command -v exa > /dev/null && alias lsa='ls -a' || alias lsa='ls -A'
-command -v exa > /dev/null && bindkey -s '^[L' ' ls -a^J' || bindkey -s '^[L' ' ls -A^J'
-command -v exa > /dev/null && bindkey -s '^[:' ' ls -lag^J' || bindkey -s '^[:' ' ls -lA^J'
-command -v exa > /dev/null && bindkey -s '^[K' ' ls -Ta^J' || bindkey -s '^[K' ' ls -TA^J'
 
 # FZF binds
 if command -v fzf 2>&1 >/dev/null; then
@@ -197,3 +147,10 @@ if command -v fzf 2>&1 >/dev/null; then
   bindkey "^[c" fzf-cd-widget
 fi
 
+autoload zmv
+
+# profile
+if [ ! -f ~/.profile ]; then
+  echo 'alias profile="${EDITOR} ~/.profile"' > ~/.profile
+fi
+source ~/.profile

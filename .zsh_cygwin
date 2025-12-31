@@ -1,3 +1,4 @@
+alias cygwin="${EDITOR} ~/.zsh_cygwin"
 # Exports
 here="/cygdrive/c/Users/`whoami`"
 mnt='/cygdrive'

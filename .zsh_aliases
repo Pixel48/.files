@@ -1,15 +1,68 @@
 alias aliases="${EDITOR} ~/.zsh_aliases"
-
 alias profile="${EDITOR} ~/.profile"
+
+if [ -f ~/.zsh_quotes ]; then
+  source ~/.zsh_quotes
+fi
 
 __cmd() {
   command -v $1 > /dev/null
 }
 
-__cmd cbonsai && alias cbonsai="cbonsai -c'%,$,#,&,@'"
+# Suffix aliases
+__cmd dnf && alias -s rpm="dnf in"
+__cmd jless && alias -s json="jless"
+__cmd open && alias -s mp4="open"
+__cmd open && alias -s pdf="open"
+__cmd open && alias -s png="open"
+alias -s asc="gpg --import"
+alias -s cc="$EDITOR"
+alias -s cc="$EDITOR"
+alias -s conf="$EDITOR"
+alias -s cpp="$EDITOR"
+alias -s go="$EDITOR"
+alias -s hh="$EDITOR"
+alias -s hpp="$EDITOR"
+alias -s js="$EDITOR"
+alias -s lua="$EDITOR"
+alias -s md="cat"
+alias -s py="$EDITOR"
+alias -s ts="$EDITOR"
+alias -s zip="zip -l"
 
+# Global aliases
+alias -g Q='>/dev/null 2>&1'
+alias -g QE='2>/dev/null'
+alias -g QT='>/dev/null'
+__cmd jq && alias -g JQ='| jq'
+__cmd xclip && alias -g C='| xclip'
+__cmd pbcopy && alias -g C='| pbcopy'
+alias -g L='| less'
+
+# Aliases for editing config files
+alias zshrc="${EDITOR} ~/.zshrc"
+alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
+alias ghconfig="${EDITOR} ~/.files/config/gh.sh"
+alias gitconfig="${EDITOR} ~/.files/config/git.sh"
+alias glabconfig="${EDITOR} ~/.files/config/glab.sh"
+alias oxiconfig="${EDITOR} ~/.files/setup/oxidation.sh"
+
+# Fundamental aliases
+alias reload='exec $(basename $SHELL)'
+alias now='date +"%d.%m.%Y %H:%M:%S"'
+
+# fs movement
+alias mkdir='mkdir -p'
 alias d='dirs -v'
-
+alias dc='dirs -c'
+alias .,='popd'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+alias ........='cd ../../../../../../..'
 alias 1='cd +1'
 alias 2='cd +2'
 alias 3='cd +3'
@@ -20,79 +73,59 @@ alias 7='cd +7'
 alias 8='cd +8'
 alias 9='cd +9'
 
-alias diff='diff --color'
-alias ip='ip -c'
-alias dc='dirs -c'
-if __cmd bat; then
-  alias cat='bat'
-  alias pat='bat -p'
-fi
-__cmd batgrep && alias rg='batgrep'
-__cmd exa && alias ls='exa' || __cmd eza && alias ls='eza' || alias ls='ls --color'
+# fs vision
+alias l='ls -1'
+alias ll='ls -lh'
+alias llag='lla -g'
+alias lld='ll -d'
+alias lldg='lld -g'
+alias llg='ll -g'
 alias lsa='ls -a'
+alias lsd='ls -d'
+alias lss='ls -sh'
+__cmd exa && alias ls='exa' || __cmd eza && alias ls='eza' || alias ls='ls --color'
+
+__cmd exa && alias la='l -a' || alias la='l -A'
+__cmd exa && alias lla='ll -a' || alias lla='ll -A'
+__cmd exa && alias lsa='ls -a' || alias lsa='ls -A'
+__cmd exa && bindkey -s '^[:' ' ls -lag^J' || bindkey -s '^[:' ' ls -lA^J'
+__cmd exa && bindkey -s '^[K' ' ls -Ta^J' || bindkey -s '^[K' ' ls -TA^J'
+__cmd exa && bindkey -s '^[L' ' ls -a^J' || bindkey -s '^[L' ' ls -A^J'
+
 alias cls='clear'
-__cmd arduino-cli && alias ardu='arduino-cli'
-alias ipe='curl -s ifconfig.me | rev | cut -c 1- | rev'
+alias dd='dd status=progress'
 alias df='df -h'
-__cmd wg && alias wgq='wg-quick'
-__cmd wg && alias wg='sudo wg'
+alias diff='diff --color'
+alias dmesg='dmesg -L'
+alias du='du -h'
+alias free='free -ght'
+alias ipe='curl -s ifconfig.me | rev | cut -c 1- | rev'
+alias ipt='sudo ptables'
+alias j='jobs -l'
+alias losetup='sudo losetup'
+alias mount='sudo mount'
+alias sshc="${EDITOR} ~/.ssh/config"
+alias sshk='ssh-keygen'
+alias sshr='ssh-keygen -R'
+alias umount='sudo umount'
 alias w='w -i'
 alias who='who -a'
 
-__cmd sysctl && alias sysctl='sudo sysctl'
-__cmd brctl && alias brctl='sudo brctl'
-__cmd nmcli && alias nmcli='sudo nmcli'
-
-__cmd terraform && alias tf='terraform'
-
-alias ipt='sudo ptables'
-alias j='jobs -l'
-alias du='du -h'
-alias dd='dd status=progress'
-alias losetup='sudo losetup'
-alias mount='sudo mount'
-alias umount='sudo umount'
-alias free='free -ght'
-alias dmesg='dmesg -L'
-alias sshc="${EDITOR} ~/.ssh/config"
-alias sshr='ssh-keygen -R'
-alias sshk='ssh-keygen'
-
-__cmd cryptsetup && alias cryptsetup="sudo cryptsetup"
-
-__cmd tcpdump && alias td="sudo tcpdump"
-
+__cmd arduino-cli && alias ardu='arduino-cli'
+__cmd bat && alias cat='bat'
+__cmd bat && alias pat='bat -p'
+__cmd batgrep && alias rg='batgrep'
+__cmd cbonsai && alias cbonsai="cbonsai -c'%,$,#,&,@'"
 __cmd g++ && alias cxx=g++
-
 __cmd oh-my-posh && alias omp=oh-my-posh
-
-alias laws='''echo -e """
-  \e[0;21;31mMurphy’s Law\e[0m
-\e[0;31mAnything that can go wrong will go wrong\e[0m
-
-  \e[0;21;32mWalson’s Law\e[0m
-\e[0;32mPut information and intelligence first, and money will come rolling in\e[0m
-
-  \e[0;21;33mGilbert’s Law\e[0m
-\e[0;33mThe biggest problem at work is that no one tells you what to do\e[0m
-
-  \e[0;21;94mKidlin’s Law\e[0m
-\e[0;94mIf you can write a problem down clearly, then it is already half solved\e[0m
-
-  \e[0;21;95mFalkland’s Law\e[0m
-\e[0;95mWhen you don’t have to make a decision, don’t make a decision\e[0m
-
-  \e[0;21;96mGoodhart’s Law\e[0m
-\e[0;96mWhen a measure becomes a target, it ceases to be a good measure\e[0m
-"""'''
+__cmd terraform && alias tf='terraform'
+__cmd wg && alias wgq='wg-quick'
+__cmd zmv && alias mmv='noglob mv -W'
 
 
-alias hate='''echo -e """
-\e[0;36mIf you feel like \e[0;1;36myou\e[0;36m \e[0;31mhate\e[0;1;36m \e[0;1;36myourself\e[0;36m:\e[7m Have a shower \e[0m
-
-\e[0;33mIf you feel like \e[1myou \e[0;31mhate\e[0;33m \e[1meveryone\e[0;33m:\e[7m Eat something \e[0m
-
-\e[0;34mIf you feel like \e[0;1;34meveryone\e[0;34m \e[0;31mhates\e[0;1;34m \e[0;1;34myou\e[0;34m:\e[7m Go to sleep \e[0m
-
-\e[0;32mIf you feel like \e[0;1;32meveryone\e[0;32m \e[0;31mhates\e[0;1;32m \e[0;1;32meveryone\e[0;32m:\e[7m Go outside \e[0m
-"""'''
+__cmd brctl && alias brctl='sudo brctl'
+__cmd cryptsetup && alias cryptsetup="sudo cryptsetup"
+__cmd nmcli && alias nmcli='sudo nmcli'
+__cmd sysctl && alias sysctl='sudo sysctl'
+__cmd tcpdump && alias td="sudo tcpdump"
+__cmd wg && alias wg='sudo wg'
