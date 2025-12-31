@@ -4,8 +4,8 @@ keybind = alt+d=new_split:right
 keybind = alt+c=new_split:down
 keybind = alt+t=new_tab
 keybind = ctrl+shift+d=new_tab
-keybind = ctrl+shift+j=goto_split:left
-keybind = ctrl+shift+k=goto_split:right
+keybind = ctrl+shift+l=goto_split:left
+keybind = ctrl+shift+;=goto_split:right
 
 font-family = LigaHack Nerd Font
 font-size = 11
