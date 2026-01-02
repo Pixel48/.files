@@ -38,6 +38,7 @@ alias -g QT='>/dev/null'
 __cmd jq && alias -g JQ='| jq'
 __cmd xclip && alias -g C='| xclip'
 __cmd pbcopy && alias -g C='| pbcopy'
+__cmd wl-copy && alias -g C='| wl-copy'
 alias -g L='| less'
 
 # Aliases for editing config files
