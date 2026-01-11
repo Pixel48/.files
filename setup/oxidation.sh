@@ -2,7 +2,7 @@ __cmd() {
   command -v $1 > /dev/null
 }
 
-__cmd cargo || ~/.files/setup/rust.sh && . ~/.profile
+__cmd cargo || ( ~/.files/setup/rust.sh && . ~/.profile )
 __cmd sccache || cargo install sccache
 [ -n "$RUSTC_WRAPPER" ] && echo 'export RUSTC_WRAPPER=sccache' >> ~/.profile
 

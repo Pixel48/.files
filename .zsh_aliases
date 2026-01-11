@@ -12,6 +12,7 @@ __cmd() {
 # Suffix aliases
 __cmd dnf && alias -s rpm="dnf in"
 __cmd jless && alias -s json="jless"
+__cmd open && alias -s html="noglob open"
 __cmd open && alias -s mp4="open"
 __cmd open && alias -s pdf="open"
 __cmd open && alias -s png="open"
@@ -40,6 +41,7 @@ __cmd xclip && alias -g C='| xclip'
 __cmd pbcopy && alias -g C='| pbcopy'
 __cmd wl-copy && alias -g C='| wl-copy'
 alias -g L='| less'
+alias -g FZF='| fzf'
 
 # Aliases for editing config files
 alias zshrc="${EDITOR} ~/.zshrc"

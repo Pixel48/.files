@@ -34,8 +34,8 @@ bindkey -s '^[;' ' ls -lg^J'
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 bindkey -s '^[h' ' history^J'
-bindkey -s '^[q' '""\C-b'
-bindkey -s '^[Q' "''\C-b"
+bindkey -s '^[w' '""\C-b'
+bindkey -s '^[W' "''\C-b"
 
 # History up/down arrows
 bindkey "^[[A" up-line-or-search
