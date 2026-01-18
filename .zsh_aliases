@@ -124,7 +124,7 @@ __cmd g++ && alias cxx=g++
 __cmd oh-my-posh && alias omp=oh-my-posh
 __cmd terraform && alias tf='terraform'
 __cmd wg && alias wgq='wg-quick'
-__cmd zmv && alias mmv='noglob mv -W'
+__cmd zmv && alias mmv='noglob zmv -W'
 
 
 __cmd brctl && alias brctl='sudo brctl'

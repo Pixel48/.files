@@ -6,6 +6,8 @@ if [[ ! -d "${ZINIT_HOME}" ]]; then # Install Zinit
 fi
 source "${ZINIT_HOME}/zinit.zsh" # Load Zinit
 
+autoload -U zmv
+
 # Fundamental zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -146,8 +148,6 @@ if command -v fzf 2>&1 >/dev/null; then
   bindkey "^T" fzf-file-widget
   bindkey "^[c" fzf-cd-widget
 fi
-
-autoload zmv
 
 # profile
 if [ ! -f ~/.profile ]; then
