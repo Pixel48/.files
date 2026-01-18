@@ -1,11 +1,13 @@
-(defcfg process-unmapped-keys (all-except ralt))
+(defcfg
+  process-unmapped-keys (all-except ralt)
+)
 
 (defsrc
   caps
 )
 
 (defalias
-  esctl (tap-hold-release 100 100 esc lctrl)
+  esctl (tap-hold-release 125 125 esc lctrl)
 )
 
 (deflayer default
