@@ -1,5 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "opencode-antigravity-auth@latest"
+  ],
   "keybinds": {
     "leader": "ctrl+;",
     "app_exit": "ctrl+c,ctrl+d,<leader>q",
@@ -20,9 +23,9 @@
     "session_list": "alt+l",
     "session_compact": "<leader>c",
     "messages_copy": "<leader>y",
-    "messages_undo": "<leader>u",
+    "messages_undo": "<leader>u,alt+u",
     "messages_redo": "<leader>r",
-    "model_list": "<leader>m",
+    "model_list": "ctrl+m",
     "command_list": "ctrl+p",
     "agent_list": "<leader>a",
     "agent_cycle": "tab",
@@ -32,6 +35,7 @@
     "history_previous": "up",
     "history_next": "down",
     "session_interrupt": "escape",
-    "messages_last_user": "ctrl+l"
+    "messages_last_user": "ctrl+l",
+    "session_parent": "ctrl+u"
   }
 }
