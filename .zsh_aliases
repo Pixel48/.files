@@ -33,23 +33,24 @@ alias -s ts="$EDITOR"
 alias -s zip="unzip -l"
 
 # Global aliases
+__cmd jq && alias -g JQ='| jq'
+__cmd pbcopy && alias -g C='| pbcopy'
+__cmd wl-copy && alias -g C='| wl-copy'
+__cmd xclip && alias -g C='| xclip'
+alias -g FZF='| fzf'
+alias -g L='| less'
 alias -g Q='>/dev/null 2>&1'
 alias -g QE='2>/dev/null'
 alias -g QT='>/dev/null'
-__cmd jq && alias -g JQ='| jq'
-__cmd xclip && alias -g C='| xclip'
-__cmd pbcopy && alias -g C='| pbcopy'
-__cmd wl-copy && alias -g C='| wl-copy'
-alias -g L='| less'
-alias -g FZF='| fzf'
+alias -g R='| rg '
 
 # Aliases for editing config files
-alias zshrc="${EDITOR} ~/.zshrc"
 alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
 alias ghconfig="${EDITOR} ~/.files/config/gh.sh"
 alias gitconfig="${EDITOR} ~/.files/config/git.sh"
 alias glabconfig="${EDITOR} ~/.files/config/glab.sh"
 alias oxiconfig="${EDITOR} ~/.files/setup/oxidation.sh"
+alias zshrc="${EDITOR} ~/.zshrc"
 
 # Fundamental aliases
 alias reload='exec $(basename $SHELL)'
