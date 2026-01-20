@@ -2,8 +2,9 @@ theme = PaulMillr
 
 keybind = alt+d=new_split:right
 keybind = alt+c=new_split:down
-keybind = alt+t=new_tab
+keybind = alt+t=unbind
 keybind = ctrl+shift+d=new_tab
+keybind = ctrl+shift+o=unbind
 keybind = ctrl+shift+l=goto_split:left
 keybind = ctrl+shift+;=goto_split:right
 
