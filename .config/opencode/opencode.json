@@ -106,5 +106,17 @@
     "session_interrupt": "escape",
     "messages_last_user": "ctrl+l",
     "session_parent": "ctrl+u"
+  },
+  "mcp": {
+    "memory": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-memory"],
+      "enabled": true
+    },
+    "fetch": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-fetch"],
+      "enabled": true
+    }
   }
 }
