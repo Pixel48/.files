@@ -1,5 +1,5 @@
-return {
-  lsps = {
+local M = {
+  lsp_servers = {
     "clangd",
     "cssls",
     "gopls",
@@ -20,4 +20,22 @@ return {
     "terraform",
     "yamlfmt",
   },
+  treesitter_parsers = {
+    "bash",
+    "c",
+    "cpp",
+    "css",
+    "glsl",
+    "haskell",
+    "hcl",
+    "html",
+    "lua",
+    "python",
+    "terraform",
+    "vim",
+    "vimdoc",
+    "yaml",
+  },
 }
+
+return M
