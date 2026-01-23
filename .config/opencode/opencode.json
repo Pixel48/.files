@@ -1,8 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": [
-    "opencode-antigravity-auth@latest"
-  ],
+   "plugin": [
+     "opencode-antigravity-auth@1.3.1"
+   ],
   "provider": {
     "google": {
       "models": {
@@ -73,39 +73,39 @@
     }
   },
   "keybinds": {
-    "leader": "ctrl+;",
-    "app_exit": "ctrl+c,ctrl+d,<leader>q",
-    "session_child_cycle": "ctrl+o",
-    "session_child_cycle_reverse": "ctrl+i",
-    "messages_half_page_up": "ctrl+k",
-    "messages_half_page_down": "ctrl+j",
-    "messages_last": "ctrl+h",
-    "input_newline": "shift+enter",
-    "theme_list": "<leader>t",
-    "session_timeline": "ctrl+y",
-    "input_clear": "ctrl+c",
-    "editor_open": "<leader>e",
-    "sidebar_toggle": "ctrl+b",
-    "status_view": "<leader>s",
-    "session_export": "<leader>x",
-    "session_new": "ctrl+n",
-    "session_list": "alt+l",
-    "session_compact": "<leader>c",
-    "messages_copy": "<leader>y",
-    "messages_undo": "<leader>u,alt+u",
-    "messages_redo": "<leader>r",
-    "model_list": "ctrl+m",
-    "command_list": "ctrl+p",
-    "agent_list": "<leader>a",
     "agent_cycle": "tab",
     "agent_cycle_reverse": "shift+tab",
+    "agent_list": "<leader>a",
+    "app_exit": "ctrl+c,ctrl+d,<leader>q",
+    "command_list": "ctrl+p",
+    "editor_open": "<leader>e",
+    "history_next": "down",
+    "history_previous": "up",
+    "input_clear": "ctrl+c",
+    "input_newline": "shift+enter",
     "input_paste": "ctrl+v",
     "input_submit": "enter",
-    "history_previous": "up",
-    "history_next": "down",
-    "session_interrupt": "escape",
+    "leader": "ctrl+;",
+    "messages_copy": "<leader>y",
+    "messages_half_page_down": "ctrl+j",
+    "messages_half_page_up": "ctrl+k",
+    "messages_last": "ctrl+h",
     "messages_last_user": "ctrl+l",
-    "session_parent": "ctrl+u"
+    "messages_redo": "<leader>r",
+    "messages_undo": "<leader>u,alt+u",
+    "model_list": "ctrl+m",
+    "session_child_cycle": "ctrl+o",
+    "session_child_cycle_reverse": "ctrl+i",
+    "session_compact": "c-s",
+    "session_export": "a-s",
+    "session_interrupt": "escape",
+    "session_list": "alt+l",
+    "session_new": "ctrl+n",
+    "session_parent": "ctrl+u",
+    "session_timeline": "ctrl+y",
+    "sidebar_toggle": "ctrl+b",
+    "status_view": "<leader>s",
+    "theme_list": "<leader>t"
   },
   "mcp": {
     "memory": {
