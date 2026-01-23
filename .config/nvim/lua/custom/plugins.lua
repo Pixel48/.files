@@ -4,7 +4,7 @@ return {
     lazy = false,
     dependencies = { "mason-org/mason.nvim" },
     opts = {
-      ensure_installed = require("custom").tools,
+      ensure_installed = require("custom.tooling").tools,
       automatic_installation = true,
       auto_update = true,
       run_on_start = true,
@@ -16,7 +16,7 @@ return {
     dependencies = { "mason-org/mason.nvim" },
     lazy = false,
     opts = {
-      ensure_installed = require("custom").lsps,
+      ensure_installed = require("custom.tooling").lsps,
       automatic_installation = true,
     },
   },
@@ -25,7 +25,7 @@ return {
     name = "lspconfig",
     lazy = false,
     config = function()
-      local servers = require("custom").lsps
+      local servers = require("custom.tooling").lsps
       vim.lsp.enable(servers)
     end,
   },
