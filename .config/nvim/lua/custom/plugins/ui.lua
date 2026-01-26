@@ -1,29 +1,37 @@
-return {
-  { -- UFO
-    "kevinhwang91/nvim-ufo",
-    name = "ufo",
-    dependencies = {
-      { "kevinhwang91/promise-async" },
-    },
-    opts = require("custom.plugins.config.ufo"),
-    keys = {
-      { "zR", function() require("ufo").openAllFolds() end, desc = "Open all folds" },
-      { "zM", function() require("ufo").closeAllFolds() end, desc = "Close all folds" },
-      { "zr", function() require("ufo").openFoldsExceptKinds() end, desc = "Open folds except kinds" },
-      { "zm", function() require("ufo").closeFoldsWith() end, desc = "Close folds with" },
-      { "zv", function()
-        local winid = require("ufo").peekFoldedLinesUnderCursor()
-        if not winid then
-          vim.lsp.buf.hover()
-        end
-      end, desc = "Peek fold or hover" },
-    },
-  },
+ return {
+   { -- Origami (folding)
+     "chrisgrieser/nvim-origami",
+     event = "VeryLazy",
+     opts = {
+       foldKeymaps = { setup = false }, -- Disable h/l/$/^ mappings
+     },
+     init = function()
+       vim.opt.foldlevel = 99
+       vim.opt.foldlevelstart = 99
+     end,
+     keys = {
+       {
+         "Z",
+         function()
+           local count = vim.v.count
+           if count > 0 then
+             vim.opt.foldlevel = count
+           else
+             local current_level = vim.fn.foldlevel(vim.fn.line ".")
+             vim.opt.foldlevel = math.max(0, current_level - 1)
+           end
+         end,
+         desc = "Set fold level (count for level, no count folds below current)",
+       },
+     },
+   },
+
+
   { -- Flash
     "folke/flash.nvim",
     event = "VeryLazy",
     ---@type Flash.Config
-    opts = require("custom.plugins.config.flash"),
+    opts = require "custom.plugins.config.flash",
     keys = {
       {
         "<C-;>",
@@ -83,3 +91,4 @@ return {
     },
   },
 }
+

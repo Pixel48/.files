@@ -1,3 +1,4 @@
+-- plugin removed fomr configuration - this is here just "in case" of revert
 return {
   provider_selector = function(bufnr, filetype, buftype)
     return { "lsp", "indent" }
@@ -36,3 +37,4 @@ return {
     return newVirtText
   end,
 }
+
