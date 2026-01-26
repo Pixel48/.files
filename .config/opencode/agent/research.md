@@ -5,23 +5,30 @@ temperature: 0.1
 tools:
   webfetch: true
   todowrite: true
+  codesearch: true
 permission:
   bash:
-    "*": "deny"
+    "*": deny
 
     # Download Tools
-    "curl": "allow"
-    "wget": "allow"
+    "curl": allow
+    "wget": allow
 
     # GitHub CLI
-    "gh search": "allow"
+    "gh search": allow
+
+    # Git
+    "git clone": ask
 
     # File Operations
-    "cat": "allow"
+    "cat": allow
+    "ls": allow
+    "tree": allow
 
     # Documentation
-    "man": "allow"
-    "tldr": "allow"
+    "man": allow
+    "tldr": allow
+  read: allow
   webfetch: allow
 ---
 

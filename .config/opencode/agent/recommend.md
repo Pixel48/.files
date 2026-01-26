@@ -4,9 +4,10 @@ mode: subagent
 temperature: 0.1
 tools:
   todowrite: true
+  webfetch: true
 permission:
   bash:
-    "*": "deny"
+    "*": deny
   webfetch: allow
 ---
 

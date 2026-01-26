@@ -2,3 +2,10 @@ bun.lock
 package*.json
 node_modules/
 opencodetmp/
+
+# Sensitive files
+.env*
+secrets.*
+*.key
+*.pem
+*.crt

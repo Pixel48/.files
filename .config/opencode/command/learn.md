@@ -1,7 +1,6 @@
 ---
 description: Research documentation and populate session context
 agent: research
-subtask: true
 ---
 
 Research $ARGUMENTS and provide comprehensive documentation to populate the current session context. Focus on:

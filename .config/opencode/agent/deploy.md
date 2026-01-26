@@ -5,44 +5,56 @@ temperature: 0.1
 tools:
   bash: true
   todowrite: true
+  webfetch: true
 permission:
   bash:
-    "*": "deny"
+    "*": deny
 
     # Git
-    "git status": "allow"
-    "git log": "allow"
-    "git diff": "allow"
-    "git push": "ask"
-    "git merge": "ask"
+    "git status": allow
+    "git log": allow
+    "git diff": allow
+    "git fetch": allow
+    "git pull": allow
+    "git checkout": ask
+    "git push": ask
+    "git merge": ask
+
+    # Cloud & IaC
+    "terraform": ask
+    "ansible-playbook": ask
+    "aws": ask
+    "gcloud": ask
+    "azure": ask
 
     # Docker
-    "docker ps": "allow"
-    "docker images": "allow"
-    "docker logs": "allow"
-    "docker build": "ask"
-    "docker run": "ask"
-    "docker push": "ask"
+    "docker ps": allow
+    "docker images": allow
+    "docker logs": allow
+    "docker build": ask
+    "docker run": ask
+    "docker push": ask
 
     # Kubectl
-    "kubectl get": "allow"
-    "kubectl describe": "allow"
-    "kubectl apply": "ask"
-    "kubectl delete": "ask"
+    "kubectl get": allow
+    "kubectl describe": allow
+    "kubectl apply": ask
+    "kubectl delete": ask
 
     # GitHub CLI
-    "gh pr list": "allow"
-    "gh run list": "allow"
-    "gh pr create": "ask"
-    "gh workflow run": "ask"
+    "gh pr list": allow
+    "gh run list": allow
+    "gh pr create": ask
+    "gh workflow run": ask
 
     # File Operations
-    "cat": "allow"
-    "ls": "allow"
+    "cat": allow
+    "ls": allow
+    "tree": allow
 
     # Documentation
-    "man": "allow"
-    "tldr": "allow"
+    "man": allow
+    "tldr": allow
   webfetch: allow
 ---
 
