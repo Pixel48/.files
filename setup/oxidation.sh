@@ -1,9 +1,85 @@
-__cmd() {
-  command -v $1 > /dev/null
+#!/usr/bin/env bash
+set -euo pipefail
+
+log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"; }
+error() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR: $*" >&2; exit 1; }
+
+show_help() {
+    cat << EOF
+Usage: $0 [-e]
+
+Install Rust development tools.
+
+Options:
+    -e                  Install only essential tools
+    -h, --help         Show this help message
+
+Essential tools: ripgrep, dust, eza, bat, fd-find, zoxide, xh, hyperfine, 
+                 tokei, just, tealdeer, open
+
+Additional tools: ripgrep-all, irust, bacon, porsmo, speedtest-rs, 
+                  wiki-tui, rtx-cli, hd, fselect, mask, presenterm, 
+                  git-ignore-generator, mprocs, rusty-man, ncspot
+EOF
 }
 
-__cmd cargo || ( ~/.files/setup/rust.sh && . ~/.profile )
-__cmd sccache || cargo install sccache
-[ -n "$RUSTC_WRAPPER" ] && echo 'export RUSTC_WRAPPER=sccache' >> ~/.profile
+ESSENTIAL_ONLY=false
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -e|--essential-only)
+            ESSENTIAL_ONLY=true
+            shift
+            ;;
+        -h|--help)
+            show_help
+            exit 0
+            ;;
+        *)
+            error "Unknown option: $1"
+            ;;
+    esac
+done
 
-RUSTC_WRAPPER=sccache cargo install --locked cargo-info ripgrep ripgrep-all du-dust eza bat irust bacon porsmo speedtest-rs wiki-tui rtx-cli hd xh zoxide hyperfine fselect tokei just mask presenterm tealdeer open git-ignore-generator fd-find mprocs rusty-man ncspot
+log "Setting up Rust development environment..."
+
+check_cmd() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+if ! check_cmd rustc; then
+    log "Rust not found, installing first..."
+    if ! ~/.files/setup/rust.sh; then
+        error "Failed to install Rust"
+    fi
+    source ~/.profile
+fi
+
+if ! check_cmd sccache; then
+    log "Installing sccache..."
+    if ! cargo install sccache; then
+        error "Failed to install sccache"
+    fi
+fi
+
+if [ -z "$RUSTC_WRAPPER" ]; then
+    log "Setting RUSTC_WRAPPER..."
+    echo 'export RUSTC_WRAPPER=sccache' >> ~/.profile
+fi
+
+log "Installing essential Rust tools..."
+if ! RUSTC_WRAPPER=sccache cargo install --locked \
+    ripgrep du-dust eza bat fd-find zoxide xh hyperfine tokei just tealdeer open; then
+    error "Failed to install essential Rust tools"
+fi
+
+if [ "$ESSENTIAL_ONLY" = false ]; then
+    log "Installing additional Rust tools..."
+    if ! RUSTC_WRAPPER=sccache cargo install --locked \
+        ripgrep-all irust bacon porsmo speedtest-rs wiki-tui rtx-cli \
+        hd fselect mask presenterm git-ignore-generator mprocs \
+        rusty-man ncspot; then
+        log "WARNING: Some additional tools failed to install"
+    fi
+fi
+
+log "Rust development environment setup complete"
