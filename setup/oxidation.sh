@@ -68,7 +68,7 @@ fi
 
 log "Installing essential Rust tools..."
 if ! RUSTC_WRAPPER=sccache cargo install --locked \
-    ripgrep du-dust eza bat fd-find zoxide xh hyperfine tokei just tealdeer open; then
+    ripgrep du-dust eza bat fd-find zoxide xh hyperfine tokei just tealdeer open mcdu; then
     error "Failed to install essential Rust tools"
 fi
 
