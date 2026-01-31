@@ -50,6 +50,7 @@ alias -g QR='| qrencode -t ansi256utf8'
 alias -g QT='>/dev/null'
 alias -g QW='2>&1'
 alias -g R='| rg '
+alias -g RR='| rg -v'
 
 # Aliases for editing config files
 alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
