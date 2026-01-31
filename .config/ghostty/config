@@ -26,8 +26,11 @@ bell-features = attention, no-title
 
 keybind = alt+t=unbind
 keybind = ctrl+shift+o=unbind
+keybind = ctrl+shift+e=unbind
+keybind = ctrl+shift+t=unbind
 
 keybind = ctrl+shift+d=new_tab
+keybind = ctrl+shift+w=close_surface
 
 keybind = alt+d=new_split:auto
 keybind = alt+c=toggle_split_zoom
