@@ -69,15 +69,31 @@ setopt push_d_ignore_dups
 setopt interactive
 setopt monitor
 
+__cmd() {
+  command -v $1 > /dev/null
+}
+
+__cmd2() {
+  command -v $1 2> /dev/null
+}
+
 # Setup file editor
 EDITOR=$(
-  command -v nvim 2>/dev/null ||
-  command -v vim 2>/dev/null ||
-  command -v vi 2>/dev/null ||
-  command -v nano 2>/dev/null ||
-  command -v ed 2>/dev/null ||
-   echo "echo No editor found")
+  __cmd2 nvim ||
+  __cmd2 vim ||
+  __cmd2 vi ||
+  __cmd2 nano ||
+  __cmd2 ed ||
+   echo "No editor found")
 export EDITOR=`basename $EDITOR`
+
+# Setup reader
+READER=$(
+  __cmd2 more ||
+  __cmd2 less ||
+  __cmd2 bat ||
+  echo "No reader found")
+export READER=`basename $READER`
 
 # Load exports
 if [ -f ~/.zsh_exports ]; then
