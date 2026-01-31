@@ -1,8 +1,7 @@
 alias exports="${EDITOR} ~/.zsh_exports"
 
-export FUCK_RUSSIA=true
-export HOMEBREW_NO_ENV_HINTS=true
-export PATH=$PATH:/opt/homebrew/bin
-export PATH=$PATH:${HOME}/.local/bin
-export XDG_CONFIG_HOME=~/.config
 export GPG_TTY=$(tty)
+export HOMEBREW_NO_ENV_HINTS=true
+export PATH=$PATH:${HOME}/.local/bin
+export PROFILE=~/.profile
+export XDG_CONFIG_HOME=~/.config
