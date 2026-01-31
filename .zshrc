@@ -92,6 +92,7 @@ READER=$(
   __cmd2 more ||
   __cmd2 less ||
   __cmd2 bat ||
+  __cmd2 pat ||
   echo "No reader found")
 export READER=`basename $READER`
 
