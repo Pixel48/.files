@@ -12,6 +12,9 @@ permission:
   bash:
     "*": deny
 
+    # File view
+    "ls": allow
+
     # Documentation
     "man": allow
     "tldr": allow
