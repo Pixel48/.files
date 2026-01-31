@@ -1,29 +1,35 @@
-theme = PaulMillr
-
-keybind = alt+d=new_split:right
-keybind = alt+c=new_split:down
-keybind = alt+t=unbind
-keybind = ctrl+shift+d=new_tab
-keybind = ctrl+shift+o=unbind
-keybind = ctrl+shift+l=goto_split:left
-keybind = ctrl+shift+;=goto_split:right
-
+window-decoration = none
+window-width = 110
+window-height = 33
+background-opacity = .75
 font-family = LigaHack Nerd Font
 font-size = 11
+
+theme = Paul Millr
+# title = Ghostty
+# window-subtitle = working-directory
 
 shell-integration-features = no-cursor
 cursor-style-blink = true
 cursor-style = underline
 cursor-color = #999999
-cursor-opacity = .8
+cursor-opacity = .75
 
 mouse-hide-while-typing = true
-
-window-new-tab-position = end
-app-notifications = no-clipboard-copy
-
-background-opacity = .75
+focus-follows-mouse = true
 
 copy-on-select = clipboard
+app-notifications = no-clipboard-copy
 
-focus-follows-mouse = true
+bell-features = attention, no-title
+
+
+keybind = alt+t=unbind
+keybind = ctrl+shift+o=unbind
+
+keybind = ctrl+shift+d=new_tab
+
+keybind = alt+d=new_split:auto
+keybind = alt+c=toggle_split_zoom
+keybind = ctrl+shift+l=goto_split:previous
+keybind = ctrl+shift+;=goto_split:next
