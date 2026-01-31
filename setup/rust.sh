@@ -1,1 +1,2 @@
-./.pipe_install.sh https://sh.rustup.rs && echo ". ~/.cargo/env" >> ~/.profile
+./.pipe_install.sh https://sh.rustup.rs
+if command -v cargo >/dev/null || echo ". ~/.cargo/env" >> $PROFILE
