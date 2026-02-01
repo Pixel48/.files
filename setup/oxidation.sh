@@ -15,11 +15,11 @@ Options:
     -h, --help         Show this help message
 
 Essential tools: ripgrep, dust, eza, bat, fd-find, zoxide, xh, hyperfine, 
-                 tokei, just, tealdeer, open
+                 tokei, just, tealdeer
 
 Additional tools: ripgrep-all, irust, bacon, porsmo, speedtest-rs, 
                   wiki-tui, rtx-cli, hd, fselect, mask, presenterm, 
-                  git-ignore-generator, mprocs, rusty-man, ncspot
+                  git-ignore-generator, mprocs, rusty-man, ncspot, open
 EOF
 }
 
@@ -68,7 +68,7 @@ fi
 
 log "Installing essential Rust tools..."
 if ! RUSTC_WRAPPER=sccache cargo install --locked \
-    ripgrep du-dust eza bat fd-find zoxide xh hyperfine tokei just tealdeer open mcdu; then
+    ripgrep du-dust eza bat fd-find zoxide xh hyperfine tokei just tealdeer mcdu; then
     error "Failed to install essential Rust tools"
 fi
 
@@ -76,7 +76,7 @@ if [ "$ESSENTIAL_ONLY" = false ]; then
     log "Installing additional Rust tools..."
     if ! RUSTC_WRAPPER=sccache cargo install --locked \
         ripgrep-all irust bacon porsmo speedtest-rs wiki-tui rtx-cli \
-        hd fselect mask presenterm git-ignore-generator mprocs \
+        hd fselect mask presenterm git-ignore-generator mprocs open \
         rusty-man ncspot; then
         log "WARNING: Some additional tools failed to install"
     fi

@@ -84,17 +84,25 @@ EDITOR=$(
   __cmd2 vi ||
   __cmd2 nano ||
   __cmd2 ed ||
-   echo "No editor found")
+  echo "No editor found")
 export EDITOR=`basename $EDITOR`
 
 # Setup reader
 READER=$(
-  __cmd2 more ||
-  __cmd2 less ||
-  __cmd2 bat ||
   __cmd2 pat ||
+  __cmd2 bat ||
+  __cmd2 less ||
+  __cmd2 more ||
   echo "No reader found")
 export READER=`basename $READER`
+
+# Setup open
+OPEN=$(
+  __cmd2 xdg-open ||
+  __cmd2 open ||
+  echo "No open found")
+export OPEN=`basename $OPEN`
+alias open=$OPEN
 
 # Load exports
 if [ -f ~/.zsh_exports ]; then
