@@ -53,12 +53,12 @@ alias -g R='| rg '
 alias -g RR='| rg -v'
 
 # Aliases for editing config files
-alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
-alias ghconfig="${EDITOR} ~/.files/config/gh.sh"
-alias gitconfig="${EDITOR} ~/.files/config/git.sh"
-alias glabconfig="${EDITOR} ~/.files/config/glab.sh"
-alias oxiconfig="${EDITOR} ~/.files/setup/oxidation.sh"
-alias zshrc="${EDITOR} ~/.zshrc"
+[ -f ~/.${EDITOR}rc ] && alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
+[ -f ~/.files/config/gh.sh ] && alias ghconfig="${EDITOR} ~/.files/config/gh.sh"
+[ -f ~/.files/config/git.sh ] && alias gitconfig="${EDITOR} ~/.files/config/git.sh"
+[ -f ~/.files/config/glab.sh ] && alias glabconfig="${EDITOR} ~/.files/config/glab.sh"
+[ -f ~/.files/setup/oxidation.sh ] && alias oxiconfig="${EDITOR} ~/.files/setup/oxidation.sh"
+[ -f ~/.zshrc ] && alias zshrc="${EDITOR} ~/.zshrc"
 
 # Fundamental aliases
 alias reload='exec $(basename $SHELL)'
@@ -86,7 +86,26 @@ alias 7='cd +7'
 alias 8='cd +8'
 alias 9='cd +9'
 
-# fs vision
+# fs view
+alias la='l -A'
+alias lla='ll -A'
+alias lsa='ls -A'
+bindkey -s '^[:' ' ls -lA^J'
+bindkey -s '^[K' ' ls -TA^J'
+bindkey -s '^[L' ' ls -A^J'
+if __cmd eza; then
+  alias ls='eza'
+elif __cmd exa; then
+  alias ls='exa'
+  alias la='l -a'
+  alias lla='ll -a'
+  alias lsa='ls -a'
+  bindkey -s '^[:' ' ls -lag^J'
+  bindkey -s '^[K' ' ls -Ta^J'
+  bindkey -s '^[L' ' ls -a^J'
+else
+  alias ls='ls --color'
+fi
 alias l='ls -1'
 alias ll='ls -lh'
 alias llag='lla -g'
@@ -96,14 +115,6 @@ alias llg='ll -g'
 alias lsa='ls -a'
 alias lsd='ls -d'
 alias lss='ls -sh'
-__cmd __cmd eza && alias ls='eza' || exa && alias ls='exa' || alias ls='ls --color'
-
-__cmd exa && alias la='l -a' || alias la='l -A'
-__cmd exa && alias lla='ll -a' || alias lla='ll -A'
-__cmd exa && alias lsa='ls -a' || alias lsa='ls -A'
-__cmd exa && bindkey -s '^[:' ' ls -lag^J' || bindkey -s '^[:' ' ls -lA^J'
-__cmd exa && bindkey -s '^[K' ' ls -Ta^J' || bindkey -s '^[K' ' ls -TA^J'
-__cmd exa && bindkey -s '^[L' ' ls -a^J' || bindkey -s '^[L' ' ls -A^J'
 
 alias cls='clear'
 alias dd='dd status=progress'
@@ -134,7 +145,6 @@ __cmd oh-my-posh && alias omp=oh-my-posh
 __cmd terraform && alias tf='terraform'
 __cmd wg && alias wgq='wg-quick'
 __cmd zmv && alias mmv='noglob zmv -W'
-
 
 __cmd brctl && alias brctl='sudo brctl'
 __cmd cryptsetup && alias cryptsetup="sudo cryptsetup"
