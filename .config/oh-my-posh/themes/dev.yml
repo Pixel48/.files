@@ -20,41 +20,41 @@ palette:
   shadow: "#444444"
   viper: "#333333"
 blocks:
-  - type: prompt
+  - type: prompt # base prompt
     alignment: left
     segments:
-      - foreground: white
+      - type: os
+        foreground: white
         style: plain
-        type: os
-      - template: "{{ .UserName }}<p:gray>@</>{{.HostName}}"
+      - type: session
+        template: "{{ .UserName }}<p:gray>@</>{{.HostName}}"
         foreground: "#FFBD00"
-        type: session
         style: plain
-      - template: <p:gray>:</>{{ .Path }}/
+      - type: path
+        template: <p:gray>:</>{{ .Path }}/
         foreground: red
-        type: path
         style: powerline
         options:
           max_width: 60
-      - template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
+      - type: node
+        template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
         foreground: "#339933"
         style: plain
-        type: node
-      - template: "{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} "
+      - type: lua
+        template: "{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} "
         foreground: "#E0E0E0"
         style: plain
-        type: lua
-      - template: "{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} "
+      - type: go
+        template: "{{ if .Error }}{{ .Error }}{{ else }} {{ .Full }}{{ end }} "
         foreground: "#00ADD8"
         style: plain
-        type: go
-      - template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
+      - type: rust
+        template: "{{if .Error}}{{.Error}}{{else}} {{.Full}}{{end}} "
         foreground: "#CE412B"
         style: plain
-        type: rust
-      - template: "\U000F0320 {{.Full }} "
+      - type: python
+        template: "\U000F0320 {{.Full }} "
         foreground: "#FFD43B"
-        type: python
         style: plain
       - type: git
         style: plain
@@ -100,22 +100,22 @@ blocks:
           - "{{if .Merge}}red{{end}}"
           - "{{if .Detached}}blue{{end}}"
           - "{{if .Working.Changed}}yellow{{end}}"
-      - template: " {{if .Context}}\U000F10FE {{.Context}}{{if .Namespace}}::{{.Namespace}}{{end}}{{end}}"
+      - type: kubectl
+        template: " {{if .Context}}\U000F10FE {{.Context}}{{if .Namespace}}::{{.Namespace}}{{end}}{{end}}"
         foreground: "#326CE5"
         style: plain
-        type: kubectl
-  - type: prompt
+  - type: prompt # dynamic status
     alignment: right
     segments:
-      - template: " {{ .FormattedMs }} "
+      - type: executiontime
+        template: " {{ .FormattedMs }} "
         foreground: p:gray
-        type: executiontime
         style: plain
         options:
           style: round
           threshold: 4000
-      - template: '{{if (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}{{end}}'
-        type: battery
+      - type: battery
+        template: '{{if (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}{{end}}'
         style: plain
         foreground_templates:
           - '{{if and (eq "Charging" .State.String) (lt .Percentage 85)}}#40C4FF{{else if eq "Discharging" .State.String}}#FF5722{{else if ge .Percentage 85}}#4CAF50{{end}}'
@@ -123,44 +123,44 @@ blocks:
           discharging_icon: " "
           charging_icon: " "
           charged_icon: " "
-      - template: ' {{if ne .Env.JOBS "0"}}{{if eq .Env.JOBS "1"}}{{else}}{{end}}{{end}}'
+      - type: text # jobs
+        template: ' {{if ne .Env.JOBS "0"}}{{if eq .Env.JOBS "1"}}{{else}}{{end}}{{end}}'
         foreground: white
         style: plain
-        type: text
-  - type: prompt
+  - type: prompt # gcloud status
     alignment: left
     segments:
       - template: '{{ if and .Project .Account }} {{ if ne .ActiveConfig "default" }}<p:google_red>{{ .ActiveConfig }}</> {{ end }}<p:google_blue>{{ .Project }}</>{{ if .Region }}<p:google_green> {{ .Region }}</>{{ end }} <p:google_yellow>{{ .Account }}</>{{ end }}'
         style: plain
         type: gcp
     newline: true
-  - type: prompt
+  - type: prompt # icons before prompt
     alignment: left
     segments:
       - type: upgrade
         style: plain
-      - template: '{{if matchP "screen*" .Env.TERM }} {{ end}}'
+      - type: text # screen
+        template: '{{if matchP "screen*" .Env.TERM }} {{ end}}'
         style: plain
-        type: text
-      - template: '{{ if eq .Env.ASCIINEMA_REC "1" }} {{ end }}'
+      - type: text # asciinema
+        template: '{{ if eq .Env.ASCIINEMA_REC "1" }} {{ end }}'
         foreground: red
         style: plain
-        type: text
-      - template: "{{ if .Env.SSH_AGENT_PID }} {{ end }}"
+      - type: text # ssh-agent
+        template: "{{ if .Env.SSH_AGENT_PID }} {{ end }}"
         foreground: "#FFBD00"
         style: plain
-        type: text
-      - template: ❯
+      - type: text # prompt end
+        template: ❯
         foreground: "#FFBD00"
         style: plain
-        type: text
         foreground_templates:
           - "{{ if gt .Code 0}}red{{end}}"
           - "{{ if eq .Code 0}}green{{end}}"
     newline: true
-  - type: rprompt
+  - type: rprompt # last git message
     alignment: left
     segments:
-      - template: " <p:shadow>{{.Commit.Subject}} ~{{.Commit.Author.Name}} ({{.Commit.Author.Email}})</>"
+      - type: git
+        template: " <p:shadow>{{.Commit.Subject}} ~{{.Commit.Author.Name}} ({{.Commit.Author.Email}})</>"
         style: plain
-        type: git
