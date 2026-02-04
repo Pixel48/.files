@@ -104,6 +104,10 @@ blocks:
         template: " {{if .Context}}\U000F10FE {{.Context}}{{if .Namespace}}::{{.Namespace}}{{end}}{{end}}"
         foreground: "#326CE5"
         style: plain
+      - type: text # dirs stack
+        template: "{{if .Env.DIRS}} {{ .Env.DIRS }}{{end}}"
+        style: plain
+        foreground: p:shadow
   - type: prompt # dynamic status
     alignment: right
     segments:
@@ -129,13 +133,14 @@ blocks:
         style: plain
   - type: prompt # gcloud status
     alignment: left
+    newline: true
     segments:
       - template: '{{ if and .Project .Account }} {{ if ne .ActiveConfig "default" }}<p:google_red>{{ .ActiveConfig }}</> {{ end }}<p:google_blue>{{ .Project }}</>{{ if .Region }}<p:google_green> {{ .Region }}</>{{ end }} <p:google_yellow>{{ .Account }}</>{{ end }}'
         style: plain
         type: gcp
-    newline: true
   - type: prompt # icons before prompt
     alignment: left
+    newline: true
     segments:
       - type: upgrade
         style: plain
@@ -157,7 +162,6 @@ blocks:
         foreground_templates:
           - "{{ if gt .Code 0}}red{{end}}"
           - "{{ if eq .Code 0}}green{{end}}"
-    newline: true
   - type: rprompt # last git message
     alignment: left
     segments:

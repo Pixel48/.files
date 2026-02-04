@@ -155,7 +155,8 @@ __cmd oh-my-posh || ~/.files/setup/ohmyposh.sh
 if [ "$TERM_PROGRAM" != "Apple Terminal" ]; then
   eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/dev.yml)"
   function set_poshcontext() {
-    export JOBS=$(jobs|wc -l|xargs)
+    export JOBS=$(jobs | wc -l | xargs)
+    export DIRS=$(dirs | sed -E 's|[^ ]*/||g; s/^[^ ]+( |$)//')
   }
 fi
 
