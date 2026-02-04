@@ -107,7 +107,7 @@ blocks:
       - type: text # dirs stack
         template: "{{if .Env.DIRS}} {{ .Env.DIRS }}{{end}}"
         style: plain
-        foreground: p:shadow
+        foreground: p:viper
   - type: prompt # dynamic status
     alignment: right
     segments:
