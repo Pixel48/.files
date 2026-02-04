@@ -94,7 +94,7 @@ bindkey -s '^[:' ' ls -lA^J'
 bindkey -s '^[K' ' ls -TA^J'
 bindkey -s '^[L' ' ls -A^J'
 if __cmd eza; then
-  alias ls='eza'
+  alias ls='eza -g'
 elif __cmd exa; then
   alias ls='exa'
   alias la='l -a'
