@@ -23,6 +23,10 @@ app-notifications = no-clipboard-copy
 
 bell-features = attention, no-title
 
+window-inherit-working-directory = false
+# tab-inherit-working-direcotry = true
+# split-inherit-working-direcotry = true
+working-directory = inherit
 
 keybind = alt+t=unbind
 keybind = ctrl+shift+o=unbind
