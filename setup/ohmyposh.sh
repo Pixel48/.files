@@ -1,1 +1,1 @@
-./.pipe_install.sh https://ohmyposh.dev/install.sh
+${0%/*}/.pipe_install.sh https://ohmyposh.dev/install.sh

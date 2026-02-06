@@ -1,1 +1,1 @@
-./.pipe_install.sh termux.carapace.sh
+${0%}/.pipe_install.sh termux.carapace.sh

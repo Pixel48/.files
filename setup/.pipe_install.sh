@@ -15,7 +15,7 @@ fatal() { echo -e "\e[07;91m$*\e[m"; }
 
 curl -fsSL "$@" > installer.sh
 command -v bat >/dev/null && bat installer.sh || cat installer.sh
-read "install?Approve? [N/y] "
+read -p "Approve? [N/y] " install
 if [[ -z $install || $install != [yY]* ]]; then
   warn "Reverting"
   exit 0

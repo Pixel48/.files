@@ -1,1 +1,1 @@
-./.pipe_install.sh https://foundry.paradigm.xyz
+${0%/*}/.pipe_install.sh https://foundry.paradigm.xyz

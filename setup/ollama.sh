@@ -1,1 +1,1 @@
-./.pipe_install.sh https://ollama.com/install.sh
+${0%/*}/.pipe_install.sh https://ollama.com/install.sh
