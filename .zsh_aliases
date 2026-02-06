@@ -10,12 +10,12 @@ __cmd() {
 }
 
 # Suffix aliases
-__cmd dnf && alias -s rpm="dnf in"
-__cmd jless && alias -s json="jless"
 __cmd $OPEN && alias -s html="noglob $OPEN"
 __cmd $OPEN && alias -s mp4="$OPEN"
 __cmd $OPEN && alias -s pdf="$OPEN"
 __cmd $OPEN && alias -s png="$OPEN"
+__cmd dnf && alias -s rpm="dnf in"
+__cmd jless && alias -s json="jless"
 alias -s asc="gpg --import"
 alias -s cc="$EDITOR"
 alias -s cc="$EDITOR"
@@ -26,9 +26,9 @@ alias -s go="$EDITOR"
 alias -s hh="$EDITOR"
 alias -s hpp="$EDITOR"
 alias -s js="$EDITOR"
-alias -s log="cat"
+alias -s log="$READER"
 alias -s lua="$EDITOR"
-alias -s md="cat"
+alias -s md="$READER"
 alias -s py="$EDITOR"
 alias -s rs="$EDITOR"
 alias -s ts="$EDITOR"
@@ -39,6 +39,7 @@ __cmd jq && alias -g JQ='| jq'
 __cmd pbcopy && alias -g C='| pbcopy'
 __cmd wl-copy && alias -g C='| wl-copy'
 __cmd xclip && alias -g C='| xclip'
+alias -g A='; echo -ne "\a"'
 alias -g E='&& exit || echo -ne "\a"'
 alias -g ER='| entr -rc'
 alias -g FZF='| fzf'
