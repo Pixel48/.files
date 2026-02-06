@@ -132,6 +132,7 @@ alias mount='sudo mount'
 alias sshc="${EDITOR} ~/.ssh/config"
 alias sshk='ssh-keygen'
 alias sshr='ssh-keygen -R'
+alias sshd='ssh-copy-id'
 alias umount='sudo umount'
 alias w='w -i'
 alias who='who -a'
