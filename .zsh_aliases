@@ -52,6 +52,7 @@ alias -g QT='>/dev/null'
 alias -g QW='2>&1'
 alias -g R='| rg '
 alias -g RR='| rg -v'
+alias -g Y='yes |'
 
 # Aliases for editing config files
 [ -f ~/.${EDITOR}rc ] && alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
