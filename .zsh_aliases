@@ -68,7 +68,7 @@ alias now='date +"%d.%m.%Y %H:%M:%S"'
 # fs movement
 alias mkdir='mkdir -p'
 alias d='dirs -v'
-alias dc='dirs -c'
+alias dc='cd; dirs -c'
 alias .,='popd'
 alias ..='cd ..'
 alias ...='cd ../..'
