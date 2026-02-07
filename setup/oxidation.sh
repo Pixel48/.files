@@ -14,7 +14,7 @@ Options:
     -e                  Install only essential tools
     -h, --help         Show this help message
 
-Essential tools: ripgrep, dust, eza, bat, fd-find, zoxide, xh, hyperfine, 
+Essential tools: fzf, ripgrep, dust, eza, bat, fd-find, zoxide, xh, hyperfine, 
                  tokei, just, tealdeer
 
 Additional tools: ripgrep-all, irust, bacon, porsmo, speedtest-rs, 
@@ -68,7 +68,7 @@ fi
 
 log "Installing essential Rust tools..."
 if ! RUSTC_WRAPPER=sccache cargo install --locked \
-    ripgrep du-dust eza bat fd-find zoxide xh hyperfine tokei just tealdeer mcdu; then
+    fzf ripgrep du-dust eza bat fd-find zoxide xh hyperfine tokei just tealdeer mcdu; then
     error "Failed to install essential Rust tools"
 fi
 
