@@ -128,7 +128,7 @@ blocks:
           charging_icon: " "
           charged_icon: " "
       - type: text # jobs
-        template: ' {{if ne .Env.JOBS "0"}}{{if eq .Env.JOBS "1"}}{{else}}{{end}}{{end}}'
+        template: '{{if ne .Env.JOBS "0"}}{{if eq .Env.JOBS "1"}}{{else}}{{end}} {{end}}'
         foreground: white
         style: plain
   - type: prompt # gcloud status
