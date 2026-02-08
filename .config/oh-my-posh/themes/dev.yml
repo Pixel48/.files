@@ -112,12 +112,16 @@ blocks:
     alignment: right
     segments:
       - type: executiontime
-        template: " {{ .FormattedMs }} "
+        template: "{{ .FormattedMs }}"
         foreground: p:gray
         style: plain
         options:
           style: round
           threshold: 4000
+      - type: text # jobs
+        template: '{{if ne .Env.JOBS "0"}} {{if eq .Env.JOBS "1"}}{{else}}{{end}} {{end}}'
+        foreground: white
+        style: plain
       - type: battery
         template: '{{if (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}{{end}}'
         style: plain
@@ -127,10 +131,6 @@ blocks:
           discharging_icon: " "
           charging_icon: " "
           charged_icon: " "
-      - type: text # jobs
-        template: '{{if ne .Env.JOBS "0"}}{{if eq .Env.JOBS "1"}}{{else}}{{end}} {{end}}'
-        foreground: white
-        style: plain
   - type: prompt # gcloud status
     alignment: left
     newline: true
