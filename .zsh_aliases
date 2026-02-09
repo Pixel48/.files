@@ -35,6 +35,7 @@ alias -s ts="$EDITOR"
 alias -s zip="unzip -l"
 
 # Global aliases
+__cmd bat && alias -g V='| bat -p'
 __cmd jq && alias -g JQ='| jq'
 __cmd pbcopy && alias -g C='| pbcopy'
 __cmd wl-copy && alias -g C='| wl-copy'

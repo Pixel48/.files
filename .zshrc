@@ -89,7 +89,6 @@ export EDITOR=`basename $EDITOR`
 
 # Setup reader
 READER=$(
-  __cmd2 pat ||
   __cmd2 bat ||
   __cmd2 less ||
   __cmd2 more ||
