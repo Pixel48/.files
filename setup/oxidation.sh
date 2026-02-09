@@ -1,4 +1,4 @@
-#!/usr/bin/env `basename $SHELL`
+#!/usr/bin/env bash
 set -eo pipefail
 
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"; }
