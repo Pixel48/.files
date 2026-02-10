@@ -67,3 +67,10 @@ rmreporuns() {
 fw() {
 	[ 0 -ne $1 ] && fg %$1 || fg
 }
+__cmd bat && bat() {
+  if [ -t 0 ]; then
+    command bat "$@"
+  else
+    command bat -p "$@"
+  fi
+}
