@@ -65,7 +65,11 @@ rmreporuns() {
   echo "All workflow runs for $repo have been deleted."
 }
 fw() {
-	[ 0 -ne $1 ] && fg %$1 || fg
+    if [ -n "$1" ]; then
+        fg "%$1"
+    else
+        fg
+    fi
 }
 __cmd bat && bat() {
   if [ -t 0 ]; then
