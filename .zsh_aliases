@@ -89,7 +89,7 @@ alias 9='cd +9'
 alias d='dirs -v'
 alias dc='cd; dirs -c'
 alias mkdir='mkdir -p'
-alias tmpd='cd `mktemp -d`'
+alias td='cd `mktemp -d`'
 
 # fs view
 alias la='l -A'
@@ -156,5 +156,4 @@ __cmd brctl && alias brctl='sudo brctl'
 __cmd cryptsetup && alias cryptsetup="sudo cryptsetup"
 __cmd nmcli && alias nmcli='sudo nmcli'
 __cmd sysctl && alias sysctl='sudo sysctl'
-__cmd tcpdump && alias td="sudo tcpdump"
 __cmd wg && alias wg='sudo wg'
