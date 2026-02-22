@@ -123,7 +123,7 @@ blocks:
         foreground: white
         style: plain
       - type: battery
-        template: '{{if (or (eq "Charging" .State.String) (le .Percentage 20))}}{{.Icon}}{{.Percentage}}{{end}}'
+        template: '{{if (or (eq "Charging" .State.String) (le .Percentage 20))}} {{.Icon}}{{.Percentage}}{{end}}'
         style: plain
         foreground_templates:
           - '{{if and (eq "Charging" .State.String) (lt .Percentage 85)}}#40C4FF{{else if eq "Discharging" .State.String}}#FF5722{{else if ge .Percentage 85}}#4CAF50{{end}}'
