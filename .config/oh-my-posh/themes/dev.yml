@@ -27,7 +27,7 @@ blocks:
         foreground: white
         style: plain
       - type: session
-        template: "{{ .UserName }}<p:gray>@</>{{.HostName}}"
+        template: "{{ if not .SSHSession }}\ueba9 {{ end }}{{ if .Root }}\e[7m{{end}}{{ .UserName }}{{ if .Root }}\e[m{{end}}<p:gray>@</>{{.HostName}}"
         foreground: "#FFBD00"
         style: plain
       - type: path
