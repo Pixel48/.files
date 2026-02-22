@@ -119,7 +119,7 @@ git config --global alias.wtr 'wt remove'
 # CORE
 git config --global core.autocrlf input
 git config --global core.safecrlf warn
-__cmd nvim && git config --global core.editor nvim || git config --global core.editor vim
+git config --global core.editor $EDITOR
 # INIT
 git config --global init.defaultbranch main
 # BRANCH
