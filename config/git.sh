@@ -1,6 +1,3 @@
-__cmd() {
-  command -v $1 >/dev/null
-}
 # ALIASES
 git config --global alias.a 'add .'
 git config --global alias.addp 'add -p'
@@ -119,15 +116,15 @@ git config --global alias.wtr 'wt remove'
 # CORE
 git config --global core.autocrlf input
 git config --global core.safecrlf warn
-git config --global core.editor $EDITOR
+git config --global core.editor "$EDITOR"
 # INIT
 git config --global init.defaultbranch main
 # BRANCH
 git config --global branch.autoSetupMerge true
 # PUSH
-git config --global push.default upstream
+git config --global push.default simple
 # CYGWIN
-if [[ `uname` == *CYGWIN* ]]; then
+if [[ $(uname) == *CYGWIN* ]]; then
   if [ -f ~/.zsh_cygwin ]; then
     git config --global core.autocrlf true
   fi

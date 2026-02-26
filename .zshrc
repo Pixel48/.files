@@ -85,7 +85,7 @@ EDITOR=$(
   __cmd2 nano ||
   __cmd2 ed ||
   echo "No editor found")
-export EDITOR=`basename $EDITOR`
+export EDITOR=$(basename "$EDITOR")
 
 # Setup reader
 READER=$(
@@ -93,15 +93,15 @@ READER=$(
   __cmd2 less ||
   __cmd2 more ||
   echo "No reader found")
-export READER=`basename $READER`
+export READER=$(basename "$READER")
 
 # Setup open
 OPEN=$(
   __cmd2 xdg-open ||
   __cmd2 open ||
   echo "No open found")
-export OPEN=`basename $OPEN`
-alias open=$OPEN
+export OPEN=$(basename "$OPEN")
+alias open="$OPEN"
 
 # Load exports
 if [ -f ~/.zsh_exports ]; then
@@ -123,7 +123,7 @@ if [ ! -f ~/.gitconfig ]; then
 fi
 
 # Load cygwin workarounds if needed
-if [[ `uname` == *CYGWIN* ]]; then
+if [[ $(uname) == *CYGWIN* ]]; then
   if [ -f ~/.zsh_cygwin ]; then
     source ~/.zsh_cygwin
   fi
@@ -139,7 +139,7 @@ alias compconfig="$EDITOR ~/.zsh_comp"
 # Zinit caching
 # zinit cdreplay -q
 
-if [[ `uname` == *CYGWIN* ]]; then
+if [[ $(uname) == *CYGWIN* ]]; then
   cd - > /dev/null
 fi
 

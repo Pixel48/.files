@@ -18,7 +18,6 @@ __cmd dnf && alias -s rpm="dnf in"
 __cmd jless && alias -s json="jless"
 alias -s asc="gpg --import"
 alias -s cc="$EDITOR"
-alias -s cc="$EDITOR"
 alias -s conf="$EDITOR"
 alias -s config="$EDITOR"
 alias -s cpp="$EDITOR"
@@ -57,7 +56,7 @@ alias -g WE='2>&1'
 alias -g Y='yes |'
 
 # Aliases for editing config files
-[ -f ~/.${EDITOR}rc ] && alias ${EDITOR}rc="${EDITOR} ~/.${EDITOR}rc"
+[ -f "~/${EDITOR}rc" ] && alias "${EDITOR}rc"="${EDITOR} ~/${EDITOR}rc"
 [ -f ~/.files/config/gh.sh ] && alias ghconfig="${EDITOR} ~/.files/config/gh.sh"
 [ -f ~/.files/config/git.sh ] && alias gitconfig="${EDITOR} ~/.files/config/git.sh"
 [ -f ~/.files/config/glab.sh ] && alias glabconfig="${EDITOR} ~/.files/config/glab.sh"
@@ -65,7 +64,7 @@ alias -g Y='yes |'
 [ -f ~/.zshrc ] && alias zshrc="${EDITOR} ~/.zshrc"
 
 # Fundamental aliases
-alias reload='exec $(basename $SHELL)'
+alias reload='exec $(basename "$SHELL")'
 alias now='date +"%d.%m.%Y %H:%M:%S"'
 
 # fs movement
