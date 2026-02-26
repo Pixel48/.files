@@ -24,10 +24,7 @@ source $VIMRUNTIME/defaults.vim
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
-  set backup		" keep a backup file (restore to previous version)
-  if has('persistent_undo')
-    set undofile	" keep an undo file (undo changes after closing)
-  endif
+  set nobackup		" disabled - use versions instead
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -76,8 +73,8 @@ set noundofile nobackup
 " Ignore case
 set ic
 
-" Disable search highligh all
-set nohls
+" Disable search highlight
+set nohlsearch
 
 " Set 2-space indent
 set tabstop=2 shiftwidth=2 expandtab
