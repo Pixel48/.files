@@ -22,8 +22,11 @@ _darcs
 ^/COPYING
 
 ### .files-specyfic
-# ignore all non-hidden root dirs
-^/[^.].*
+# ignore all non-hidden root dirs and files
+^/[^.]*
+
+# ignore GitHub metadata
+^/\.github
 
 # ignore AGENTS.md in opencode
 ^/\.config/opencode/AGENTS\.md
