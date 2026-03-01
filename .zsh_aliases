@@ -31,28 +31,28 @@ alias -s md="$READER"
 alias -s py="$EDITOR"
 alias -s rs="$EDITOR"
 alias -s ts="$EDITOR"
+alias -s txt="$READER"
 alias -s zip="unzip -l"
 
 # Global aliases
-__cmd bat && alias -g V='| bat -p'
+__cmd entr && alias -g ER='| entr -rc'
+__cmd fzf && alias -g FZF='| fzf'
 __cmd jq && alias -g JQ='| jq'
 __cmd pbcopy && alias -g C='| pbcopy'
+__cmd qrencode && alias -g QR='| qrencode -t ansi256utf8'
 __cmd wl-copy && alias -g C='| wl-copy'
 __cmd xclip && alias -g C='| xclip'
-alias -g A='; echo -ne "\a"'
+alias -g A='; echo -ne "\a"' # Alert on success
 alias -g D='J disown'
-alias -g E='&& exit || echo -ne "\a"'
-alias -g ER='| entr -rc'
-alias -g FZF='| fzf'
-alias -g J='Q QE &'
-alias -g L="| $READER"
-alias -g LC='| wc -l'
-alias -g Q='>/dev/null'
-alias -g QE='2>/dev/null'
-alias -g QR='| qrencode -t ansi256utf8'
-alias -g R='| rg '
-alias -g RR='| rg -v'
-alias -g WE='2>&1'
+alias -g E='&& exit || echo -ne "\a"' # Exit on success
+alias -g J='Q QE &' # Job (quiet and in bg)
+alias -g L="| $READER" # Less (or other reader)
+alias -g LC='| wc -l' # Line Count
+alias -g Q='>/dev/null' # Quiet
+alias -g QE='2>/dev/null' # Quiet Errors
+alias -g R='| rg ' # Ripgrep
+alias -g RR='| rg -v' # Reverse Ripgrep
+alias -g WE='2>&1' # Write Errors (in stdout)
 alias -g Y='yes |'
 
 # Aliases for editing config files
@@ -141,8 +141,7 @@ alias w='w -i'
 alias who='who -a'
 
 __cmd arduino-cli && alias ardu='arduino-cli'
-__cmd bat && alias cat='bat'
-__cmd bat && alias pat='bat -p'
+__cmd bat && alias cat='bat' && alias pat='bat -p'
 __cmd batgrep && alias rg='batgrep'
 __cmd cbonsai && alias cbonsai="cbonsai -c'%,$,#,&,@'"
 __cmd g++ && alias cxx=g++
