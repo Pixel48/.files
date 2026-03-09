@@ -17,9 +17,10 @@ _darcs
 .+~          # emacs backup files
 \#.*\#       # emacs autosave files
 
-^/README.*
-^/LICENSE.*
-^/COPYING
+^README.*
+^LICENSE.*
+^COPYING
+lazy-lock\.json
 
 ### .files-specyfic
 # ignore all non-hidden root dirs and files
