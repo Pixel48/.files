@@ -33,4 +33,4 @@ lazy-lock\.json
 ^/\.config/opencode/AGENTS\.md
 
 # ignore finder file
-.DS_Store
+\.DS_Store
