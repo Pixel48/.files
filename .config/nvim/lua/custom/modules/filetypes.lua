@@ -6,5 +6,6 @@ vim.filetype.add {
   },
   filename = {
     ["config"] = "conf",
+    [".stow-local-ignore"] = "gitignore",
   },
 }
