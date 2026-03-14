@@ -193,7 +193,7 @@
     "messages_last_user": "ctrl+l",
     "messages_redo": "<leader>r,alt+shift+z,alt+shift+u",
     "messages_undo": "<leader>u,alt+u,alt+z",
-    "model_list": "ctrl+m",
+    "model_list": "alt+m",
     "session_child_cycle": "ctrl+o",
     "session_child_cycle_reverse": "ctrl+i",
     "session_compact": "ctrl+s",
