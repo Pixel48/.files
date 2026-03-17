@@ -83,25 +83,30 @@ EDITOR=$(
   __cmd2 vim ||
   __cmd2 vi ||
   __cmd2 nano ||
-  __cmd2 ed ||
-  echo "No editor found")
+  __cmd2 ed)
 export EDITOR=$(basename "$EDITOR")
 
 # Setup reader
 READER=$(
   __cmd2 bat ||
-  __cmd2 less ||
   __cmd2 more ||
-  echo "No reader found")
+  __cmd2 less)
 export READER=$(basename "$READER")
 
 # Setup open
 OPEN=$(
   __cmd2 xdg-open ||
   __cmd2 open ||
-  echo "No open found")
+)
 export OPEN=$(basename "$OPEN")
 alias open="$OPEN"
+
+# Setup copy tool
+COPY=$(
+  __cmd2 wl-copy ||
+  __cmd2 xclip ||
+  __cmd2 pbcopy)
+export COPY=$(basename "$COPY")
 
 # Load exports
 if [ -f ~/.zsh_exports ]; then
