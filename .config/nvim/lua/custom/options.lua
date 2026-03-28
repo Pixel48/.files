@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+-- vim.g.maplocalleader = " "
+
 vim.o.colorcolumn = "80"
 vim.o.number = true
 vim.o.relativenumber = true
