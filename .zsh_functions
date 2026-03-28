@@ -24,20 +24,8 @@ __cmd ufw && ufw() {
   if [[ $# == 0 ]]; then
     sudo ufw status numbered
   else
-    if [[ $# > 1 ]]; then
+    if [[ $# > 0 ]]; then
       sudo ufw $@
-    else
-      case $1 in
-        "on")
-          yes | ufw enable
-          ;;
-        "off")
-          ufw disable
-          ;;
-        *)
-          ufw $@
-          ;;
-      esac
     fi
   fi
 }

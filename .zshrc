@@ -95,8 +95,8 @@ export READER=$(basename "$READER")
 
 # Setup open
 OPEN=$(
-  __cmd2 xdg-open ||
   __cmd2 open ||
+  __cmd2 xdg-open ||
 )
 export OPEN=$(basename "$OPEN")
 alias open="$OPEN"

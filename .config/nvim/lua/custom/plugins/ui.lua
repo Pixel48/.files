@@ -25,7 +25,6 @@ return {
       },
     },
   },
-
   { -- Flash
     "folke/flash.nvim",
     event = "VeryLazy",
@@ -90,4 +89,3 @@ return {
     },
   },
 }
-
