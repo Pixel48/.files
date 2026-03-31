@@ -7,4 +7,8 @@ vim.filetype.add {
   filename = {
     [".stow-local-ignore"] = "gitignore",
   },
+  pattern = {
+    [".*/dinit%.d/.*"] = "toml",
+    [".*/%.env/.*"] = "sh",
+  },
 }
