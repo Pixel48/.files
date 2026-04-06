@@ -88,7 +88,7 @@ export EDITOR=$(basename "$EDITOR")
 
 # Setup reader
 READER=$(
-  __cmd2 bat ||
+  __cmd2 cat ||
   __cmd2 more ||
   __cmd2 less)
 export READER=$(basename "$READER")
@@ -180,3 +180,6 @@ if [ ! -f ~/.profile ]; then
   echo 'alias profile="${EDITOR} ~/.profile"' > ~/.profile
 fi
 source ~/.profile
+
+# opencode
+export PATH=/home/stanley//.opencode/bin:$PATH
