@@ -12,6 +12,8 @@ theme = Paul Millr
 shell-integration-features = no-cursor
 cursor-style-blink = true
 cursor-style = underline
+custom-shader = ~/.config/ghostty/shaders/cursor_warp.glsl
+custom-shader-animation = always
 cursor-color = #999999
 cursor-opacity = .75
 
