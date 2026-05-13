@@ -4,7 +4,7 @@ __cmd sudo && ok() {
   if [ "$#" = "0" ]; then
     sudo $(fc -ln -1)
   else
-    sudo $@
+    sudo "$@"
   fi
 }
 title() {

@@ -181,4 +181,5 @@ if [ ! -f ~/.profile ]; then
 fi
 source ~/.profile
 
-# .opencode/bin set in .profile
+# opencode
+# export PATH=/home/stanley//.opencode/bin:$PATH
