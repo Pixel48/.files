@@ -1,6 +1,8 @@
 alias aliases="${EDITOR} ~/.zsh_aliases"
 alias profile="${EDITOR} ~/.profile"
 
+__cmd doas && alias sudo='doas'
+
 if [ -f ~/.zsh_quotes ]; then
   source ~/.zsh_quotes
 fi
@@ -34,6 +36,8 @@ alias -s rules="$EDITOR"
 alias -s toml="$EDITOR"
 alias -s ts="$EDITOR"
 alias -s txt="$READER"
+alias -s yaml="$EDITOR"
+alias -s yml="$EDITOR"
 alias -s zip="unzip -l"
 
 # Global aliases
@@ -52,6 +56,7 @@ alias -g Q='>/dev/null' # Quiet
 alias -g QE='2>/dev/null' # Quiet Errors
 alias -g R='| rg ' # Ripgrep
 alias -g RR='| rg -v' # Reverse Ripgrep
+alias -g TEE='| tee'
 alias -g WE='2>&1' # Write Errors (in stdout)
 alias -g Y='yes |'
 
@@ -131,10 +136,11 @@ alias ipt='sudo ptables'
 alias j='jobs -l'
 alias losetup='sudo losetup'
 alias mount='sudo mount'
+alias rf='rm -rf'
 alias sshc="${EDITOR} ~/.ssh/config"
+alias sshi='ssh-copy-id'
 alias sshk='ssh-keygen'
 alias sshr='ssh-keygen -R'
-alias sshi='ssh-copy-id'
 alias umount='sudo umount'
 alias w='w -i'
 alias who='who -a'
