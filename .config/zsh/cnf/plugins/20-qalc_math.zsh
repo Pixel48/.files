@@ -1,4 +1,4 @@
-cnf_20_quick_math() {
+cnf_20_qalc_math() {
   local cmd="$1"
   local math_regex="^[0-9]+[\+\-\*\/\^][0-9\+\-\*\/\^\(\)\.]+$"
   

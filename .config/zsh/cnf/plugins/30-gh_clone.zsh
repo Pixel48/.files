@@ -7,9 +7,7 @@ cnf_30_gh_clone() {
     
     if curl -s -I "https://api.github.com/repos/$cmd" | grep -q "200 OK"; then
       local repo_name="${cmd#*/}" 
-      
       echo -e "\e[1;34m❯\e[m \e[36mgit clone\e[m \e[33mhttps://github.com/$cmd.git\e[m \e[1;31m&& cd $repo_name\e[m"
-      
       git clone "https://github.com/$cmd.git" && cd "$repo_name"
       return 0
     fi

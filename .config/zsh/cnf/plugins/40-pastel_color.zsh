@@ -5,7 +5,6 @@ cnf_40_pastel_color() {
   if [[ $cmd =~ $hex_regex ]] && __cmd pastel; then
     local hex="$cmd"
     [[ $hex != \#* ]] && hex="#$hex"
-
     echo -e "\e[1;34m❯\e[m \e[36mpastel color\e[m \e[1;31m$hex\e[m"
     pastel color "$hex"
     return 0
