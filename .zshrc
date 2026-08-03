@@ -182,7 +182,7 @@ fi
 source ~/.profile
 
 # cnf extensions
-source ~/.config/zsh/cnf/router.sh
+source ~/.config/zsh/cnf/router.zsh
 
 # opencode
 # export PATH=/home/stanley//.opencode/bin:$PATH
