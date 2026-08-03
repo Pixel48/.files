@@ -13,6 +13,8 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
+# EMACS & QoL binds
+bindkey -e
 bindkey '^[[Z' reverse-menu-complete
 
 # kill-word per separator
@@ -24,8 +26,6 @@ bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 
-# EMACS & QoL binds
-bindkey -e
 bindkey '^@' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -182,7 +182,7 @@ fi
 source ~/.profile
 
 # cnf extensions
-source ~/.config/zsh/cnf/cnf_router.sh
+source ~/.config/zsh/cnf/router.sh
 
 # opencode
 # export PATH=/home/stanley//.opencode/bin:$PATH
