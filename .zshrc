@@ -181,5 +181,8 @@ if [ ! -f ~/.profile ]; then
 fi
 source ~/.profile
 
+# cnf extensions
+source ~/.config/zsh/cnf/cnf_router.sh
+
 # opencode
 # export PATH=/home/stanley//.opencode/bin:$PATH
