@@ -1,0 +1,12 @@
+cnf_105_url_runner() {
+  local cmd="$1"
+
+  local url_regex="^(https?:\/\/)?(www\.)?[a-zA-Z0-9\.]+\.[a-zA-Z0-9]{2,}/.*$"
+
+  if [[ $cmd =~ $url_regex ]]; then
+    if __cmd librewolf; then
+      echo -e "\e[1;34m❯\e[m \e[36mlibrewolf\e[m \e[1;31m$cmd\e[m"
+      librewolf "$cmd"
+      return 0
+    fi
+}

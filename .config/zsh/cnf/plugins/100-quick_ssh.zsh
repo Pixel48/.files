@@ -14,8 +14,9 @@ cnf_100_quick_ssh() {
   fi
   
   if $is_target && __cmd ssh; then
-    echo -e "\e[1;34m❯\e[m \e[36mssh\e[m \e[1;31m$cmd\e[m"
-    ssh "$cmd"
+    shift
+    echo -e "\e[1;34m❯\e[m \e[36mssh\e[m \e[1;31m$cmd\e[m \e[33m$@\e[m"
+    ssh "$cmd" "$@"
     return 0
   fi
   

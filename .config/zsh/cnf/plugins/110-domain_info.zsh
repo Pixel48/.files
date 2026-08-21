@@ -8,13 +8,12 @@ cnf_110_domain_info() {
     if [[ -e $cmd ]]; then return 1; fi
 
     if __cmd host; then
-      echo -e "\e[1;34m❯\e[m \e[36mhost\e[m \e[1;31m$cmd\e[m"
-      host "$cmd"
-      return 0
-      
-    elif __cmd dig; then
       echo -e "\e[1;34m❯\e[m \e[36mdig ANY +short\e[m \e[1;31m$cmd\e[m"
       dig ANY +short "$cmd"
+      return 0
+    elif __cmd dig; then
+      echo -e "\e[1;34m❯\e[m \e[36mhost\e[m \e[1;31m$cmd\e[m"
+      host "$cmd"
       return 0
     fi
   fi
