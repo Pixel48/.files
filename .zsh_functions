@@ -66,3 +66,11 @@ __cmd bat && bat() {
     command bat -p "$@"
   fi
 }
+
+up() {
+  ok ip l set $1 up
+}
+
+down() {
+  ok ip l set $1 down
+}
