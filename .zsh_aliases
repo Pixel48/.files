@@ -56,6 +56,7 @@ alias -g Q='>/dev/null' # Quiet
 alias -g QE='2>/dev/null' # Quiet Errors
 alias -g R='| rg ' # Ripgrep
 alias -g RR='| rg -v' # Reverse Ripgrep
+alias -g H='| head -1'
 alias -g TEE='| tee'
 alias -g WE='2>&1' # Write Errors (in stdout)
 alias -g Y='yes |'
