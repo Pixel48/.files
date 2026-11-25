@@ -11,6 +11,7 @@ local M = {
     "terraformls",
     "ts_ls",
     "yamlls",
+    "jdtls",
   },
   tools = {
     "ansible-lint",
